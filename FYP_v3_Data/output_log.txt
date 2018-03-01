@@ -1,0 +1,388 @@
+Initialize engine version: 5.6.3f1 (d3101c3b8468)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GT 750M (ID=0xfe4)
+    Vendor:   NVIDIA
+    VRAM:     4029 MB
+    Driver:   10.18.13.5946
+Begin MonoManager ReloadAssembly
+Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\Photon3Unity3D.dll (this message is harmless)
+Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
+- Completed reload, in  0.178 seconds
+Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
+<RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 2.696777 ms
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 122c -> priority: 1 
+  Thread -> id: 1efc -> priority: 1 
+  Thread -> id: 1330 -> priority: 1 
+  Thread -> id: 18cc -> priority: 1 
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 5.090350 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 564.
+Total: 0.462720 ms (FindLiveObjects: 0.046614 ms CreateObjectMapping: 0.017533 ms MarkObjects: 0.387453 ms  DeleteObjects: 0.010691 ms)
+
+Craete Room
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Join Room
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.555093 ms
+LEVEL Room
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 1013.
+Total: 0.915604 ms (FindLiveObjects: 0.076977 ms CreateObjectMapping: 0.049180 ms MarkObjects: 0.761649 ms  DeleteObjects: 0.026942 ms)
+
+Player is created
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player is created
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Initialize engine version: 5.6.3f1 (d3101c3b8468)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GT 750M (ID=0xfe4)
+    Vendor:   NVIDIA
+    VRAM:     4029 MB
+    Driver:   10.18.13.5946
+Begin MonoManager ReloadAssembly
+Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\Photon3Unity3D.dll (this message is harmless)
+Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
+- Completed reload, in  0.020 seconds
+Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
+<RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
+<RI> Input initialized.
+<RI> Initialized touch support.
+Initialize engine version: 5.6.3f1 (d3101c3b8468)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GT 750M (ID=0xfe4)
+    Vendor:   NVIDIA
+    VRAM:     4029 MB
+    Driver:   10.18.13.5946
+Begin MonoManager ReloadAssembly
+Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\Photon3Unity3D.dll (this message is harmless)
+Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
+- Completed reload, in  0.024 seconds
+Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
+<RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
+<RI> Input initialized.
+UnloadTime: 2.451732 ms
+<RI> Initialized touch support.
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 21d0 -> priority: 1 
+  Thread -> id: 498 -> priority: 1 
+  Thread -> id: 48c -> priority: 1 
+  Thread -> id: 900 -> priority: 1 
+UnloadTime: 2.792144 ms
+connet to master
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 1d78 -> priority: 1 
+  Thread -> id: 1b7c -> priority: 1 
+  Thread -> id: 3460 -> priority: 1 
+  Thread -> id: 1894 -> priority: 1 
+connet to master
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 6.447719 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 564.
+Total: 1.848315 ms (FindLiveObjects: 0.159086 ms CreateObjectMapping: 0.120170 ms MarkObjects: 1.540405 ms  DeleteObjects: 0.025231 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.690231 ms
+LEVEL Room
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 1012.
+Total: 1.053308 ms (FindLiveObjects: 0.135993 ms CreateObjectMapping: 0.044048 ms MarkObjects: 0.845041 ms  DeleteObjects: 0.025659 ms)
+
+Player is created
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player is created
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player is created
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player is created
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 5.583006 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 564.
+Total: 1.449742 ms (FindLiveObjects: 0.117604 ms CreateObjectMapping: 0.106057 ms MarkObjects: 1.199993 ms  DeleteObjects: 0.023520 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.636347 ms
+LEVEL Room
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 1012.
+Total: 0.971626 ms (FindLiveObjects: 0.081681 ms CreateObjectMapping: 0.072700 ms MarkObjects: 0.787308 ms  DeleteObjects: 0.028652 ms)
+
+Player is created
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player is created
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player is created
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player is created
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player is created
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player is created
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+KeyNotFoundException: The given key was not present in the dictionary.
+  at System.Collections.Generic.Dictionary`2[PunTeams+Team,System.Collections.Generic.List`1[PhotonPlayer]].get_Item (Team key) [0x00000] in <filename unknown>:0 
+  at PunTeams.UpdateTeams () [0x00000] in <filename unknown>:0 
+  at PunTeams.OnPhotonPlayerDisconnected (.PhotonPlayer otherPlayer) [0x00000] in <filename unknown>:0 
+UnityEngine.GameObject:SendMessage(String, Object, SendMessageOptions)
+NetworkingPeer:SendMonoMessage(PhotonNetworkingMessage, Object[])
+NetworkingPeer:HandleEventLeave(Int32, EventData)
+NetworkingPeer:OnEvent(EventData)
+ExitGames.Client.Photon.PeerBase:DeserializeMessageAndCallback(Byte[])
+ExitGames.Client.Photon.EnetPeer:DispatchIncomingCommands()
+ExitGames.Client.Photon.PhotonPeer:DispatchIncomingCommands()
+PhotonHandler:Update()
+ 
+(Filename:  Line: -1)
+
+KeyNotFoundException: The given key was not present in the dictionary.
+  at System.Collections.Generic.Dictionary`2[PunTeams+Team,System.Collections.Generic.List`1[PhotonPlayer]].get_Item (Team key) [0x00000] in <filename unknown>:0 
+  at PunTeams.UpdateTeams () [0x00000] in <filename unknown>:0 
+  at PunTeams.OnPhotonPlayerDisconnected (.PhotonPlayer otherPlayer) [0x00000] in <filename unknown>:0 
+UnityEngine.GameObject:SendMessage(String, Object, SendMessageOptions)
+NetworkingPeer:SendMonoMessage(PhotonNetworkingMessage, Object[])
+NetworkingPeer:HandleEventLeave(Int32, EventData)
+NetworkingPeer:OnEvent(EventData)
+ExitGames.Client.Photon.PeerBase:DeserializeMessageAndCallback(Byte[])
+ExitGames.Client.Photon.EnetPeer:DispatchIncomingCommands()
+ExitGames.Client.Photon.PhotonPeer:DispatchIncomingCommands()
+PhotonHandler:Update()
+ 
+(Filename:  Line: -1)
+
+KeyNotFoundException: The given key was not present in the dictionary.
+  at System.Collections.Generic.Dictionary`2[PunTeams+Team,System.Collections.Generic.List`1[PhotonPlayer]].get_Item (Team key) [0x00000] in <filename unknown>:0 
+  at PunTeams.UpdateTeams () [0x00000] in <filename unknown>:0 
+  at PunTeams.OnPhotonPlayerDisconnected (.PhotonPlayer otherPlayer) [0x00000] in <filename unknown>:0 
+UnityEngine.GameObject:SendMessage(String, Object, SendMessageOptions)
+NetworkingPeer:SendMonoMessage(PhotonNetworkingMessage, Object[])
+NetworkingPeer:HandleEventLeave(Int32, EventData)
+NetworkingPeer:OnEvent(EventData)
+ExitGames.Client.Photon.PeerBase:DeserializeMessageAndCallback(Byte[])
+ExitGames.Client.Photon.EnetPeer:DispatchIncomingCommands()
+ExitGames.Client.Photon.PhotonPeer:DispatchIncomingCommands()
+PhotonHandler:Update()
+ 
+(Filename:  Line: -1)
+
+KeyNotFoundException: The given key was not present in the dictionary.
+  at System.Collections.Generic.Dictionary`2[PunTeams+Team,System.Collections.Generic.List`1[PhotonPlayer]].get_Item (Team key) [0x00000] in <filename unknown>:0 
+  at PunTeams.UpdateTeams () [0x00000] in <filename unknown>:0 
+  at PunTeams.OnPhotonPlayerDisconnected (.PhotonPlayer otherPlayer) [0x00000] in <filename unknown>:0 
+UnityEngine.GameObject:SendMessage(String, Object, SendMessageOptions)
+NetworkingPeer:SendMonoMessage(PhotonNetworkingMessage, Object[])
+NetworkingPeer:HandleEventLeave(Int32, EventData)
+NetworkingPeer:OnEvent(EventData)
+ExitGames.Client.Photon.PeerBase:DeserializeMessageAndCallback(Byte[])
+ExitGames.Client.Photon.EnetPeer:DispatchIncomingCommands()
+ExitGames.Client.Photon.PhotonPeer:DispatchIncomingCommands()
+PhotonHandler:Update()
+ 
+(Filename:  Line: -1)
+
+KeyNotFoundException: The given key was not present in the dictionary.
+  at System.Collections.Generic.Dictionary`2[PunTeams+Team,System.Collections.Generic.List`1[PhotonPlayer]].get_Item (Team key) [0x00000] in <filename unknown>:0 
+  at PunTeams.UpdateTeams () [0x00000] in <filename unknown>:0 
+  at PunTeams.OnPhotonPlayerDisconnected (.PhotonPlayer otherPlayer) [0x00000] in <filename unknown>:0 
+UnityEngine.GameObject:SendMessage(String, Object, SendMessageOptions)
+NetworkingPeer:SendMonoMessage(PhotonNetworkingMessage, Object[])
+NetworkingPeer:HandleEventLeave(Int32, EventData)
+NetworkingPeer:OnEvent(EventData)
+ExitGames.Client.Photon.PeerBase:DeserializeMessageAndCallback(Byte[])
+ExitGames.Client.Photon.EnetPeer:DispatchIncomingCommands()
+ExitGames.Client.Photon.PhotonPeer:DispatchIncomingCommands()
+PhotonHandler:Update()
+ 
+(Filename:  Line: -1)
+
+KeyNotFoundException: The given key was not present in the dictionary.
+  at System.Collections.Generic.Dictionary`2[PunTeams+Team,System.Collections.Generic.List`1[PhotonPlayer]].get_Item (Team key) [0x00000] in <filename unknown>:0 
+  at PunTeams.UpdateTeams () [0x00000] in <filename unknown>:0 
+  at PunTeams.OnPhotonPlayerDisconnected (.PhotonPlayer otherPlayer) [0x00000] in <filename unknown>:0 
+UnityEngine.GameObject:SendMessage(String, Object, SendMessageOptions)
+NetworkingPeer:SendMonoMessage(PhotonNetworkingMessage, Object[])
+NetworkingPeer:HandleEventLeave(Int32, EventData)
+NetworkingPeer:OnEvent(EventData)
+ExitGames.Client.Photon.PeerBase:DeserializeMessageAndCallback(Byte[])
+ExitGames.Client.Photon.EnetPeer:DispatchIncomingCommands()
+ExitGames.Client.Photon.PhotonPeer:DispatchIncomingCommands()
+PhotonHandler:Update()
+ 
+(Filename:  Line: -1)
+
+KeyNotFoundException: The given key was not present in the dictionary.
+  at System.Collections.Generic.Dictionary`2[PunTeams+Team,System.Collections.Generic.List`1[PhotonPlayer]].get_Item (Team key) [0x00000] in <filename unknown>:0 
+  at PunTeams.UpdateTeams () [0x00000] in <filename unknown>:0 
+  at PunTeams.OnPhotonPlayerDisconnected (.PhotonPlayer otherPlayer) [0x00000] in <filename unknown>:0 
+UnityEngine.GameObject:SendMessage(String, Object, SendMessageOptions)
+NetworkingPeer:SendMonoMessage(PhotonNetworkingMessage, Object[])
+NetworkingPeer:HandleEventLeave(Int32, EventData)
+NetworkingPeer:OnEvent(EventData)
+ExitGames.Client.Photon.PeerBase:DeserializeMessageAndCallback(Byte[])
+ExitGames.Client.Photon.EnetPeer:DispatchIncomingCommands()
+ExitGames.Client.Photon.PhotonPeer:DispatchIncomingCommands()
+PhotonHandler:Update()
+ 
+(Filename:  Line: -1)
+
+KeyNotFoundException: The given key was not present in the dictionary.
+  at System.Collections.Generic.Dictionary`2[PunTeams+Team,System.Collections.Generic.List`1[PhotonPlayer]].get_Item (Team key) [0x00000] in <filename unknown>:0 
+  at PunTeams.UpdateTeams () [0x00000] in <filename unknown>:0 
+  at PunTeams.OnPhotonPlayerDisconnected (.PhotonPlayer otherPlayer) [0x00000] in <filename unknown>:0 
+UnityEngine.GameObject:SendMessage(String, Object, SendMessageOptions)
+NetworkingPeer:SendMonoMessage(PhotonNetworkingMessage, Object[])
+NetworkingPeer:HandleEventLeave(Int32, EventData)
+NetworkingPeer:OnEvent(EventData)
+ExitGames.Client.Photon.PeerBase:DeserializeMessageAndCallback(Byte[])
+ExitGames.Client.Photon.EnetPeer:DispatchIncomingCommands()
+ExitGames.Client.Photon.PhotonPeer:DispatchIncomingCommands()
+PhotonHandler:Update()
+ 
+(Filename:  Line: -1)
+
+KeyNotFoundException: The given key was not present in the dictionary.
+  at System.Collections.Generic.Dictionary`2[PunTeams+Team,System.Collections.Generic.List`1[PhotonPlayer]].get_Item (Team key) [0x00000] in <filename unknown>:0 
+  at PunTeams.UpdateTeams () [0x00000] in <filename unknown>:0 
+  at PunTeams.OnPhotonPlayerDisconnected (.PhotonPlayer otherPlayer) [0x00000] in <filename unknown>:0 
+UnityEngine.GameObject:SendMessage(String, Object, SendMessageOptions)
+NetworkingPeer:SendMonoMessage(PhotonNetworkingMessage, Object[])
+NetworkingPeer:HandleEventLeave(Int32, EventData)
+NetworkingPeer:OnEvent(EventData)
+ExitGames.Client.Photon.PeerBase:DeserializeMessageAndCallback(Byte[])
+ExitGames.Client.Photon.EnetPeer:DispatchIncomingCommands()
+ExitGames.Client.Photon.PhotonPeer:DispatchIncomingCommands()
+PhotonHandler:Update()
+ 
+(Filename:  Line: -1)
+
+KeyNotFoundException: The given key was not present in the dictionary.
+  at System.Collections.Generic.Dictionary`2[PunTeams+Team,System.Collections.Generic.List`1[PhotonPlayer]].get_Item (Team key) [0x00000] in <filename unknown>:0 
+  at PunTeams.UpdateTeams () [0x00000] in <filename unknown>:0 
+  at PunTeams.OnPhotonPlayerDisconnected (.PhotonPlayer otherPlayer) [0x00000] in <filename unknown>:0 
+UnityEngine.GameObject:SendMessage(String, Object, SendMessageOptions)
+NetworkingPeer:SendMonoMessage(PhotonNetworkingMessage, Object[])
+NetworkingPeer:HandleEventLeave(Int32, EventData)
+NetworkingPeer:OnEvent(EventData)
+ExitGames.Client.Photon.PeerBase:DeserializeMessageAndCallback(Byte[])
+ExitGames.Client.Photon.EnetPeer:DispatchIncomingCommands()
+ExitGames.Client.Photon.PhotonPeer:DispatchIncomingCommands()
+PhotonHandler:Update()
+ 
+(Filename:  Line: -1)
+
+KeyNotFoundException: The given key was not present in the dictionary.
+  at System.Collections.Generic.Dictionary`2[PunTeams+Team,System.Collections.Generic.List`1[PhotonPlayer]].get_Item (Team key) [0x00000] in <filename unknown>:0 
+  at PunTeams.UpdateTeams () [0x00000] in <filename unknown>:0 
+  at PunTeams.OnPhotonPlayerDisconnected (.PhotonPlayer otherPlayer) [0x00000] in <filename unknown>:0 
+UnityEngine.GameObject:SendMessage(String, Object, SendMessageOptions)
+NetworkingPeer:SendMonoMessage(PhotonNetworkingMessage, Object[])
+NetworkingPeer:HandleEventLeave(Int32, EventData)
+NetworkingPeer:OnEvent(EventData)
+ExitGames.Client.Photon.PeerBase:DeserializeMessageAndCallback(Byte[])
+ExitGames.Client.Photon.EnetPeer:DispatchIncomingCommands()
+ExitGames.Client.Photon.PhotonPeer:DispatchIncomingCommands()
+PhotonHandler:Update()
+ 
+(Filename:  Line: -1)
+
