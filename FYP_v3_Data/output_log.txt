@@ -7,66 +7,27 @@ Direct3D:
     VRAM:     4029 MB
     Driver:   10.18.13.5946
 Begin MonoManager ReloadAssembly
-Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
-Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
-Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
-Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\Photon3Unity3D.dll (this message is harmless)
-Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-- Completed reload, in  0.178 seconds
-Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\System.dll (this message is harmless)
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\Photon3Unity3D.dll (this message is harmless)
+Loading F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
+- Completed reload, in  0.017 seconds
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
 <RI> Initializing input.
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
-<RI> Initialized touch support.
-UnloadTime: 2.696777 ms
-Setting up 4 worker threads for Enlighten.
-  Thread -> id: 122c -> priority: 1 
-  Thread -> id: 1efc -> priority: 1 
-  Thread -> id: 1330 -> priority: 1 
-  Thread -> id: 18cc -> priority: 1 
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.090350 ms
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 564.
-Total: 0.462720 ms (FindLiveObjects: 0.046614 ms CreateObjectMapping: 0.017533 ms MarkObjects: 0.387453 ms  DeleteObjects: 0.010691 ms)
-
-Craete Room
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Join Room
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.555093 ms
-LEVEL Room
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 1013.
-Total: 0.915604 ms (FindLiveObjects: 0.076977 ms CreateObjectMapping: 0.049180 ms MarkObjects: 0.761649 ms  DeleteObjects: 0.026942 ms)
-
-Player is created
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Player is created
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
 Initialize engine version: 5.6.3f1 (d3101c3b8468)
 GfxDevice: creating device client; threaded=1
 Direct3D:
@@ -76,28 +37,27 @@ Direct3D:
     VRAM:     4029 MB
     Driver:   10.18.13.5946
 Begin MonoManager ReloadAssembly
-Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
-Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
-Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
-Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\Photon3Unity3D.dll (this message is harmless)
-Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-- Completed reload, in  0.020 seconds
-Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\System.dll (this message is harmless)
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\Photon3Unity3D.dll (this message is harmless)
+Loading F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
+- Completed reload, in  0.016 seconds
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
 <RI> Initializing input.
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
-<RI> Initialized touch support.
 Initialize engine version: 5.6.3f1 (d3101c3b8468)
 GfxDevice: creating device client; threaded=1
 Direct3D:
@@ -107,63 +67,99 @@ Direct3D:
     VRAM:     4029 MB
     Driver:   10.18.13.5946
 Begin MonoManager ReloadAssembly
-Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
-Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
-Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
-Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\Photon3Unity3D.dll (this message is harmless)
-Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-- Completed reload, in  0.024 seconds
-Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\System.dll (this message is harmless)
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\Photon3Unity3D.dll (this message is harmless)
+Loading F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
+- Completed reload, in  0.016 seconds
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\FYP_v3_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
 <RI> Initializing input.
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
-UnloadTime: 2.451732 ms
 <RI> Initialized touch support.
+<RI> Initialized touch support.
+<RI> Initialized touch support.
+UnloadTime: 1.431781 ms
+UnloadTime: 1.664424 ms
+UnloadTime: 1.650739 ms
 Setting up 4 worker threads for Enlighten.
-  Thread -> id: 21d0 -> priority: 1 
-  Thread -> id: 498 -> priority: 1 
-  Thread -> id: 48c -> priority: 1 
-  Thread -> id: 900 -> priority: 1 
-UnloadTime: 2.792144 ms
+  Thread -> id: 3a54 -> priority: 1 
+  Thread -> id: 1c40 -> priority: 1 
+  Thread -> id: 3310 -> priority: 1 
+  Thread -> id: a24 -> priority: 1 
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 22c8 -> priority: 1 
+  Thread -> id: 349c -> priority: 1 
+  Thread -> id: 580 -> priority: 1 
+  Thread -> id: 18e0 -> priority: 1 
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 118c -> priority: 1 
+  Thread -> id: 3f04 -> priority: 1 
+  Thread -> id: 3f90 -> priority: 1 
+  Thread -> id: 3b34 -> priority: 1 
 connet to master
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Setting up 4 worker threads for Enlighten.
-  Thread -> id: 1d78 -> priority: 1 
-  Thread -> id: 1b7c -> priority: 1 
-  Thread -> id: 3460 -> priority: 1 
-  Thread -> id: 1894 -> priority: 1 
+connet to master
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
 connet to master
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 6.447719 ms
+UnloadTime: 5.294768 ms
 
 Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 564.
-Total: 1.848315 ms (FindLiveObjects: 0.159086 ms CreateObjectMapping: 0.120170 ms MarkObjects: 1.540405 ms  DeleteObjects: 0.025231 ms)
+Total: 0.492655 ms (FindLiveObjects: 0.036350 ms CreateObjectMapping: 0.017106 ms MarkObjects: 0.422520 ms  DeleteObjects: 0.015823 ms)
 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.690231 ms
+UnloadTime: 0.532427 ms
 LEVEL Room
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 
 Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 1012.
-Total: 1.053308 ms (FindLiveObjects: 0.135993 ms CreateObjectMapping: 0.044048 ms MarkObjects: 0.845041 ms  DeleteObjects: 0.025659 ms)
+Total: 0.916459 ms (FindLiveObjects: 0.067996 ms CreateObjectMapping: 0.032929 ms MarkObjects: 0.773196 ms  DeleteObjects: 0.040627 ms)
+
+Player is created
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player is created
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.816652 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 564.
+Total: 0.439199 ms (FindLiveObjects: 0.035922 ms CreateObjectMapping: 0.018389 ms MarkObjects: 0.376334 ms  DeleteObjects: 0.008125 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.810829 ms
+LEVEL Room
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 1012.
+Total: 0.580752 ms (FindLiveObjects: 0.053884 ms CreateObjectMapping: 0.021382 ms MarkObjects: 0.487524 ms  DeleteObjects: 0.017106 ms)
 
 Player is created
  
@@ -182,20 +178,20 @@ Player is created
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.583006 ms
+UnloadTime: 5.606954 ms
 
 Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 564.
-Total: 1.449742 ms (FindLiveObjects: 0.117604 ms CreateObjectMapping: 0.106057 ms MarkObjects: 1.199993 ms  DeleteObjects: 0.023520 ms)
+Total: 0.609832 ms (FindLiveObjects: 0.038061 ms CreateObjectMapping: 0.032073 ms MarkObjects: 0.523874 ms  DeleteObjects: 0.014540 ms)
 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.636347 ms
+UnloadTime: 0.685099 ms
 LEVEL Room
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 
 Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 1012.
-Total: 0.971626 ms (FindLiveObjects: 0.081681 ms CreateObjectMapping: 0.072700 ms MarkObjects: 0.787308 ms  DeleteObjects: 0.028652 ms)
+Total: 0.857871 ms (FindLiveObjects: 0.096221 ms CreateObjectMapping: 0.033784 ms MarkObjects: 0.708620 ms  DeleteObjects: 0.018816 ms)
 
 Player is created
  
@@ -220,6 +216,51 @@ Player is created
 Player is created
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+KeyNotFoundException: The given key was not present in the dictionary.
+  at System.Collections.Generic.Dictionary`2[PunTeams+Team,System.Collections.Generic.List`1[PhotonPlayer]].get_Item (Team key) [0x00000] in <filename unknown>:0 
+  at PunTeams.UpdateTeams () [0x00000] in <filename unknown>:0 
+  at PunTeams.OnPhotonPlayerDisconnected (.PhotonPlayer otherPlayer) [0x00000] in <filename unknown>:0 
+UnityEngine.GameObject:SendMessage(String, Object, SendMessageOptions)
+NetworkingPeer:SendMonoMessage(PhotonNetworkingMessage, Object[])
+NetworkingPeer:HandleEventLeave(Int32, EventData)
+NetworkingPeer:OnEvent(EventData)
+ExitGames.Client.Photon.PeerBase:DeserializeMessageAndCallback(Byte[])
+ExitGames.Client.Photon.EnetPeer:DispatchIncomingCommands()
+ExitGames.Client.Photon.PhotonPeer:DispatchIncomingCommands()
+PhotonHandler:Update()
+ 
+(Filename:  Line: -1)
+
+KeyNotFoundException: The given key was not present in the dictionary.
+  at System.Collections.Generic.Dictionary`2[PunTeams+Team,System.Collections.Generic.List`1[PhotonPlayer]].get_Item (Team key) [0x00000] in <filename unknown>:0 
+  at PunTeams.UpdateTeams () [0x00000] in <filename unknown>:0 
+  at PunTeams.OnPhotonPlayerDisconnected (.PhotonPlayer otherPlayer) [0x00000] in <filename unknown>:0 
+UnityEngine.GameObject:SendMessage(String, Object, SendMessageOptions)
+NetworkingPeer:SendMonoMessage(PhotonNetworkingMessage, Object[])
+NetworkingPeer:HandleEventLeave(Int32, EventData)
+NetworkingPeer:OnEvent(EventData)
+ExitGames.Client.Photon.PeerBase:DeserializeMessageAndCallback(Byte[])
+ExitGames.Client.Photon.EnetPeer:DispatchIncomingCommands()
+ExitGames.Client.Photon.PhotonPeer:DispatchIncomingCommands()
+PhotonHandler:Update()
+ 
+(Filename:  Line: -1)
+
+KeyNotFoundException: The given key was not present in the dictionary.
+  at System.Collections.Generic.Dictionary`2[PunTeams+Team,System.Collections.Generic.List`1[PhotonPlayer]].get_Item (Team key) [0x00000] in <filename unknown>:0 
+  at PunTeams.UpdateTeams () [0x00000] in <filename unknown>:0 
+  at PunTeams.OnPhotonPlayerDisconnected (.PhotonPlayer otherPlayer) [0x00000] in <filename unknown>:0 
+UnityEngine.GameObject:SendMessage(String, Object, SendMessageOptions)
+NetworkingPeer:SendMonoMessage(PhotonNetworkingMessage, Object[])
+NetworkingPeer:HandleEventLeave(Int32, EventData)
+NetworkingPeer:OnEvent(EventData)
+ExitGames.Client.Photon.PeerBase:DeserializeMessageAndCallback(Byte[])
+ExitGames.Client.Photon.EnetPeer:DispatchIncomingCommands()
+ExitGames.Client.Photon.PhotonPeer:DispatchIncomingCommands()
+PhotonHandler:Update()
+ 
+(Filename:  Line: -1)
 
 KeyNotFoundException: The given key was not present in the dictionary.
   at System.Collections.Generic.Dictionary`2[PunTeams+Team,System.Collections.Generic.List`1[PhotonPlayer]].get_Item (Team key) [0x00000] in <filename unknown>:0 
