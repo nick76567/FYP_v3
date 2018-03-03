@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-    public float speed = 12f;                 
+    public float speed = 500f;                 
     public float turnSpeed = 180f;
     //    public AudioSource m_MovementAudio;         
     //    public AudioClip m_EngineIdling;            
@@ -107,6 +107,8 @@ public class CharacterMovement : MonoBehaviour
         // Adjust the rigidbodies position and orientation in FixedUpdate.
         Move();
         Turn();
+
+        
     }
 
 
@@ -114,9 +116,12 @@ public class CharacterMovement : MonoBehaviour
     {
         // Create a vector in the direction the tank is facing with a magnitude based on the input, speed and the time between frames.
         Vector3 movement = transform.forward * movementInputValue * speed * Time.deltaTime;
-
+        //Vector3 movement = new Vector3(movementInputValue, 0, turnInputValue) * (Time.deltaTime * speed);
         // Apply this movement to the rigidbody's position.
         rigidBody.MovePosition(rigidBody.position + movement);
+        //this.transform.Translate(movement, Space.World);
+        //rigidBody.AddForce(movement * speed);
+      
     }
 
 
@@ -130,5 +135,11 @@ public class CharacterMovement : MonoBehaviour
 
         // Apply this rotation to the rigidbody's rotation.
         rigidBody.MoveRotation(rigidBody.rotation * turnRotation);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        rigidBody.velocity = Vector3.zero;
+       // rigidBody.rotation = Quaternion.identity;
     }
 }
