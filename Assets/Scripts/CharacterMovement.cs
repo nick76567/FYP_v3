@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-    public float speed = 500f;                 
+    public float speed = 1f;                 
     public float turnSpeed = 180f;
     //    public AudioSource m_MovementAudio;         
     //    public AudioClip m_EngineIdling;            
@@ -62,10 +62,12 @@ public class CharacterMovement : MonoBehaviour
         if(Input.GetKey(KeyCode.LeftShift))
         {
             animator.SetBool("isRun", true);
+            speed = 3;
         }
         else
         {
             animator.SetBool("isRun", false);
+            speed = 1;
         }
 
         animator.SetFloat("movementInputValue", movementInputValue);
@@ -120,7 +122,7 @@ public class CharacterMovement : MonoBehaviour
         // Apply this movement to the rigidbody's position.
         rigidBody.MovePosition(rigidBody.position + movement);
         //this.transform.Translate(movement, Space.World);
-        //rigidBody.AddForce(movement * speed);
+        //rigidBody.AddForce(movement);
       
     }
 

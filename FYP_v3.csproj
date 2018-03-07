@@ -96,6 +96,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Characters\Golem\Scripts\GolemManager.cs" />
+    <Compile Include="Assets\Particle Dissolve Shader by Moonflower Carnivore\Scripts\HUDFPS.cs" />
+    <Compile Include="Assets\Particle Dissolve Shader by Moonflower Carnivore\Scripts\PDS_GameController.cs" />
+    <Compile Include="Assets\Particle Dissolve Shader by Moonflower Carnivore\Scripts\ScrollingUVs_PDS.cs" />
     <Compile Include="Assets\Photon Unity Networking\Demos\Demo2DJumpAndRunWithPhysics\Scripts\Demo2DJumpAndRun.cs" />
     <Compile Include="Assets\Photon Unity Networking\Demos\Demo2DJumpAndRunWithPhysics\Scripts\JumpAndRunMovement.cs" />
     <Compile Include="Assets\Photon Unity Networking\Demos\DemoBoxes\ColorPerPlayer.cs" />
@@ -239,13 +242,47 @@
     <Compile Include="Assets\PhotonChatApi\ChatState.cs" />
     <Compile Include="Assets\PhotonChatApi\ChatUserStatus.cs" />
     <Compile Include="Assets\PhotonChatApi\IChatClientListener.cs" />
-    <Compile Include="Assets\Scripts\CharacterAttack.cs" />
+    <Compile Include="Assets\Scripts\CharacterFollow.cs" />
     <Compile Include="Assets\Scripts\CharacterMovement.cs" />
+    <Compile Include="Assets\Scripts\FireBallManager.cs" />
+    <Compile Include="Assets\Scripts\FireWallManager.cs" />
+    <Compile Include="Assets\Scripts\GolemAttack.cs" />
+    <Compile Include="Assets\Scripts\GolemDustRingManager.cs" />
+    <Compile Include="Assets\Scripts\GruntAttack.cs" />
+    <Compile Include="Assets\Scripts\GruntWeaponManager.cs" />
+    <Compile Include="Assets\Scripts\LichAttack.cs" />
+    <Compile Include="Assets\Scripts\LichWeaponManager.cs" />
     <Compile Include="Assets\Scripts\LobbyManager.cs" />
     <Compile Include="Assets\Scripts\MenuManager.cs" />
+    <Compile Include="Assets\Scripts\ParticleManager.cs" />
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
+    <Compile Include="Assets\test.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Flames Of The Phoenix\READ_ME.txt" />
+    <None Include="Assets\Particle Dissolve Shader by Moonflower Carnivore\ReadMe.txt" />
+    <None Include="Assets\Particle Dissolve Shader by Moonflower Carnivore\Shaders\legacy\DissolveSoft_Alpha_Additive.shader" />
+    <None Include="Assets\Particle Dissolve Shader by Moonflower Carnivore\Shaders\legacy\DissolveSoft_Alpha_Additive_Opacity.shader" />
+    <None Include="Assets\Particle Dissolve Shader by Moonflower Carnivore\Shaders\legacy\DissolveSoft_Alpha_Additive_Opacity_softrim.shader" />
+    <None Include="Assets\Particle Dissolve Shader by Moonflower Carnivore\Shaders\legacy\DissolveSoft_Alpha_Additive_softrim.shader" />
+    <None Include="Assets\Particle Dissolve Shader by Moonflower Carnivore\Shaders\legacy\DissolveSoft_Alpha_Unlit.shader" />
+    <None Include="Assets\Particle Dissolve Shader by Moonflower Carnivore\Shaders\legacy\DissolveSoft_Alpha_Unlit_Opacity.shader" />
+    <None Include="Assets\Particle Dissolve Shader by Moonflower Carnivore\Shaders\legacy\DissolveSoft_Alpha_Unlit_Opacity_softrim.shader" />
+    <None Include="Assets\Particle Dissolve Shader by Moonflower Carnivore\Shaders\legacy\DissolveSoft_Alpha_Unlit_softrim.shader" />
+    <None Include="Assets\Particle Dissolve Shader by Moonflower Carnivore\Shaders\legacy\Dissolve_Alpha_Additive.shader" />
+    <None Include="Assets\Particle Dissolve Shader by Moonflower Carnivore\Shaders\legacy\Dissolve_Alpha_Additive_Opacity.shader" />
+    <None Include="Assets\Particle Dissolve Shader by Moonflower Carnivore\Shaders\legacy\Dissolve_Alpha_Additive_Opacity_softrim.shader" />
+    <None Include="Assets\Particle Dissolve Shader by Moonflower Carnivore\Shaders\legacy\Dissolve_Alpha_Additive_softrim.shader" />
+    <None Include="Assets\Particle Dissolve Shader by Moonflower Carnivore\Shaders\legacy\Dissolve_Alpha_Unlit.shader" />
+    <None Include="Assets\Particle Dissolve Shader by Moonflower Carnivore\Shaders\legacy\Dissolve_Alpha_Unlit_Opacity.shader" />
+    <None Include="Assets\Particle Dissolve Shader by Moonflower Carnivore\Shaders\legacy\Dissolve_Alpha_Unlit_Opacity_softrim.shader" />
+    <None Include="Assets\Particle Dissolve Shader by Moonflower Carnivore\Shaders\legacy\Dissolve_Alpha_Unlit_softrim.shader" />
+    <None Include="Assets\Particle Dissolve Shader by Moonflower Carnivore\Shaders\softrim\Particle_softrim_add.shader" />
+    <None Include="Assets\Particle Dissolve Shader by Moonflower Carnivore\Shaders\softrim\Particle_softrim_add_stretch.shader" />
+    <None Include="Assets\Particle Dissolve Shader by Moonflower Carnivore\Shaders\softrim\Particle_softrim_alpha.shader" />
+    <None Include="Assets\Particle Dissolve Shader by Moonflower Carnivore\Shaders\softrim\Particle_softrim_alpha_stretch.shader" />
+    <None Include="Assets\Particle Dissolve Shader by Moonflower Carnivore\Shaders\unity5\Particle_Softrim_Dissolve_additive.shader" />
+    <None Include="Assets\Particle Dissolve Shader by Moonflower Carnivore\Shaders\unity5\Particle_Softrim_Dissolve_alpha.shader" />
     <None Include="Assets\Photon Unity Networking\Demos\DemoBoxes\Resources\eurof_tt.txt" />
     <None Include="Assets\Photon Unity Networking\Demos\DemoRockPaperScissors\Assets\OpenSans\Apache License.txt" />
     <None Include="Assets\Photon Unity Networking\Demos\MarcoPolo-Tutorial\marcopolo-readme.txt" />
