@@ -13,7 +13,7 @@ public class GolemAttack : MonoBehaviour {
         isLaunchDustRing = false;
 
         animator = GetComponent<Animator>();
-        dustRing = Resources.Load("GolemDustRing", typeof(GameObject)) as GameObject;
+        dustRing = Resources.Load("GolemSmokeRing", typeof(GameObject)) as GameObject;
         
 	}
 	
@@ -32,10 +32,10 @@ public class GolemAttack : MonoBehaviour {
         {
             isLaunchDustRing = true;
 
-            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
 
             animator.SetBool("isLongAttack", true);
-            Invoke("LaunchDustRing", 0.5f);
+            Invoke("LaunchDustRing", 0.9f);
         }
         else
         {

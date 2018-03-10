@@ -242,20 +242,24 @@
     <Compile Include="Assets\PhotonChatApi\ChatState.cs" />
     <Compile Include="Assets\PhotonChatApi\ChatUserStatus.cs" />
     <Compile Include="Assets\PhotonChatApi\IChatClientListener.cs" />
+    <Compile Include="Assets\Scripts\CharacterAbility.cs" />
     <Compile Include="Assets\Scripts\CharacterFollow.cs" />
     <Compile Include="Assets\Scripts\CharacterMovement.cs" />
     <Compile Include="Assets\Scripts\FireBallManager.cs" />
     <Compile Include="Assets\Scripts\FireWallManager.cs" />
     <Compile Include="Assets\Scripts\GolemAttack.cs" />
-    <Compile Include="Assets\Scripts\GolemDustRingManager.cs" />
+    <Compile Include="Assets\Scripts\GolemSmokeRingManager.cs" />
     <Compile Include="Assets\Scripts\GruntAttack.cs" />
     <Compile Include="Assets\Scripts\GruntWeaponManager.cs" />
     <Compile Include="Assets\Scripts\LichAttack.cs" />
-    <Compile Include="Assets\Scripts\LichWeaponManager.cs" />
+    <Compile Include="Assets\Scripts\LichManager.cs" />
     <Compile Include="Assets\Scripts\LobbyManager.cs" />
     <Compile Include="Assets\Scripts\MenuManager.cs" />
     <Compile Include="Assets\Scripts\ParticleManager.cs" />
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
+    <Compile Include="Assets\Scripts\SoldierAttack.cs" />
+    <Compile Include="Assets\Scripts\SoldierManager.cs" />
+    <Compile Include="Assets\Scripts\SoldierWeaponManager.cs" />
     <Compile Include="Assets\test.cs" />
   </ItemGroup>
   <ItemGroup>

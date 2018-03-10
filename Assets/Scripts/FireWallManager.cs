@@ -5,12 +5,16 @@ using UnityEngine;
 public class FireWallManager : MonoBehaviour {
 
     private float initTime;
+    private CharacterAbility characterAbility;
+    private int magicalAp;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         initTime = Time.timeSinceLevelLoad;
-        
-	}
+        //characterAbility = GetComponentInParent<CharacterAbility>();
+        //magicalAp = characterAbility.GetMAP();
+        magicalAp = 60;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -25,6 +29,7 @@ public class FireWallManager : MonoBehaviour {
         if (other.tag == "Enemy")
         {
             Debug.Log("Water hit");
+            other.GetComponent<CharacterAbility>().MagicalDamage(magicalAp);
         }
     }
 }

@@ -26,7 +26,7 @@ public class LichAttack : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.J) && !isLaunchFireBall)
+        if (Input.GetKey(KeyCode.J) && !isLaunchFireBall && !isLaunchFireWall)
         {
             isLaunchFireBall = true;
             animator.SetBool("isShortAttack", true);
@@ -37,7 +37,7 @@ public class LichAttack : MonoBehaviour {
             animator.SetBool("isShortAttack", false);
         }
 
-        if (Input.GetKey(KeyCode.K) && !isLaunchFireWall)
+        if (Input.GetKey(KeyCode.K) && !isLaunchFireWall && !isLaunchFireBall)
         {
             isLaunchFireWall = true;
             animator.SetBool("isLongAttack", true);
@@ -62,13 +62,14 @@ public class LichAttack : MonoBehaviour {
 
     private void LaunchFireBall()
     {
-        Instantiate(fireBall, transform.position + new Vector3(0, 2, 0), Quaternion.identity).GetComponent<Rigidbody>().AddForce(transform.forward * 1000);
+        Instantiate(fireBall, transform.position + new Vector3(0, 2, 0), transform.rotation).GetComponent<Rigidbody>().AddForce(transform.forward * 1000);
         Invoke("ChangeLaunchFireBallState", 2.0f);
     }
 
     private void LaunchFireWall()
     {
-        Instantiate(fireWall, transform.position + new Vector3(-2, 0, 1), Quaternion.identity);
+        Instantiate(fireWall, transform.position + (transform.forward * 2), transform.rotation);
         Invoke("ChangeLaunchFireWallState", 2.0f);
     }
+    
 }
