@@ -2,26 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireWallManager : MonoBehaviour {
+public class FireWallManager : Photon.PunBehaviour {
 
     private float initTime;
-    private CharacterAbility characterAbility;
     private int magicalAp;
+
 
     // Use this for initialization
     void Start () {
-        initTime = Time.timeSinceLevelLoad;
-        //characterAbility = GetComponentInParent<CharacterAbility>();
-        //magicalAp = characterAbility.GetMAP();
+        initTime = Time.timeSinceLevelLoad;    
         magicalAp = 60;
     }
 	
 	// Update is called once per frame
 	void Update () {
+    
 		if(Time.time - initTime > 2.0f)
         {
             Destroy(gameObject);
         }
+    
 	}
 
     private void OnParticleCollision(GameObject other)

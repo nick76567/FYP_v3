@@ -17,6 +17,7 @@ public class PlayerManager : Photon.PunBehaviour, IPunObservable{
     private bool isReady , isBeingMasterClient;
     private static int totalIsReady, maxPlayerPerTeam;
 
+
     // Use this for initialization
     void Start () {
         if (photonView.isMine)
@@ -98,7 +99,7 @@ public class PlayerManager : Photon.PunBehaviour, IPunObservable{
     {
         if(scene.name == "Game")
         {
-            PhotonNetwork.Instantiate(charactersName[(int)currentCharacter], new Vector3(Random.Range(0, 100), 0, 0), Quaternion.identity, 0);
+            PhotonNetwork.Instantiate(charactersName[(int)currentCharacter], new Vector3(Random.Range(0, 50), 0, 0), Quaternion.identity, 0); 
         }
     }
     

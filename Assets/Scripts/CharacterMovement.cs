@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterMovement : MonoBehaviour
+public class CharacterMovement : Photon.PunBehaviour
 {
     public float speed = 1f;                 
     public float turnSpeed = 180f;
@@ -55,23 +55,25 @@ public class CharacterMovement : MonoBehaviour
 
     private void Update()
     {
-        // Store the value of both input axes.
-        movementInputValue = Input.GetAxis("Vertical");
-        turnInputValue = Input.GetAxis("Horizontal");
-
-        if(Input.GetKey(KeyCode.LeftShift))
+        if (photonView.isMine)
         {
-            animator.SetBool("isRun", true);
-            speed = 3;
-        }
-        else
-        {
-            animator.SetBool("isRun", false);
-            speed = 1;
-        }
+            // Store the value of both input axes.
+            movementInputValue = Input.GetAxis("Vertical");
+            turnInputValue = Input.GetAxis("Horizontal");
 
-        animator.SetFloat("movementInputValue", movementInputValue);
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                animator.SetBool("isRun", true);
+                speed = 3;
+            }
+            else
+            {
+                animator.SetBool("isRun", false);
+                speed = 1;
+            }
 
+            animator.SetFloat("movementInputValue", movementInputValue);
+        }
         //EngineAudio();
     }
 
@@ -139,9 +141,4 @@ public class CharacterMovement : MonoBehaviour
         rigidBody.MoveRotation(rigidBody.rotation * turnRotation);
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        rigidBody.velocity = Vector3.zero;
-       // rigidBody.rotation = Quaternion.identity;
-    }
 }

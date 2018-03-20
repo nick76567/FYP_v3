@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireBallManager : MonoBehaviour {
+public class FireBallManager : Photon.PunBehaviour {
 
     private float initTime;
-    private CharacterAbility characterAbility;
     private int magicalAp;
+    
 
     // Use this for initialization
     void Start () {
+        Debug.Log("Fire ball init");
         initTime = Time.timeSinceLevelLoad;
-        //characterAbility = GetComponentInParent<CharacterAbility>();
-        //magicalAp = characterAbility.GetMAP();
         magicalAp = 100;
     }
 	

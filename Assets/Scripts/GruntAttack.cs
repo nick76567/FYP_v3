@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GruntAttack : MonoBehaviour {
+public class GruntAttack : Photon.PunBehaviour {
 
     private Animator animator;
 
@@ -13,22 +13,25 @@ public class GruntAttack : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKey(KeyCode.J))
+        if (photonView.isMine)
         {
-            animator.SetBool("isShortAttack", true);
-        }
-        else
-        {
-            animator.SetBool("isShortAttack", false);
-        }
+            if (Input.GetKey(KeyCode.J))
+            {
+                animator.SetBool("isShortAttack", true);
+            }
+            else
+            {
+                animator.SetBool("isShortAttack", false);
+            }
 
-        if (Input.GetKey(KeyCode.K))
-        {
-            animator.SetBool("isLongAttack", true);
-        }
-        else
-        {
-            animator.SetBool("isLongAttack", false);
+            if (Input.GetKey(KeyCode.K))
+            {
+                animator.SetBool("isLongAttack", true);
+            }
+            else
+            {
+                animator.SetBool("isLongAttack", false);
+            }
         }
     }
 
