@@ -251,6 +251,7 @@
     <Compile Include="Assets\Scripts\GolemRingParticleManager.cs" />
     <Compile Include="Assets\Scripts\GolemSmokeParticleManager.cs" />
     <Compile Include="Assets\Scripts\GolemSmokeRingManager.cs" />
+    <Compile Include="Assets\Scripts\GolemWeaponManager.cs" />
     <Compile Include="Assets\Scripts\GruntAttack.cs" />
     <Compile Include="Assets\Scripts\GruntManager.cs" />
     <Compile Include="Assets\Scripts\GruntWeaponManager.cs" />

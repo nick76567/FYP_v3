@@ -19,39 +19,39 @@ Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Networkin
 Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-- Completed reload, in  0.226 seconds
+- Completed reload, in  0.235 seconds
 Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\System.dll (this message is harmless)
-desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.111898 ms
+UnloadTime: 1.890655 ms
 Setting up 4 worker threads for Enlighten.
-  Thread -> id: 143c -> priority: 1 
-  Thread -> id: 2c64 -> priority: 1 
-  Thread -> id: 11a4 -> priority: 1 
-  Thread -> id: 1a5c -> priority: 1 
+  Thread -> id: 26c8 -> priority: 1 
+  Thread -> id: 2fb8 -> priority: 1 
+  Thread -> id: d9c -> priority: 1 
+  Thread -> id: 2738 -> priority: 1 
 connet to master
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 6.767185 ms
+UnloadTime: 7.909019 ms
 
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 585.
-Total: 0.632926 ms (FindLiveObjects: 0.046186 ms CreateObjectMapping: 0.029935 ms MarkObjects: 0.538843 ms  DeleteObjects: 0.016678 ms)
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 586.
+Total: 0.718457 ms (FindLiveObjects: 0.050035 ms CreateObjectMapping: 0.040199 ms MarkObjects: 0.608550 ms  DeleteObjects: 0.018389 ms)
 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.709049 ms
+UnloadTime: 1.229503 ms
 LEVEL Room
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 1036.
-Total: 1.022091 ms (FindLiveObjects: 0.069279 ms CreateObjectMapping: 0.031218 ms MarkObjects: 0.885669 ms  DeleteObjects: 0.034639 ms)
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 1037.
+Total: 1.590442 ms (FindLiveObjects: 0.180469 ms CreateObjectMapping: 0.114611 ms MarkObjects: 1.244898 ms  DeleteObjects: 0.049180 ms)
 
 photon maxplayer 2
  
@@ -74,229 +74,32 @@ RPCREady in !isReady 1
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.637911 ms
+UnloadTime: 4.157217 ms
 LEVEL Game
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1566.
-Total: 0.993438 ms (FindLiveObjects: 0.102209 ms CreateObjectMapping: 0.076977 ms MarkObjects: 0.802277 ms  DeleteObjects: 0.009836 ms)
-
-ontriggerEnter long Golem(Clone) (0.4, 0.0, -0.9)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Phy damage: 20
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-ontriggerEnter long Golem(Clone) (0.4, 0.0, -0.9)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Phy damage: 20
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-ontriggerEnter short Golem(Clone)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Phy damage: 20
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-ontriggerEnter short Golem(Clone)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Phy damage: 20
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-ontriggerEnter short Golem(Clone)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Phy damage: 20
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-ontriggerEnter long Golem(Clone) (0.9, 0.0, 0.4)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Phy damage: 20
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-ontriggerEnter long Golem(Clone) (0.9, 0.0, 0.4)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Phy damage: 20
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-ontriggerEnter long Golem(Clone) (0.9, 0.0, 0.4)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Phy damage: 20
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1565.
+Total: 1.873548 ms (FindLiveObjects: 0.208694 ms CreateObjectMapping: 0.157376 ms MarkObjects: 1.486095 ms  DeleteObjects: 0.020527 ms)
 
 NullReferenceException: Object reference not set to an instance of an object
-  at GruntWeaponManager.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-ontriggerEnter long Golem(Clone) (-0.7, 0.0, -0.7)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Phy damage: 20
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-ontriggerEnter long Golem(Clone) (-0.7, 0.0, -0.7)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Phy damage: 20
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-ontriggerEnter long Golem(Clone) (-0.7, 0.0, -0.7)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Phy damage: 20
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-ontriggerEnter long Golem(Clone) (-0.7, 0.0, -0.7)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Phy damage: 20
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-ontriggerEnter long Golem(Clone) (-0.7, 0.0, -0.7)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Phy damage: 20
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-ontriggerEnter long Golem(Clone) (-0.7, 0.0, -0.7)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Phy damage: 20
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-ontriggerEnter long Golem(Clone) (-0.7, 0.0, -0.7)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Phy damage: 20
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-ontriggerEnter long Golem(Clone) (-0.7, 0.0, -0.7)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Phy damage: 20
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at GruntWeaponManager.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+  at SoldierWeaponManager.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
  
 (Filename:  Line: -1)
 
 NullReferenceException: Object reference not set to an instance of an object
-  at GruntWeaponManager.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+  at SoldierWeaponManager.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
  
 (Filename:  Line: -1)
 
 NullReferenceException: Object reference not set to an instance of an object
-  at GruntWeaponManager.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+  at SoldierWeaponManager.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
  
 (Filename:  Line: -1)
 
-ontriggerEnter long Golem(Clone) (0.7, 0.0, -0.7)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Phy damage: 20
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-ontriggerEnter short Golem(Clone)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Phy damage: 20
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-ontriggerEnter short Golem(Clone)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Phy damage: 20
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-ontriggerEnter long Golem(Clone) (-0.9, 0.0, 0.4)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Phy damage: 20
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-ontriggerEnter long Golem(Clone) (-0.9, 0.0, 0.4)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Phy damage: 20
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-ontriggerEnter long Golem(Clone) (-0.4, 0.0, -0.9)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Phy damage: 20
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-ontriggerEnter long Golem(Clone) (-0.4, 0.0, -0.9)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Phy damage: 20
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-ontriggerEnter long Golem(Clone) (-0.4, 0.0, -0.9)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Phy damage: 20
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
 NullReferenceException: Object reference not set to an instance of an object
-  at GruntWeaponManager.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+  at SoldierWeaponManager.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
  
 (Filename:  Line: -1)
 

@@ -17,7 +17,7 @@ public class FireWallManager : Photon.PunBehaviour {
 	// Update is called once per frame
 	void Update () {
     
-		if(Time.time - initTime > 2.0f)
+		if(Time.timeSinceLevelLoad - initTime > 2.0f)
         {
             Destroy(gameObject);
         }

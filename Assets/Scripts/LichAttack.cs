@@ -42,14 +42,14 @@ public class LichAttack : Photon.PunBehaviour{
                 */
                 this.photonView.RPC("RPCLaunchFireBall", PhotonTargets.All, null);
                 isStopLaunchFireBall = false;
-                Debug.Log("lichAttack update fireball");
+                
             }
             else if( !isStopLaunchFireBall &&  !isLaunchFireBall)
             {
                 //animator.SetBool("isShortAttack", false);
                 this.photonView.RPC("RPCStopLaunchFireBall", PhotonTargets.All, null);
                 isStopLaunchFireBall = true;
-                Debug.Log("lichAttack update stopfireball");
+                
             }
 
             if (Input.GetKey(KeyCode.K) && !isLaunchFireWall && !isLaunchFireBall)
@@ -62,14 +62,14 @@ public class LichAttack : Photon.PunBehaviour{
                 */
                 this.photonView.RPC("RPCLaunchFireWall", PhotonTargets.All, null);
                 isStopLaunchFireWall = false;
-                Debug.Log("lichAttack update fireWall");
+                
             }
             else if( !isStopLaunchFireWall &&  !isLaunchFireWall)
             {
                 //animator.SetBool("isLongAttack", false);
                 this.photonView.RPC("RPCStopLaunchFireWall", PhotonTargets.All, null);
                 isStopLaunchFireWall = true;
-                Debug.Log("lichAttack update StopfireWall");
+                
             }
         }
     }
@@ -78,14 +78,14 @@ public class LichAttack : Photon.PunBehaviour{
     private void ChangeLaunchFireBallState()
     {
         isLaunchFireBall = !isLaunchFireBall;
-        Debug.Log("ChangeLaunchFireBallState is called" + photonView.isMine.ToString());
+        
     }
 
     
     private void ChangeLaunchFireWallState()
     {
         isLaunchFireWall = !isLaunchFireWall;
-        Debug.Log("ChangeLaunchFireWallState is called" + photonView.isMine.ToString());
+        
     }
 
     
@@ -104,7 +104,6 @@ public class LichAttack : Photon.PunBehaviour{
     {
         //isLaunchFireWall = true;
         animator.SetBool("isLongAttack", true);
-        
        
         Instantiate(fireWall, transform.position + (transform.forward * 2), transform.rotation) ;
         //fireWall2.Launch();

@@ -7,11 +7,13 @@ public class GolemAttack : Photon.PunBehaviour {
     private GameObject dustRing;
     private Animator animator;
     private bool isLaunchDustRing;
+    private bool isNotLaunchDustRing;
     private GolemSmokeRingManager smokeRing;
 
 	// Use this for initialization
 	void Start () {
         isLaunchDustRing = false;
+        isNotLaunchDustRing = true;
 
         animator = GetComponent<Animator>();
         //dustRing = Resources.Load("GolemSmokeRing", typeof(GameObject)) as GameObject;
@@ -35,16 +37,20 @@ public class GolemAttack : Photon.PunBehaviour {
             if (Input.GetKey(KeyCode.K) && !isLaunchDustRing)
             {
                 isLaunchDustRing = true;
+                isNotLaunchDustRing = false;
 
                 GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
 
-                animator.SetBool("isLongAttack", true);
-                Invoke("LaunchDustRing", 0.9f);
+                //animator.SetBool("isLongAttack", true);
+                //Invoke("LaunchDustRing", 0.9f);
+                this.photonView.RPC("RPCLaunchDustRing", PhotonTargets.All);
 
             }
-            else
+            else if(!isNotLaunchDustRing && !isLaunchDustRing)
             {
-                animator.SetBool("isLongAttack", false);
+                isNotLaunchDustRing = true;
+                //animator.SetBool("isLongAttack", false);
+                this.photonView.RPC("PRCStopLaunchDustRing", PhotonTargets.All);
             }
         }
     }
@@ -53,7 +59,7 @@ public class GolemAttack : Photon.PunBehaviour {
     {
         //Instantiate(dustRing, transform.position, Quaternion.identity);
         smokeRing.Launch();
-        Invoke("ChangeIsLaunchDustRingState", 2f);
+        Invoke("ChangeIsLaunchDustRingState", 1f);
     }
 
     private void ChangeIsLaunchDustRingState()
@@ -62,4 +68,18 @@ public class GolemAttack : Photon.PunBehaviour {
 
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionY;
     }
+
+    [PunRPC]
+    private void RPCLaunchDustRing()
+    {
+        animator.SetBool("isLongAttack", true);
+        Invoke("LaunchDustRing", 0.9f);
+    }
+
+    [PunRPC]
+    private void PRCStopLaunchDustRing()
+    {
+        animator.SetBool("isLongAttack", false);
+    }
+
 }

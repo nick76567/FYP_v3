@@ -10,18 +10,28 @@ public class FireBallManager : Photon.PunBehaviour {
 
     // Use this for initialization
     void Start () {
-        Debug.Log("Fire ball init");
+        
         initTime = Time.timeSinceLevelLoad;
+        
         magicalAp = 100;
     }
 	
 	// Update is called once per frame
 	void Update () {
-		if(Time.time - initTime >= 2f)
+        
+        
+		if(Time.timeSinceLevelLoad - initTime >= 2f)
         {
+            
             Destroy(gameObject);
         }
+        
 	}
+
+    private void OnDestroy()
+    {
+        Debug.Log("Fire ball is destoried");
+    }
 
     private void OnParticleCollision(GameObject other)
     {
