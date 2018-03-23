@@ -5,12 +5,15 @@ using UnityEngine;
 public class CharacterAbility : MonoBehaviour
 {
 
+    public enum Team { none, blue, red };
+
     private int hp;
     private int mp;
     private int physicalAp;
     private int magicalAp;
     private int physicalDp;
     private int magicalDp;
+    private Team team;
 
 
     // Use this for initialization
@@ -57,6 +60,11 @@ public class CharacterAbility : MonoBehaviour
         mp -= _mp;
     }
 
+    public void SetTeam(Team _team)
+    {
+        team = _team;
+    }
+
     public int GetHP()
     {
         return hp;
@@ -85,5 +93,10 @@ public class CharacterAbility : MonoBehaviour
     public int GetMDP()
     {
         return magicalDp;
+    }
+
+    public Team GetTeam()
+    {
+        return team;
     }
 }
