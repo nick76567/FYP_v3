@@ -35,9 +35,10 @@ public class SoldierWeaponManager : Photon.PunBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        int otherID = other.gameObject.GetPhotonView().viewID;
+        
         if (other.tag == "Player" && other.GetComponent<CharacterAbility>().GetTeam() != team)
         {
+            int otherID = other.gameObject.GetPhotonView().viewID;
             this.photonView.RPC("RPCOnTriggerEnter", PhotonTargets.All, otherID);
         }
         else if (other.tag == "Planet")

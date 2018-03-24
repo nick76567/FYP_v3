@@ -246,6 +246,7 @@
     <Compile Include="Assets\Scripts\CharacterMovement.cs" />
     <Compile Include="Assets\Scripts\FireBallManager.cs" />
     <Compile Include="Assets\Scripts\FireWallManager.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GolemAttack.cs" />
     <Compile Include="Assets\Scripts\GolemManager.cs" />
     <Compile Include="Assets\Scripts\GolemRingParticleManager.cs" />
@@ -262,6 +263,7 @@
     <Compile Include="Assets\Scripts\MenuManager.cs" />
     <Compile Include="Assets\Scripts\ParticleManager.cs" />
     <Compile Include="Assets\Scripts\PlanetAbility.cs" />
+    <Compile Include="Assets\Scripts\PlanetForestManager.cs" />
     <Compile Include="Assets\Scripts\PlanetIceManager.cs" />
     <Compile Include="Assets\Scripts\PlanetOrangeManager.cs" />
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
