@@ -20,22 +20,45 @@ public class FireWallManager : Photon.PunBehaviour {
     
 		if(Time.timeSinceLevelLoad - initTime > 2.0f)
         {
-            Destroy(gameObject);
+            PhotonNetwork.Destroy(gameObject);
         }
     
 	}
 
     private void OnParticleCollision(GameObject other)
     {
-        if (other.tag == "Enemy")
+        if (other.tag == "Player" && other.GetComponent<CharacterAbility>().GetTeam() != team)
         {
-            Debug.Log("Water hit");
-            other.GetComponent<CharacterAbility>().MagicalDamage(magicalAp);
+            Debug.Log("particle hit name " + other.name);
+            int otherID = other.GetPhotonView().viewID;
+            this.photonView.RPC("RPCOnParticleCollision", PhotonTargets.All, otherID);
+            PhotonNetwork.Destroy(gameObject);
         }
+        else if (other.tag == "Planet")
+        {
+            if (other.GetComponent<PlanetAbility>().GetTeam() != team)
+            {
+                this.photonView.RPC("RPCOnParticleCollision", PhotonTargets.All, other.name);
+                PhotonNetwork.Destroy(gameObject);
+            }
+        }
+        
     }
 
     public void SetTeam(CharacterAbility.Team _team)
     {
         team = _team;
+    }
+
+    [PunRPC]
+    private void RPCOnParticleCollision(int otherID)
+    {
+        PhotonView.Find(otherID).GetComponent<CharacterAbility>().MagicalDamage(magicalAp);
+    }
+
+    [PunRPC]
+    private void RPCOnParticleCollisiion(string otherName)
+    {
+        GameObject.Find(otherName).GetComponent<PlanetAbility>().MagicalDamage(magicalAp);
     }
 }

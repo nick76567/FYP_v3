@@ -19,7 +19,14 @@ public class LichManager : Photon.MonoBehaviour {
 
         if (photonView.isMine)
         {
-
+            if (PhotonNetwork.player.GetTeam() == PunTeams.Team.blue)
+            {
+                this.photonView.RPC("SetTeam", PhotonTargets.All, CharacterAbility.Team.blue);
+            }
+            else
+            {
+                this.photonView.RPC("SetTeam", PhotonTargets.All, CharacterAbility.Team.red);
+            }
         }
         else
         {
@@ -27,7 +34,7 @@ public class LichManager : Photon.MonoBehaviour {
             otherCamera = GetComponentInChildren<Camera>();
             audioListener.enabled = false;
             otherCamera.enabled = false;
-            this.tag = "Enemy";
+            //this.tag = "Enemy";
         }
         
     }
@@ -39,5 +46,11 @@ public class LichManager : Photon.MonoBehaviour {
         {
             Debug.Log("Lich is dead");
         }
+    }
+
+    [PunRPC]
+    private void SetTeam(CharacterAbility.Team team)
+    {
+        GetComponent<CharacterAbility>().SetTeam(team);
     }
 }

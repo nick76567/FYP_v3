@@ -17,7 +17,14 @@ public class SoldierManager : Photon.PunBehaviour {
 
         if (photonView.isMine)
         {
-
+            if (PhotonNetwork.player.GetTeam() == PunTeams.Team.blue)
+            {
+                this.photonView.RPC("SetTeam", PhotonTargets.All, CharacterAbility.Team.blue);
+            }
+            else
+            {
+                this.photonView.RPC("SetTeam", PhotonTargets.All, CharacterAbility.Team.red);
+            }
         }
         else
         {
@@ -25,7 +32,6 @@ public class SoldierManager : Photon.PunBehaviour {
             otherCamera = GetComponentInChildren<Camera>();
             audioListener.enabled = false;
             otherCamera.enabled = false;
-            this.tag = "Enemy";
         }
     }
 	
@@ -38,4 +44,10 @@ public class SoldierManager : Photon.PunBehaviour {
             Debug.Log("Soldire is dead");
         }
 	}
+
+    [PunRPC]
+    private void SetTeam(CharacterAbility.Team team)
+    {
+        GetComponent<CharacterAbility>().SetTeam(team);
+    }
 }

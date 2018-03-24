@@ -38,40 +38,42 @@ public class LichAttack : Photon.PunBehaviour{
         {
             if (Input.GetKey(KeyCode.J) && !isLaunchFireBall && !isLaunchFireWall)
             {
-                
+                Debug.Log("Lich fire ball");
                 isLaunchFireBall = true;
                 /*
                 animator.SetBool("isShortAttack", true);
                 Invoke("LaunchFireBall", 0.5f);
                 */
-                this.photonView.RPC("RPCLaunchFireBall", PhotonTargets.All, null);
+                int id = PhotonNetwork.Instantiate("FireBall", transform.position + (transform.forward * 2) + new Vector3(0, 2, 0), transform.rotation, 0).GetPhotonView().viewID;
+                this.photonView.RPC("RPCLaunchFireBall", PhotonTargets.All, team, id);
                 isStopLaunchFireBall = false;
                 
             }
             else if( !isStopLaunchFireBall &&  !isLaunchFireBall)
             {
                 //animator.SetBool("isShortAttack", false);
-                this.photonView.RPC("RPCStopLaunchFireBall", PhotonTargets.All, null);
+                this.photonView.RPC("RPCStopLaunchFireBall", PhotonTargets.All);
                 isStopLaunchFireBall = true;
                 
             }
 
             if (Input.GetKey(KeyCode.K) && !isLaunchFireWall && !isLaunchFireBall)
             {
-                
+                Debug.Log("Lich fire wall");
                 isLaunchFireWall = true;
                 /*
                 animator.SetBool("isLongAttack", true);
                 Invoke("LaunchFireWall", 0.5f);
                 */
-                this.photonView.RPC("RPCLaunchFireWall", PhotonTargets.All, team);
+                int id = PhotonNetwork.Instantiate("FireWall", transform.position + (transform.forward * 2), transform.rotation, 0).GetPhotonView().viewID;
+                this.photonView.RPC("RPCLaunchFireWall", PhotonTargets.All, team, id);
                 isStopLaunchFireWall = false;
                 
             }
             else if( !isStopLaunchFireWall &&  !isLaunchFireWall)
             {
                 //animator.SetBool("isLongAttack", false);
-                this.photonView.RPC("RPCStopLaunchFireWall", PhotonTargets.All, team);
+                this.photonView.RPC("RPCStopLaunchFireWall", PhotonTargets.All);
                 isStopLaunchFireWall = true;
                 
             }
@@ -115,24 +117,29 @@ public class LichAttack : Photon.PunBehaviour{
     }
 */
     [PunRPC]
-    private void RPCLaunchFireBall(CharacterAbility.Team team)
+    private void RPCLaunchFireBall(CharacterAbility.Team team, int id)
     {
         //isLaunchFireBall = true;
         animator.SetBool("isShortAttack", true);
 
-        Instantiate(fireBall, transform.position + new Vector3(0, 2, 0), transform.rotation).GetComponent<Rigidbody>().AddForce(transform.forward * 1000);
+        GameObject tmp = PhotonView.Find(id).gameObject;
+        tmp.GetComponent<Rigidbody>().AddForce(transform.forward * 700);
+        tmp.GetComponent<FireBallManager>().SetTeam(team);
 
         Invoke("ChangeLaunchFireBallState", 1.0f);
     }
 
     [PunRPC]
-    private void RPCLaunchFireWall(CharacterAbility.Team team)
+    private void RPCLaunchFireWall(CharacterAbility.Team team, int id)
     {
         //isLaunchFireWall = true;
         animator.SetBool("isLongAttack", true);
 
-        GameObject tmp = Instantiate(fireWall, transform.position + (transform.forward * 2), transform.rotation);
+        GameObject tmp = PhotonView.Find(id).gameObject;
         tmp.GetComponent<FireWallManager>().SetTeam(team);
+       
+        
+
         //fireWall2.Launch();
         Invoke("ChangeLaunchFireWallState", 2.0f);
     }
