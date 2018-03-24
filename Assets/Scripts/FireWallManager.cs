@@ -6,6 +6,7 @@ public class FireWallManager : Photon.PunBehaviour {
 
     private float initTime;
     private int magicalAp;
+    private CharacterAbility.Team team;
 
 
     // Use this for initialization
@@ -31,5 +32,10 @@ public class FireWallManager : Photon.PunBehaviour {
             Debug.Log("Water hit");
             other.GetComponent<CharacterAbility>().MagicalDamage(magicalAp);
         }
+    }
+
+    public void SetTeam(CharacterAbility.Team _team)
+    {
+        team = _team;
     }
 }

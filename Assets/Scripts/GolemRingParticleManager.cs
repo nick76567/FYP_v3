@@ -16,11 +16,6 @@ public class GolemRingParticleManager : MonoBehaviour {
 
     private void OnParticleCollision(GameObject other)
     {
-        Debug.Log("called2");
 
-        if (other.tag == "Enemy")
-        {
-            Debug.Log("Ring Hit");
-        }
     }
 }

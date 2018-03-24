@@ -19,7 +19,14 @@ public class GruntManager : Photon.PunBehaviour {
 
         if (photonView.isMine)
         {
-
+            if (PhotonNetwork.player.GetTeam() == PunTeams.Team.blue)
+            {
+                this.photonView.RPC("SetTeam", PhotonTargets.All, CharacterAbility.Team.blue);
+            }
+            else
+            {
+                this.photonView.RPC("SetTeam", PhotonTargets.All, CharacterAbility.Team.red);
+            }
         }
         else
         {
@@ -27,7 +34,7 @@ public class GruntManager : Photon.PunBehaviour {
             otherCamera = GetComponentInChildren<Camera>();
             audioListener.enabled = false;
             otherCamera.enabled = false;
-            this.tag = "Enemy";
+            //this.tag = "Enemy";
         }
     }
 
@@ -38,5 +45,11 @@ public class GruntManager : Photon.PunBehaviour {
         {
             Debug.Log("Grunt is dead");
         }
+    }
+
+    [PunRPC]
+    private void SetTeam(CharacterAbility.Team team)
+    {
+        GetComponent<CharacterAbility>().SetTeam(team);
     }
 }

@@ -40,19 +40,19 @@ public class CharacterAbility : MonoBehaviour
 
     public void PhysicalDamage(int _ap)
     {
-
-        hp = hp - (_ap - physicalDp);
-        Debug.Log("Phy damage: " + (_ap - physicalDp));
+        int damage = (_ap - physicalDp);
+        hp = hp - ((damage < 0) ? 0 : damage);
+        Debug.Log("Phy damage: " + damage);
     }
 
     public void MagicalDamage(int _ap)
     {
-
-        hp = hp - (_ap - magicalDp);
+        int damage = (_ap - magicalDp);
+        hp = hp - ((damage < 0) ? 0 : damage);
 
         Debug.Log("_ap " + _ap);
         Debug.Log("magicalDp" + magicalDp);
-        Debug.Log("Mag damage: " + (_ap - magicalDp));
+        Debug.Log("Mag damage: " + damage);
     }
 
     public void SetMP(int _mp)

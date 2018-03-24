@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LichAttack : Photon.PunBehaviour{
 
+    private CharacterAbility.Team team;
     private Animator animator;
     private GameObject fireBall, fireWall;
     private bool isLaunchFireBall, isLaunchFireWall;
@@ -12,6 +13,7 @@ public class LichAttack : Photon.PunBehaviour{
     // Use this for initialization
     void Start()
     {
+        team = GetComponent<CharacterAbility>().GetTeam();
         animator = GetComponent<Animator>();
         fireBall = Resources.Load("FireBall", typeof(GameObject)) as GameObject;
         fireWall = Resources.Load("FireWall", typeof(GameObject)) as GameObject;
@@ -20,6 +22,8 @@ public class LichAttack : Photon.PunBehaviour{
         {
             Debug.LogError("particle not found");
         }
+
+
 
         isLaunchFireBall = false;
         isLaunchFireWall = false;
@@ -60,14 +64,14 @@ public class LichAttack : Photon.PunBehaviour{
                 animator.SetBool("isLongAttack", true);
                 Invoke("LaunchFireWall", 0.5f);
                 */
-                this.photonView.RPC("RPCLaunchFireWall", PhotonTargets.All, null);
+                this.photonView.RPC("RPCLaunchFireWall", PhotonTargets.All, team);
                 isStopLaunchFireWall = false;
                 
             }
             else if( !isStopLaunchFireWall &&  !isLaunchFireWall)
             {
                 //animator.SetBool("isLongAttack", false);
-                this.photonView.RPC("RPCStopLaunchFireWall", PhotonTargets.All, null);
+                this.photonView.RPC("RPCStopLaunchFireWall", PhotonTargets.All, team);
                 isStopLaunchFireWall = true;
                 
             }
@@ -88,7 +92,7 @@ public class LichAttack : Photon.PunBehaviour{
         
     }
 
-    
+/*    
     private void LaunchFireBall()
     {
         //isLaunchFireBall = true;
@@ -99,7 +103,7 @@ public class LichAttack : Photon.PunBehaviour{
         Invoke("ChangeLaunchFireBallState", 1.0f);
     }
 
-    
+ 
     private void LaunchFireWall()
     {
         //isLaunchFireWall = true;
@@ -109,17 +113,28 @@ public class LichAttack : Photon.PunBehaviour{
         //fireWall2.Launch();
         Invoke("ChangeLaunchFireWallState", 2.0f);
     }
-
+*/
     [PunRPC]
-    private void RPCLaunchFireBall()
+    private void RPCLaunchFireBall(CharacterAbility.Team team)
     {
-        Invoke("LaunchFireBall", 0.5f);
+        //isLaunchFireBall = true;
+        animator.SetBool("isShortAttack", true);
+
+        Instantiate(fireBall, transform.position + new Vector3(0, 2, 0), transform.rotation).GetComponent<Rigidbody>().AddForce(transform.forward * 1000);
+
+        Invoke("ChangeLaunchFireBallState", 1.0f);
     }
 
     [PunRPC]
-    private void RPCLaunchFireWall()
+    private void RPCLaunchFireWall(CharacterAbility.Team team)
     {
-        Invoke("LaunchFireWall", 0.5f);
+        //isLaunchFireWall = true;
+        animator.SetBool("isLongAttack", true);
+
+        GameObject tmp = Instantiate(fireWall, transform.position + (transform.forward * 2), transform.rotation);
+        tmp.GetComponent<FireWallManager>().SetTeam(team);
+        //fireWall2.Launch();
+        Invoke("ChangeLaunchFireWallState", 2.0f);
     }
 
     [PunRPC]

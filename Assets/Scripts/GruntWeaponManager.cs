@@ -7,12 +7,14 @@ public class GruntWeaponManager : Photon.PunBehaviour {
     private CharacterAbility characterAbility;
     private Animator animator;
     private int physicalAp;
+    private CharacterAbility.Team team;
 
 
     // Use this for initialization
     void Start () {
         characterAbility = GetComponentInParent<CharacterAbility>();
         physicalAp = characterAbility.GetPAP();
+        team = characterAbility.GetTeam();
         animator = this.GetComponentInParent<Animator>();
         this.transform.localScale = new Vector3(1.8f, 1.8f, 1.8f);
         
@@ -26,9 +28,16 @@ public class GruntWeaponManager : Photon.PunBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         int otherID = other.gameObject.GetPhotonView().viewID;
-        if (other.tag == "Enemy")
+        if (other.tag == "Player" && other.GetComponent<CharacterAbility>().GetTeam() != team)
         {
             this.photonView.RPC("RPCOnTriggerEnter", PhotonTargets.All, otherID);
+        }else if(other.tag == "Planet")
+        {
+            if (other.GetComponent<PlanetAbility>().GetTeam() != team)
+            {
+                string otherName = other.gameObject.name;
+                this.photonView.RPC("RPConTriggerEnter", PhotonTargets.All, other.gameObject.name);
+            }
         }
     }
 
@@ -48,5 +57,24 @@ public class GruntWeaponManager : Photon.PunBehaviour {
             Debug.Log("ontriggerEnter short " + other.name);
             other.GetComponent<CharacterAbility>().PhysicalDamage(physicalAp);
         }  
+    }
+
+    [PunRPC]
+    private void RPConTriggerEnter(string otherName)
+    {
+        if (animator.GetBool("isShortAttack") || animator.GetBool("isLongAttack"))
+        {
+            Debug.Log("Grunt Planet Hit");
+            GameObject other = GameObject.Find(otherName);
+                   
+            PlanetAbility planetAbility = other.GetComponent<PlanetAbility>();
+            planetAbility.PhysicalDamage(physicalAp);
+            if (planetAbility.GetHP() <= 0)
+            {
+                planetAbility.SetTeam(team);
+                Debug.Log("RPCContrig Planet team " + planetAbility.GetTeam());
+            }
+
+        }
     }
 }
