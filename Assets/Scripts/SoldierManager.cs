@@ -17,14 +17,6 @@ public class SoldierManager : Photon.PunBehaviour {
 
         if (photonView.isMine)
         {
-            if (PhotonNetwork.player.GetTeam() == PunTeams.Team.blue)
-            {
-                this.photonView.RPC("SetTeam", PhotonTargets.All, CharacterAbility.Team.blue);
-            }
-            else
-            {
-                this.photonView.RPC("SetTeam", PhotonTargets.All, CharacterAbility.Team.red);
-            }
         }
         else
         {
@@ -45,9 +37,4 @@ public class SoldierManager : Photon.PunBehaviour {
         }
 	}
 
-    [PunRPC]
-    private void SetTeam(CharacterAbility.Team team)
-    {
-        GetComponent<CharacterAbility>().SetTeam(team);
-    }
 }

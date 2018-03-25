@@ -7,7 +7,7 @@ public class GolemWeaponManager : Photon.PunBehaviour {
     private Animator animator;
     private CharacterAbility characterAbility;
     private int physicalAp;
-    private CharacterAbility.Team team;
+    private PunTeams.Team team;
 
 	// Use this for initialization
 	void Start () {
@@ -24,19 +24,24 @@ public class GolemWeaponManager : Photon.PunBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player" && other.GetComponent<CharacterAbility>().GetTeam() != team)
+        if (photonView.isMine)
         {
-            Debug.Log("OnTriggerEnter");
-            int otherID = other.gameObject.GetPhotonView().viewID;
-            this.photonView.RPC("RPConTriggerEnter", PhotonTargets.All, otherID);
-        }else if(other.tag == "Planet")
-        {
-            if (other.GetComponent<PlanetAbility>().GetTeam() != team)
+            if (other.tag == "Player" && other.GetComponent<CharacterAbility>().GetTeam() != team)
             {
-                string otherName = other.gameObject.name;
-                this.photonView.RPC("RPConTriggerEnter", PhotonTargets.All, other.gameObject.name);
+                Debug.Log("OnTriggerEnter");
+                int otherID = other.gameObject.GetPhotonView().viewID;
+                this.photonView.RPC("RPConTriggerEnter", PhotonTargets.All, otherID);
+            }
+            else if (other.tag == "Planet")
+            {
+                if (other.GetComponent<PlanetAbility>().GetTeam() != team)
+                {
+                    string otherName = other.gameObject.name;
+                    this.photonView.RPC("RPConTriggerEnter", PhotonTargets.All, other.gameObject.name);
+                }
             }
         }
+        
     }
 
     [PunRPC]

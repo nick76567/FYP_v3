@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CharacterAbility : MonoBehaviour
+public class CharacterAbility : Photon.PunBehaviour
 {
     public Image healthBar;
     public enum Team { none, blue, red };
@@ -15,7 +15,7 @@ public class CharacterAbility : MonoBehaviour
     private int magicalAp;
     private int physicalDp;
     private int magicalDp;
-    private Team team;
+    private PunTeams.Team team;
 
 
 
@@ -23,6 +23,10 @@ public class CharacterAbility : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        if (photonView.isMine)
+        {
+            this.photonView.RPC("SetTeam", PhotonTargets.All, PhotonNetwork.player.GetTeam());
+        }
         healthBar.fillAmount = 1;
     }
 
@@ -65,10 +69,6 @@ public class CharacterAbility : MonoBehaviour
         mp -= _mp;
     }
 
-    public void SetTeam(Team _team)
-    {
-        team = _team;
-    }
 
     public int GetHP()
     {
@@ -100,8 +100,14 @@ public class CharacterAbility : MonoBehaviour
         return magicalDp;
     }
 
-    public Team GetTeam()
+    public PunTeams.Team GetTeam()
     {
         return team;
+    }
+
+    [PunRPC]
+    private void SetTeam(PunTeams.Team _team)
+    {
+        team = _team;
     }
 }

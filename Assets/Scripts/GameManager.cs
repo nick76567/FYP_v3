@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour {
                 //do sth
             }
 
-            if (planets[(int)Planet.Orange].GetTeam() != CharacterAbility.Team.none &&
+            if (planets[(int)Planet.Orange].GetTeam() != PunTeams.Team.none &&
                planets[(int)Planet.Orange].GetTeam() == planets[(int)Planet.Forest].GetTeam() &&
                planets[(int)Planet.Orange].GetTeam() == planets[(int)Planet.Ice].GetTeam())
             {

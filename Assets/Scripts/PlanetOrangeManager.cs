@@ -21,7 +21,7 @@ public class PlanetOrangeManager : Photon.PunBehaviour {
 
             //planetAbility.SetTeam((planetAbility.GetTeam() == CharacterAbility.Team.blue)? CharacterAbility.Team.red : CharacterAbility.Team.blue);
             planetAbility.SetHP(HP);
-            Debug.Log("PlanetOrange isBlueTeam " + planetAbility.GetTeam());
+            Debug.Log("PlanetOrange Team " + planetAbility.GetTeam());
             
         }
     }    

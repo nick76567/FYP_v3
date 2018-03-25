@@ -7,7 +7,7 @@ public class GruntWeaponManager : Photon.PunBehaviour {
     private CharacterAbility characterAbility;
     private Animator animator;
     private int physicalAp;
-    private CharacterAbility.Team team;
+    private PunTeams.Team team;
 
 
     // Use this for initialization
@@ -27,18 +27,23 @@ public class GruntWeaponManager : Photon.PunBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        int otherID = other.gameObject.GetPhotonView().viewID;
-        if (other.tag == "Player" && other.GetComponent<CharacterAbility>().GetTeam() != team)
+        if (photonView.isMine)
         {
-            this.photonView.RPC("RPCOnTriggerEnter", PhotonTargets.All, otherID);
-        }else if(other.tag == "Planet")
-        {
-            if (other.GetComponent<PlanetAbility>().GetTeam() != team)
+            int otherID = other.gameObject.GetPhotonView().viewID;
+            if (other.tag == "Player" && other.GetComponent<CharacterAbility>().GetTeam() != team)
             {
-                string otherName = other.gameObject.name;
-                this.photonView.RPC("RPConTriggerEnter", PhotonTargets.All, other.gameObject.name);
+                this.photonView.RPC("RPCOnTriggerEnter", PhotonTargets.All, otherID);
+            }
+            else if (other.tag == "Planet")
+            {
+                if (other.GetComponent<PlanetAbility>().GetTeam() != team)
+                {
+                    string otherName = other.gameObject.name;
+                    this.photonView.RPC("RPConTriggerEnter", PhotonTargets.All, other.gameObject.name);
+                }
             }
         }
+        
     }
 
     [PunRPC]

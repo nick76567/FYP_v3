@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GolemManager : Photon.PunBehaviour {
 
-    private const int HP = 10000, MP = 0, PAP = 100, MAP = 10, PDP = 30, MDP = 5;
+    private const int HP = 1000, MP = 0, PAP = 100, MAP = 10, PDP = 30, MDP = 5;
 
     private CharacterAbility characterAbility;
     private AudioListener audioListener;
@@ -20,14 +20,8 @@ public class GolemManager : Photon.PunBehaviour {
 
         if (photonView.isMine)
         {
-            if(PhotonNetwork.player.GetTeam() == PunTeams.Team.blue)
-            {
-                this.photonView.RPC("SetTeam", PhotonTargets.All, CharacterAbility.Team.blue);                
-            }
-            else
-            {
-                this.photonView.RPC("SetTeam", PhotonTargets.All, CharacterAbility.Team.red);            
-            }
+
+        
         }
         else
         {
@@ -48,9 +42,4 @@ public class GolemManager : Photon.PunBehaviour {
         }
     }
 
-    [PunRPC]
-    private void SetTeam(CharacterAbility.Team team)
-    {
-        GetComponent<CharacterAbility>().SetTeam(team);
-    }
 }

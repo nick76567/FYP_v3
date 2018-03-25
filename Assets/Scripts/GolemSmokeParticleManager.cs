@@ -6,7 +6,7 @@ public class GolemSmokeParticleManager : Photon.PunBehaviour {
 
     private CharacterAbility characterAbility;
     private int magicalAp;
-    private CharacterAbility.Team team;
+    private PunTeams.Team team;
 
     // Use this for initialization
     void Start () {
@@ -22,21 +22,23 @@ public class GolemSmokeParticleManager : Photon.PunBehaviour {
 
     private void OnParticleCollision(GameObject other)
     {
-        
-        
-        if (other.tag == "Player" && other.GetComponent<CharacterAbility>().GetTeam() != team)
+        if (photonView.isMine)
         {
-            Debug.Log("particle hit name " + other.name);
-            int otherID = other.GetPhotonView().viewID;
-            this.photonView.RPC("RPCOnTriggerEnter", PhotonTargets.All, otherID);
-        }
-        else if (other.tag == "Planet")
-        {
-            if (other.GetComponent<PlanetAbility>().GetTeam() != team)
+            if (other.tag == "Player" && other.GetComponent<CharacterAbility>().GetTeam() != team)
             {
-                this.photonView.RPC("RPConTriggerEnter", PhotonTargets.All, other.name);
+                Debug.Log("particle hit name " + other.name);
+                int otherID = other.GetPhotonView().viewID;
+                this.photonView.RPC("RPCOnTriggerEnter", PhotonTargets.All, otherID);
+            }
+            else if (other.tag == "Planet")
+            {
+                if (other.GetComponent<PlanetAbility>().GetTeam() != team)
+                {
+                    this.photonView.RPC("RPConTriggerEnter", PhotonTargets.All, other.name);
+                }
             }
         }
+        
     }
 
     [PunRPC]

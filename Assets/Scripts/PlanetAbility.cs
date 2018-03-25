@@ -11,7 +11,7 @@ public class PlanetAbility : MonoBehaviour {
     private int hp;
     private int physicalDp;
     private int magicalDp;
-    private CharacterAbility.Team team;
+    private PunTeams.Team team;
 
 
     // Use this for initialization
@@ -31,7 +31,7 @@ public class PlanetAbility : MonoBehaviour {
         startHP = hp = _hp;
         physicalDp = _physicalDp;
         magicalDp = _magicalDp;
-        team = CharacterAbility.Team.none;
+        team = PunTeams.Team.none;
     }
 
     public void PhysicalDamage(int _ap)
@@ -55,7 +55,7 @@ public class PlanetAbility : MonoBehaviour {
         Debug.Log("Mag damage: " + (_ap - magicalDp));
     }
 
-    public void SetTeam(CharacterAbility.Team _team)
+    public void SetTeam(PunTeams.Team _team)
     {
         team = _team;
     }
@@ -80,7 +80,7 @@ public class PlanetAbility : MonoBehaviour {
         return magicalDp;
     }
 
-    public CharacterAbility.Team GetTeam()
+    public PunTeams.Team GetTeam()
     {
         return team;
     }

@@ -7,7 +7,7 @@ public class SoldierWeaponManager : Photon.PunBehaviour {
     private CharacterAbility characterAbility;
     private Animator animator;
     private int physicalAp;
-    private CharacterAbility.Team team;
+    private PunTeams.Team team;
 
 	// Use this for initialization
 	void Start () {
@@ -15,40 +15,29 @@ public class SoldierWeaponManager : Photon.PunBehaviour {
         animator = GetComponentInParent<Animator>();
         characterAbility = GetComponentInParent<CharacterAbility>();
         physicalAp = characterAbility.GetPAP();
-        
+      
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-/*
-    private void OnTriggerEnter(Collider other)
-    {
-        int otherID = other.gameObject.GetPhotonView().viewID;
-        if (other.tag == "Enemy")
-        {
-            this.photonView.RPC("RPCOnTriggerEnter", PhotonTargets.All, otherID);
-        }
-    }
-*/
 
     private void OnTriggerEnter(Collider other)
     {
-        
-        if (other.tag == "Player" && other.GetComponent<CharacterAbility>().GetTeam() != team)
+        if (photonView.isMine)
         {
-            int otherID = other.gameObject.GetPhotonView().viewID;
-            this.photonView.RPC("RPCOnTriggerEnter", PhotonTargets.All, otherID);
-        }
-        else if (other.tag == "Planet")
-        {
-            if (other.GetComponent<PlanetAbility>().GetTeam() != team)
+            if (other.tag == "Player" && other.GetComponent<CharacterAbility>().GetTeam() != team)
             {
-                string otherName = other.gameObject.name;
-                this.photonView.RPC("RPConTriggerEnter", PhotonTargets.All, other.gameObject.name);
+                int otherID = other.gameObject.GetPhotonView().viewID;
+                this.photonView.RPC("RPCOnTriggerEnter", PhotonTargets.All, otherID);
+            }
+            else if (other.tag == "Planet")
+            {
+                if (other.GetComponent<PlanetAbility>().GetTeam() != team)
+                {
+                    string otherName = other.gameObject.name;
+                    this.photonView.RPC("RPConTriggerEnter", PhotonTargets.All, other.gameObject.name);
+                }
             }
         }
+        
     }
 
     [PunRPC]

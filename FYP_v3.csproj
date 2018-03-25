@@ -257,7 +257,6 @@
     <Compile Include="Assets\Scripts\GruntManager.cs" />
     <Compile Include="Assets\Scripts\GruntWeaponManager.cs" />
     <Compile Include="Assets\Scripts\LichAttack.cs" />
-    <Compile Include="Assets\Scripts\LichAttack_backup.cs" />
     <Compile Include="Assets\Scripts\LichManager.cs" />
     <Compile Include="Assets\Scripts\LobbyManager.cs" />
     <Compile Include="Assets\Scripts\MenuManager.cs" />

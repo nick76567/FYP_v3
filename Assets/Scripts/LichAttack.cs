@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class LichAttack : Photon.PunBehaviour{
 
-    private CharacterAbility.Team team;
     private Animator animator;
     private GameObject fireBall, fireWall;
     private bool isLaunchFireBall, isLaunchFireWall;
@@ -13,7 +12,6 @@ public class LichAttack : Photon.PunBehaviour{
     // Use this for initialization
     void Start()
     {
-        team = GetComponent<CharacterAbility>().GetTeam();
         animator = GetComponent<Animator>();
         fireBall = Resources.Load("FireBall", typeof(GameObject)) as GameObject;
         fireWall = Resources.Load("FireWall", typeof(GameObject)) as GameObject;
@@ -45,7 +43,7 @@ public class LichAttack : Photon.PunBehaviour{
                 Invoke("LaunchFireBall", 0.5f);
                 */
                 int id = PhotonNetwork.Instantiate("FireBall", transform.position + (transform.forward * 2) + new Vector3(0, 2, 0), transform.rotation, 0).GetPhotonView().viewID;
-                this.photonView.RPC("RPCLaunchFireBall", PhotonTargets.All, team, id);
+                this.photonView.RPC("RPCLaunchFireBall", PhotonTargets.All, id);
                 isStopLaunchFireBall = false;
                 
             }
@@ -66,7 +64,7 @@ public class LichAttack : Photon.PunBehaviour{
                 Invoke("LaunchFireWall", 0.5f);
                 */
                 int id = PhotonNetwork.Instantiate("FireWall", transform.position + (transform.forward * 2), transform.rotation, 0).GetPhotonView().viewID;
-                this.photonView.RPC("RPCLaunchFireWall", PhotonTargets.All, team, id);
+                this.photonView.RPC("RPCLaunchFireWall", PhotonTargets.All, id);
                 isStopLaunchFireWall = false;
                 
             }
@@ -117,26 +115,26 @@ public class LichAttack : Photon.PunBehaviour{
     }
 */
     [PunRPC]
-    private void RPCLaunchFireBall(CharacterAbility.Team team, int id)
+    private void RPCLaunchFireBall( int id)
     {
         //isLaunchFireBall = true;
         animator.SetBool("isShortAttack", true);
 
         GameObject tmp = PhotonView.Find(id).gameObject;
         tmp.GetComponent<Rigidbody>().AddForce(transform.forward * 700);
-        tmp.GetComponent<FireBallManager>().SetTeam(team);
+        //tmp.GetComponent<FireBallManager>().SetTeam(team);
 
         Invoke("ChangeLaunchFireBallState", 1.0f);
     }
 
     [PunRPC]
-    private void RPCLaunchFireWall(CharacterAbility.Team team, int id)
+    private void RPCLaunchFireWall(int id)
     {
         //isLaunchFireWall = true;
         animator.SetBool("isLongAttack", true);
 
         GameObject tmp = PhotonView.Find(id).gameObject;
-        tmp.GetComponent<FireWallManager>().SetTeam(team);
+        //tmp.GetComponent<FireWallManager>().SetTeam(team);
        
         
 
