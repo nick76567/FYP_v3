@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlanetAbility : MonoBehaviour {
 
+    public Image healthBar;
 
-
+    private float startHP;
     private int hp;
     private int physicalDp;
     private int magicalDp;
@@ -26,7 +28,7 @@ public class PlanetAbility : MonoBehaviour {
 
     public void Init(int _hp, int _physicalDp, int _magicalDp)
     {
-        hp = _hp;
+        startHP = hp = _hp;
         physicalDp = _physicalDp;
         magicalDp = _magicalDp;
         team = CharacterAbility.Team.none;
@@ -35,14 +37,18 @@ public class PlanetAbility : MonoBehaviour {
     public void PhysicalDamage(int _ap)
     {
 
-        hp = hp - (_ap - physicalDp);
+        int damage = (_ap - physicalDp);
+        hp = hp - ((damage < 0) ? 0 : damage);
+        healthBar.fillAmount = hp / startHP;
         Debug.Log("Phy damage: " + (_ap - physicalDp));
     }
 
     public void MagicalDamage(int _ap)
     {
 
-        hp = hp - (_ap - magicalDp);
+        int damage = (_ap - magicalDp);
+        hp = hp - ((damage < 0) ? 0 : damage);
+        healthBar.fillAmount = hp / startHP;
 
         Debug.Log("_ap " + _ap);
         Debug.Log("magicalDp" + magicalDp);

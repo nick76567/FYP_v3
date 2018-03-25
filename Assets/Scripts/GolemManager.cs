@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GolemManager : Photon.PunBehaviour {
 
-    private const int HP = 1000, MP = 0, PAP = 100, MAP = 10, PDP = 30, MDP = 5;
+    private const int HP = 10000, MP = 0, PAP = 100, MAP = 10, PDP = 30, MDP = 5;
 
     private CharacterAbility characterAbility;
     private AudioListener audioListener;
