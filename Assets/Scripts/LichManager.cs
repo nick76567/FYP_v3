@@ -5,6 +5,7 @@ using UnityEngine;
 public class LichManager : Photon.MonoBehaviour {
 
     private const int HP = 800, MP = 1000, PAP = 0, MAP = 100, PDP = 20, MDP = 100;
+    private const float WALK = 16, RUN = 32;
 
     private CharacterAbility characterAbility;
     private Camera otherCamera;
@@ -28,7 +29,8 @@ public class LichManager : Photon.MonoBehaviour {
             otherCamera.enabled = false;
             //this.tag = "Enemy";
         }
-        
+
+        GetComponent<CharacterMovement>().SetMovement(WALK, RUN);
     }
 
     // Update is called once per frame

@@ -5,6 +5,7 @@ using UnityEngine;
 public class GruntManager : Photon.PunBehaviour {
 
     private const int HP = 1000, MP = 0, PAP = 50, MAP = 0, PDP = 30, MDP = 10;
+    private const float WALK = 12, RUN = 24;
 
     private CharacterAbility characterAbility;
     private AudioListener audioListener;
@@ -28,6 +29,8 @@ public class GruntManager : Photon.PunBehaviour {
             otherCamera.enabled = false;
             //this.tag = "Enemy";
         }
+
+        GetComponent<CharacterMovement>().SetMovement(WALK, RUN);
     }
 
     // Update is called once per frame

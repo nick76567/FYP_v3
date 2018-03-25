@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CharacterMovement : Photon.PunBehaviour
 {
-    public float speed = 1f;                 
     public float turnSpeed = 180f;
     //    public AudioSource m_MovementAudio;         
     //    public AudioClip m_EngineIdling;            
@@ -15,6 +14,9 @@ public class CharacterMovement : Photon.PunBehaviour
     private Rigidbody rigidBody;              
     private float movementInputValue;         
     private float turnInputValue;
+    private float speed, walk, run;
+
+
     //private float m_OriginalPitch;          
 
 
@@ -64,12 +66,12 @@ public class CharacterMovement : Photon.PunBehaviour
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 animator.SetBool("isRun", true);
-                speed = 3;
+                speed = run;
             }
             else
             {
                 animator.SetBool("isRun", false);
-                speed = 1;
+                speed = walk;
             }
 
             animator.SetFloat("movementInputValue", movementInputValue);
@@ -119,12 +121,12 @@ public class CharacterMovement : Photon.PunBehaviour
     private void Move()
     {
         // Create a vector in the direction the tank is facing with a magnitude based on the input, speed and the time between frames.
-        Vector3 movement = transform.forward * movementInputValue * speed * Time.deltaTime;
+        Vector3 movement = transform.forward * movementInputValue * speed;// * Time.deltaTime;
         //Vector3 movement = new Vector3(movementInputValue, 0, turnInputValue) * (Time.deltaTime * speed);
         // Apply this movement to the rigidbody's position.
-        rigidBody.MovePosition(rigidBody.position + movement);
+        //rigidBody.MovePosition(rigidBody.position + movement);
         //this.transform.Translate(movement, Space.World);
-        //rigidBody.AddForce(movement);
+        rigidBody.AddForce(movement);
       
     }
 
@@ -141,4 +143,9 @@ public class CharacterMovement : Photon.PunBehaviour
         rigidBody.MoveRotation(rigidBody.rotation * turnRotation);
     }
 
+    public void SetMovement(float _walk, float _run)
+    {
+        walk = _walk;
+        run = _run;
+    }
 }

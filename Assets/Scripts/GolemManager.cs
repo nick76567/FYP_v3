@@ -6,6 +6,7 @@ using UnityEngine;
 public class GolemManager : Photon.PunBehaviour {
 
     private const int HP = 1000, MP = 0, PAP = 100, MAP = 10, PDP = 30, MDP = 5;
+    private const float WALK = 10, RUN = 20;
 
     private CharacterAbility characterAbility;
     private AudioListener audioListener;
@@ -31,6 +32,8 @@ public class GolemManager : Photon.PunBehaviour {
             otherCamera.enabled = false;
             //this.tag = "Player";
         }
+
+        GetComponent<CharacterMovement>().SetMovement(WALK, RUN);
     }
 
     // Update is called once per frame

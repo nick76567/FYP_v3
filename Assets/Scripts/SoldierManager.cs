@@ -5,6 +5,7 @@ using UnityEngine;
 public class SoldierManager : Photon.PunBehaviour {
 
     private const int HP = 10, MP = 500, PAP = 70, MAP = 0, PDP = 0, MDP = 50;
+    private const float WALK = 20, RUN = 40;
 
     private CharacterAbility characterAbility;
     private AudioListener audioListener;
@@ -25,6 +26,8 @@ public class SoldierManager : Photon.PunBehaviour {
             audioListener.enabled = false;
             otherCamera.enabled = false;
         }
+
+        GetComponent<CharacterMovement>().SetMovement(WALK, RUN);
     }
 	
 	// Update is called once per frame
