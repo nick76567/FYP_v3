@@ -34,7 +34,7 @@ public class GolemSmokeParticleManager : Photon.PunBehaviour {
             {
                 if (other.GetComponent<PlanetAbility>().GetTeam() != team)
                 {
-                    this.photonView.RPC("RPConTriggerEnter", PhotonTargets.All, other.name);
+                    this.photonView.RPC("RPConTriggerEnter", PhotonTargets.All, other.name, team);
                 }
             }
         }
@@ -49,7 +49,7 @@ public class GolemSmokeParticleManager : Photon.PunBehaviour {
     }
 
     [PunRPC]
-    private void RPConTriggerEnter(string otherName)
+    private void RPConTriggerEnter(string otherName, PunTeams.Team _team)
     {
         Debug.Log("Golem Planet Hit");
         GameObject other = GameObject.Find(otherName);
@@ -58,7 +58,7 @@ public class GolemSmokeParticleManager : Photon.PunBehaviour {
         planetAbility.MagicalDamage(magicalAp);
         if (planetAbility.GetHP() <= 0)
         {
-            planetAbility.SetTeam(team);
+            planetAbility.SetTeam(_team);
             Debug.Log("RPCContrig Planet team " + planetAbility.GetTeam());
         }                 
     }

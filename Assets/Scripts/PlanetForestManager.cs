@@ -18,12 +18,12 @@ public class PlanetForestManager : Photon.PunBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (planetAbility.GetHP() <= 0)
-        {
-            //planetAbility.SetTeam((planetAbility.GetTeam() == CharacterAbility.Team.blue) ? CharacterAbility.Team.red : CharacterAbility.Team.blue);
-            planetAbility.SetHP(HP);
-            Debug.Log("PlanetIce isBlueTeam " + planetAbility.GetTeam());
-        }
+        //if (planetAbility.GetHP() <= 0)
+        //{
+        //    //planetAbility.SetTeam((planetAbility.GetTeam() == CharacterAbility.Team.blue) ? CharacterAbility.Team.red : CharacterAbility.Team.blue);
+        //    planetAbility.SetHP(HP);
+        //    Debug.Log("PlanetIce isBlueTeam " + planetAbility.GetTeam());
+        //}
     }
 
 }

@@ -265,6 +265,7 @@
     <Compile Include="Assets\Scripts\PlanetForestManager.cs" />
     <Compile Include="Assets\Scripts\PlanetIceManager.cs" />
     <Compile Include="Assets\Scripts\PlanetOrangeManager.cs" />
+    <Compile Include="Assets\Scripts\PlanetParticleRing.cs" />
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\SoldierAttack.cs" />
     <Compile Include="Assets\Scripts\SoldierManager.cs" />

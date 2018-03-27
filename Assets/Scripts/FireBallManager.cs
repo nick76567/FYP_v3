@@ -49,7 +49,7 @@ public class FireBallManager : Photon.PunBehaviour {
             {
                 if (other.GetComponent<PlanetAbility>().GetTeam() != team)
                 {
-                    this.photonView.RPC("RPCOnParticleCollision", PhotonTargets.All, other.name);
+                    this.photonView.RPC("RPCOnParticleCollision", PhotonTargets.All, other.name, team);
                     PhotonNetwork.Destroy(gameObject);
                 }
             }
@@ -73,12 +73,12 @@ public class FireBallManager : Photon.PunBehaviour {
     }
 
     [PunRPC]
-    private void RPCOnParticleCollision(string otherName)
+    private void RPCOnParticleCollision(string otherName, PunTeams.Team _team)
     {
         PlanetAbility other = GameObject.Find(otherName).GetComponent<PlanetAbility>();
         other.MagicalDamage(magicalAp);
         if (other.GetHP() <= 0)
-            other.SetTeam(team);
+            other.SetTeam(_team);
     }
 
 }

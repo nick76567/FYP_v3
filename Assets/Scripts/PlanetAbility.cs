@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class PlanetAbility : MonoBehaviour {
 
     public Image healthBar;
+    public GameObject blueParticleRing;
+    public GameObject redParticleRing;
 
     private float startHP;
     private int hp;
@@ -58,6 +60,20 @@ public class PlanetAbility : MonoBehaviour {
     public void SetTeam(PunTeams.Team _team)
     {
         team = _team;
+        if(_team == PunTeams.Team.red)
+        {
+            redParticleRing.SetActive(true);
+            blueParticleRing.SetActive(false);
+        }
+        else
+        {
+            redParticleRing.SetActive(false);
+            blueParticleRing.SetActive(true);
+        }
+
+        SetHP((int)startHP);
+        healthBar.fillAmount = 1;
+
     }
 
     public void SetHP(int _hp)

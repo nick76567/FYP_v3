@@ -37,7 +37,7 @@ public class GolemWeaponManager : Photon.PunBehaviour {
                 if (other.GetComponent<PlanetAbility>().GetTeam() != team)
                 {
                     string otherName = other.gameObject.name;
-                    this.photonView.RPC("RPConTriggerEnter", PhotonTargets.All, other.gameObject.name);
+                    this.photonView.RPC("RPConTriggerEnter", PhotonTargets.All, other.gameObject.name, team);
                 }
             }
         }
@@ -57,7 +57,7 @@ public class GolemWeaponManager : Photon.PunBehaviour {
     }
 
     [PunRPC]
-    private void RPConTriggerEnter(string otherName)
+    private void RPConTriggerEnter(string otherName, PunTeams.Team _team)
     {
         if (animator.GetBool("isShortAttack"))
         {
@@ -71,7 +71,7 @@ public class GolemWeaponManager : Photon.PunBehaviour {
             planetAbility.PhysicalDamage(physicalAp);
             if(planetAbility.GetHP() <= 0)
             {
-               planetAbility.SetTeam(team);
+               planetAbility.SetTeam(_team);
                 Debug.Log("RPCContrig Planet team " + planetAbility.GetTeam());
             }
 
