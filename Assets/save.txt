@@ -1,0 +1,1 @@
+{"weaponList":[{"type":1,"apRate":1.0,"speedRate":1.0},{"type":0,"apRate":0.20000000298023225,"speedRate":0.20000000298023225}],"win":0,"lose":0,"money":0}

@@ -15,6 +15,7 @@ public class LobbyManager : Photon.PunBehaviour {
     private byte[] maxPlayersList = { 2, 4 };
     private string currentPanel = "";
     private const string ROOM_SCENE = "Room";
+    private const string SHOP_SCENE = "Shop";
 
 	// Use this for initialization
 	void Start () {
@@ -80,6 +81,11 @@ public class LobbyManager : Photon.PunBehaviour {
     public void JoinRoom()
     {
         PhotonNetwork.JoinRoom(jName.text);
+    }
+
+    public void EnterShop()
+    {
+        SceneManager.LoadScene(SHOP_SCENE);
     }
 
     private void OnLoadCallBack(Scene scene, LoadSceneMode sceneMode)
