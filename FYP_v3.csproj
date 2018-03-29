@@ -269,6 +269,9 @@
     <Compile Include="Assets\Scripts\Soldier\SoldierAttack.cs" />
     <Compile Include="Assets\Scripts\Soldier\SoldierManager.cs" />
     <Compile Include="Assets\Scripts\Soldier\SoldierWeaponManager.cs" />
+    <Compile Include="Assets\Scripts\Weapon\Axe.cs" />
+    <Compile Include="Assets\Scripts\Weapon\Bow.cs" />
+    <Compile Include="Assets\Scripts\Weapon\Staff.cs" />
     <Compile Include="Assets\Scripts\Weapon\Sword.cs" />
     <Compile Include="Assets\Scripts\Weapon\WeaponAbililty.cs" />
   </ItemGroup>

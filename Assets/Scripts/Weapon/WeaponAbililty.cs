@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WeaponAbility{
-    public enum Weapon { SWORD, AXE, STAFF, BOW };
+    public enum Weapon { AXE, BOW, STAFF, SWORD };
     public static double[] increaseRateMain = new double[] { 1.03, 1.03, 1.03, 1.03, 1.03, 1.03, 1.06, 1.06, 1.06, 1.09 };
     public static double[] increaseRateSupport = new double[] { 1.013, 1.013, 1.013, 1.013, 1.013, 1.013, 1.016, 1.016, 1.016, 1.019 };
 

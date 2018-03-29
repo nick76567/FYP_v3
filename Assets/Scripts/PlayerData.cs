@@ -23,6 +23,7 @@ public class Weapon
 public class Data
 {
     public List<Weapon> weaponList;
+    //public Weapon[] weaponList;
     public int win;
     public int lose;
     public int money;
@@ -30,6 +31,13 @@ public class Data
     public Data()
     {
         weaponList = new List<Weapon>();
+        weaponList.Add(new Weapon(WeaponAbility.Weapon.AXE, 0, 0));
+        weaponList.Add(new Weapon(WeaponAbility.Weapon.BOW, 0, 0));
+        weaponList.Add(new Weapon(WeaponAbility.Weapon.STAFF, 0, 0));
+        weaponList.Add(new Weapon(WeaponAbility.Weapon.SWORD, 0, 0));
+
+
+
         money = lose = win = 0;
     }
 }
@@ -43,10 +51,13 @@ public class PlayerData : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        data = new Data();
-        
+        data = new Data();    
         FilePath = Path.Combine(Application.dataPath, "save.txt");
-        Load();
+        if (File.Exists(FilePath))
+        {
+            Load();
+        }
+        
         DontDestroyOnLoad(gameObject);
     }
 	
@@ -55,10 +66,15 @@ public class PlayerData : MonoBehaviour {
 		
 	}
 
-    public void AddWeapon(WeaponAbility.Weapon type, double apRate, double speedRate)
+    public void BuildWeapon(WeaponAbility.Weapon type, double apRate, double speedRate)
     {
-        data.weaponList.Add(new Weapon(type, apRate, speedRate));
+        int index = (int)type;
+        Debug.Log("Weapon type " + index);
+        data.weaponList[index].apRate = apRate;
+        data.weaponList[index].speedRate = speedRate;
     }
+
+    
 
     public void Save()
     {

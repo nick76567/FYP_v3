@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class ShopManager : MonoBehaviour {
 
+    private PlayerData player;
+
 	// Use this for initialization
 	void Start () {
-		
+        player = GameObject.Find("Player").GetComponent<PlayerData>();
 	}
 	
 	// Update is called once per frame
@@ -14,10 +16,31 @@ public class ShopManager : MonoBehaviour {
 		
 	}
 
+    public void BuyAxe()
+    {
+        Axe axe = new Axe();
+        player.BuildWeapon(WeaponAbility.Weapon.AXE, axe.GetPapIncreaseRate(), axe.GetpSpeedIncreaseRate());
+        player.Save();
+    }
+
+    public void BuyBow()
+    {
+        Bow bow = new Bow();
+        player.BuildWeapon(WeaponAbility.Weapon.BOW, bow.GetMapIncreaseRate(), bow.GetmSpeedIncreaseRate());
+        player.Save();
+    }
+
+    public void BuyStaff()
+    {
+        Staff staff = new Staff();
+        player.BuildWeapon(WeaponAbility.Weapon.STAFF, staff.GetMapIncreaseRate(), staff.GetmSpeedIncreaseRate());
+        player.Save();
+    }
+
     public void BuySword()
     {
         Sword sword = new Sword();
-        Debug.Log("Sword pap " + sword.GetPapIncreaseRate());
-        Debug.Log("Sword speed " + sword.GetpSpeedIncreaseRate());
+        player.BuildWeapon(WeaponAbility.Weapon.SWORD, sword.GetPapIncreaseRate(), sword.GetpSpeedIncreaseRate());
+        player.Save();
     }
 }
