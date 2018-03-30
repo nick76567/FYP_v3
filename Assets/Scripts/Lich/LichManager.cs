@@ -11,13 +11,16 @@ public class LichManager : Photon.MonoBehaviour {
     private Camera otherCamera;
     private AudioListener audioListener;
 
-    // Use this for initialization
-    void Start()
+    private void Awake()
     {
         characterAbility = GetComponent<CharacterAbility>();
         characterAbility.Init(HP, MP, PAP, MAP, PDP, MDP);
-        
+    }
 
+    // Use this for initialization
+    void Start()
+    {
+        
         if (photonView.isMine)
         {
         }

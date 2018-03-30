@@ -7,6 +7,7 @@ public class CharacterAbility : Photon.PunBehaviour
 {
     public Image healthBar;
     public enum Team { none, blue, red };
+    public GameObject[] buttonList;
 
     private float startHP;
     private int hp;
@@ -15,6 +16,10 @@ public class CharacterAbility : Photon.PunBehaviour
     private int magicalAp;
     private int physicalDp;
     private int magicalDp;
+    private double pSpeed;
+    private double mSpeed;
+
+    private Weapon equipWeapon;
     private PunTeams.Team team;
 
 
@@ -26,6 +31,13 @@ public class CharacterAbility : Photon.PunBehaviour
         if (photonView.isMine)
         {
             this.photonView.RPC("SetTeam", PhotonTargets.All, PhotonNetwork.player.GetTeam());
+        }
+        else
+        {
+            foreach(GameObject button in buttonList)
+            {
+                button.SetActive(false);
+            }
         }
         healthBar.fillAmount = 1;
     }
@@ -44,6 +56,8 @@ public class CharacterAbility : Photon.PunBehaviour
         magicalAp = _magicalAp;
         physicalDp = _physicalDp;
         magicalDp = _magicalDp;
+        mSpeed = pSpeed = 1;
+
     }
 
     public void PhysicalDamage(int _ap)
@@ -100,6 +114,43 @@ public class CharacterAbility : Photon.PunBehaviour
         return magicalDp;
     }
 
+    public double GetpSpeed()
+    {
+        return pSpeed;
+    }
+
+    public double GetmSpeed()
+    {
+        return mSpeed;
+    }
+
+    public void EquipWeapon(Weapon weapon)
+    {
+        this.photonView.RPC("RPCEquipWeapon", PhotonTargets.All, (int)weapon.type, weapon.apRate, weapon.speedRate);
+        this.photonView.RPC("RPCWeaponBuff", PhotonTargets.All, (int)weapon.type, weapon.apRate, weapon.speedRate);
+        //equipWeapon = weapon;
+        //WeaponBuff();
+    }
+
+
+    public void WeaponBuff()
+    {
+        this.photonView.RPC("RPCWeaponBuff", PhotonTargets.All, (int)equipWeapon.type, equipWeapon.apRate, equipWeapon.speedRate);
+        //Debug.Log("WeaponBuff " + equipWeapon.type);
+        //Debug.Log("WeaponBuff " + physicalAp);
+        //Debug.Log("WeaponBuff " + pSpeed);
+
+        //if (equipWeapon.type == WeaponAbility.Weapon.AXE || equipWeapon.type == WeaponAbility.Weapon.SWORD)
+        //{
+        //    physicalAp = (int)(physicalAp + physicalAp * equipWeapon.apRate);
+        //}
+        //else
+        //{
+        //    magicalAp = (int)(magicalAp + magicalAp * equipWeapon.apRate);
+        //}
+        //pSpeed = pSpeed + pSpeed * equipWeapon.speedRate;
+    }
+
     public PunTeams.Team GetTeam()
     {
         return team;
@@ -109,5 +160,33 @@ public class CharacterAbility : Photon.PunBehaviour
     private void SetTeam(PunTeams.Team _team)
     {
         team = _team;
+    }
+
+    [PunRPC]
+    private void RPCEquipWeapon(int type, double apRate, double speedRate)
+    {
+        Weapon weapon = new Weapon((WeaponAbility.Weapon)type, apRate, speedRate);
+        equipWeapon = weapon;
+
+    }
+
+    [PunRPC]
+    private void RPCWeaponBuff(int type, double apRate, double speedRate)
+    {
+        Debug.Log("WeaponBuff " + type);
+        
+        
+
+        if ((WeaponAbility.Weapon)type == WeaponAbility.Weapon.AXE || (WeaponAbility.Weapon)type == WeaponAbility.Weapon.SWORD)
+        {
+            physicalAp = (int)(physicalAp + physicalAp * apRate);
+            Debug.Log("WeaponBuff " + physicalAp);
+        }
+        else
+        {
+            magicalAp = (int)(magicalAp + magicalAp * apRate);
+        }
+        pSpeed = pSpeed + pSpeed * speedRate;
+        Debug.Log("WeaponBuff " + pSpeed);
     }
 }

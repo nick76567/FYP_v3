@@ -6,14 +6,14 @@ public class GolemWeaponManager : Photon.PunBehaviour {
 
     private Animator animator;
     private CharacterAbility characterAbility;
-    private int physicalAp;
+    //private int physicalAp;
     private PunTeams.Team team;
 
 	// Use this for initialization
 	void Start () {
         animator = GetComponentInParent<Animator>();
         characterAbility = GetComponentInParent<CharacterAbility>();
-        physicalAp = characterAbility.GetPAP();
+        //physicalAp = characterAbility.GetPAP();
         team = characterAbility.GetTeam();
 	}
 	
@@ -21,6 +21,7 @@ public class GolemWeaponManager : Photon.PunBehaviour {
 	void Update () {
 		
 	}
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -30,14 +31,14 @@ public class GolemWeaponManager : Photon.PunBehaviour {
             {
                 Debug.Log("OnTriggerEnter");
                 int otherID = other.gameObject.GetPhotonView().viewID;
-                this.photonView.RPC("RPConTriggerEnter", PhotonTargets.All, otherID);
+                this.photonView.RPC("RPConTriggerEnter", PhotonTargets.All, otherID, characterAbility.GetPAP());
             }
             else if (other.tag == "Planet")
             {
                 if (other.GetComponent<PlanetAbility>().GetTeam() != team)
                 {
                     string otherName = other.gameObject.name;
-                    this.photonView.RPC("RPConTriggerEnter", PhotonTargets.All, other.gameObject.name, team);
+                    this.photonView.RPC("RPConTriggerEnter", PhotonTargets.All, other.gameObject.name, team, characterAbility.GetPAP());
                 }
             }
         }
@@ -45,7 +46,7 @@ public class GolemWeaponManager : Photon.PunBehaviour {
     }
 
     [PunRPC]
-    private void RPConTriggerEnter(int otherID)
+    private void RPConTriggerEnter(int otherID, int physicalAp)
     {
         if (animator.GetBool("isShortAttack"))
         {
@@ -57,7 +58,7 @@ public class GolemWeaponManager : Photon.PunBehaviour {
     }
 
     [PunRPC]
-    private void RPConTriggerEnter(string otherName, PunTeams.Team _team)
+    private void RPConTriggerEnter(string otherName, PunTeams.Team _team, int physicalAp)
     {
         if (animator.GetBool("isShortAttack"))
         {

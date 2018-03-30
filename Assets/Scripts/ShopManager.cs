@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ShopManager : MonoBehaviour {
 
@@ -8,7 +9,7 @@ public class ShopManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        player = GameObject.Find("Player").GetComponent<PlayerData>();
+        player = GameObject.Find("PlayerData").GetComponent<PlayerData>();
 	}
 	
 	// Update is called once per frame
@@ -42,5 +43,10 @@ public class ShopManager : MonoBehaviour {
         Sword sword = new Sword();
         player.BuildWeapon(WeaponAbility.Weapon.SWORD, sword.GetPapIncreaseRate(), sword.GetpSpeedIncreaseRate());
         player.Save();
+    }
+
+    public void Return()
+    {
+        SceneManager.LoadScene("Lobby");
     }
 }

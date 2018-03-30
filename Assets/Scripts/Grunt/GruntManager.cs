@@ -11,12 +11,15 @@ public class GruntManager : Photon.PunBehaviour {
     private AudioListener audioListener;
     private Camera otherCamera;
 
-    // Use this for initialization
-    void Start()
+    private void Awake()
     {
         characterAbility = GetComponent<CharacterAbility>();
         characterAbility.Init(HP, MP, PAP, MAP, PDP, MDP);
+    }
 
+    // Use this for initialization
+    void Start()
+    {
 
         if (photonView.isMine)
         {

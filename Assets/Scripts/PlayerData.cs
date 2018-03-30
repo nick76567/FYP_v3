@@ -74,6 +74,12 @@ public class PlayerData : MonoBehaviour {
         data.weaponList[index].speedRate = speedRate;
     }
 
+    public Weapon GetWeapon(WeaponAbility.Weapon type)
+    {
+        Debug.Log("GetWeapon in player Data is called " + type);
+        return data.weaponList[(int)type];
+    }
+
     
 
     public void Save()

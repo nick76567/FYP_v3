@@ -5,13 +5,13 @@ using UnityEngine;
 public class GolemSmokeParticleManager : Photon.PunBehaviour {
 
     private CharacterAbility characterAbility;
-    private int magicalAp;
+    //private int magicalAp;
     private PunTeams.Team team;
 
     // Use this for initialization
     void Start () {
         characterAbility = GetComponentInParent<CharacterAbility>();
-        magicalAp = characterAbility.GetMAP();
+       // magicalAp = characterAbility.GetMAP();
         team = characterAbility.GetTeam();
 	}
 	
@@ -28,13 +28,13 @@ public class GolemSmokeParticleManager : Photon.PunBehaviour {
             {
                 Debug.Log("particle hit name " + other.name);
                 int otherID = other.GetPhotonView().viewID;
-                this.photonView.RPC("RPCOnTriggerEnter", PhotonTargets.All, otherID);
+                this.photonView.RPC("RPCOnTriggerEnter", PhotonTargets.All, otherID, characterAbility.GetMAP());
             }
             else if (other.tag == "Planet")
             {
                 if (other.GetComponent<PlanetAbility>().GetTeam() != team)
                 {
-                    this.photonView.RPC("RPConTriggerEnter", PhotonTargets.All, other.name, team);
+                    this.photonView.RPC("RPConTriggerEnter", PhotonTargets.All, other.name, team, characterAbility.GetMAP());
                 }
             }
         }
@@ -42,14 +42,14 @@ public class GolemSmokeParticleManager : Photon.PunBehaviour {
     }
 
     [PunRPC]
-    private void RPCOnTriggerEnter(int otherID)
+    private void RPCOnTriggerEnter(int otherID, int magicalAp)
     {
         GameObject other = PhotonView.Find(otherID).gameObject;
         other.GetComponent<CharacterAbility>().MagicalDamage(magicalAp);
     }
 
     [PunRPC]
-    private void RPConTriggerEnter(string otherName, PunTeams.Team _team)
+    private void RPConTriggerEnter(string otherName, PunTeams.Team _team, int magicalAp)
     {
         Debug.Log("Golem Planet Hit");
         GameObject other = GameObject.Find(otherName);

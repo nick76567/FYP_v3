@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class WeaponAbility{
     public enum Weapon { AXE, BOW, STAFF, SWORD };
-    public static double[] increaseRateMain = new double[] { 1.03, 1.03, 1.03, 1.03, 1.03, 1.03, 1.06, 1.06, 1.06, 1.09 };
-    public static double[] increaseRateSupport = new double[] { 1.013, 1.013, 1.013, 1.013, 1.013, 1.013, 1.016, 1.016, 1.016, 1.019 };
+    public static double[] increaseRateMain = new double[] { 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.06, 0.06, 0.06, 0.09 };
+    public static double[] increaseRateSupport = new double[] { 0.013, 0.013, 0.013, 0.013, 0.013, 0.013, 0.016, 0.016, 0.016, 0.019 };
 
     private Weapon type;
     private double papIncreaseRate = 0;

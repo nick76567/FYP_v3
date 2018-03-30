@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class PlayerManager : Photon.PunBehaviour, IPunObservable{
+public class PlayerManager : Photon.PunBehaviour{
 
     private const int READY_BUTTON = 6;
     private const string SCENE = "Game";
@@ -11,6 +11,8 @@ public class PlayerManager : Photon.PunBehaviour, IPunObservable{
     public GameObject[] allIdleCharactersList;
     public Text readyButton;
 
+    private PlayerData playerData;
+    private Weapon currentEquipWeapon;
     private string[] charactersName = { "Golem", "Grunt", "Lich", "Soldier" };
     private enum CharactersName { Golem, Grunt, Lich, Soldier, CharatersLen};
     private CharactersName currentCharacter;
@@ -22,8 +24,11 @@ public class PlayerManager : Photon.PunBehaviour, IPunObservable{
     void Start () {
         if (photonView.isMine)
         {
+
             PhotonNetwork.player.SetTeam(PunTeams.Team.none);
             currentCharacter = CharactersName.Golem;
+            playerData = GameObject.Find("PlayerData").GetComponent<PlayerData>();
+
 
             for (int i = 1; i < (int)CharactersName.CharatersLen; i++)
                 allIdleCharactersList[i].SetActive(false);
@@ -99,8 +104,9 @@ public class PlayerManager : Photon.PunBehaviour, IPunObservable{
     {
         if(scene.name == "Game")
         {
-            PhotonNetwork.Instantiate(charactersName[(int)currentCharacter], new Vector3(Random.Range(0, 50), 0, 0), Quaternion.identity, 0);
-            
+            Debug.Log("before instan");
+            PhotonNetwork.Instantiate(charactersName[(int)currentCharacter], new Vector3(Random.Range(0, 50), 0, 0), Quaternion.identity, 0)
+            .GetComponent<CharacterAbility>().EquipWeapon(currentEquipWeapon);        
         }
     }
     
@@ -143,10 +149,43 @@ public class PlayerManager : Photon.PunBehaviour, IPunObservable{
         
     }
 
+    public void EquipAxe()
+    {
+            currentEquipWeapon = playerData.GetWeapon(WeaponAbility.Weapon.AXE);
+            Debug.Log("Equip: " + currentEquipWeapon.type);
+            Debug.Log("Equip: " + currentEquipWeapon.apRate);
+            Debug.Log("Equip: " + currentEquipWeapon.speedRate);
+    }
+
+    public void EquipBow()
+    {
+        currentEquipWeapon = playerData.GetWeapon(WeaponAbility.Weapon.BOW);
+        Debug.Log("Equip: " + currentEquipWeapon.type);
+        Debug.Log("Equip: " + currentEquipWeapon.apRate);
+        Debug.Log("Equip: " + currentEquipWeapon.speedRate);
+    }
+
+    public void EquipStaff()
+    {
+        currentEquipWeapon = playerData.GetWeapon(WeaponAbility.Weapon.STAFF);
+        Debug.Log("Equip: " + currentEquipWeapon.type);
+        Debug.Log("Equip: " + currentEquipWeapon.apRate);
+        Debug.Log("Equip: " + currentEquipWeapon.speedRate);
+    }
+
+    public void EquipSword()
+    {
+        currentEquipWeapon = playerData.GetWeapon(WeaponAbility.Weapon.SWORD);
+        Debug.Log("Equip: " + currentEquipWeapon.type);
+        Debug.Log("Equip: " + currentEquipWeapon.apRate);
+        Debug.Log("Equip: " + currentEquipWeapon.speedRate);
+    }
+
     public void Ready()
     {
         if (PhotonNetwork.isMasterClient)
         {
+            Debug.Log("Master ready");
             PhotonNetwork.LoadLevel(SCENE);
         }
         else
@@ -174,8 +213,4 @@ public class PlayerManager : Photon.PunBehaviour, IPunObservable{
             }
     }
 
-    void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    {
-        
-    }
 }
