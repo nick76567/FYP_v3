@@ -9,6 +9,8 @@ public class GolemAttack : Photon.PunBehaviour {
     private bool isLaunchDustRing;
     private bool isNotLaunchDustRing;
     private GolemSmokeRingManager smokeRing;
+    private CharacterAbility characterAbility;
+    private double PASpeed, MASpeed; 
 
 	// Use this for initialization
 	void Start () {
@@ -18,7 +20,10 @@ public class GolemAttack : Photon.PunBehaviour {
         animator = GetComponent<Animator>();
         //dustRing = Resources.Load("GolemSmokeRing", typeof(GameObject)) as GameObject;
         smokeRing = GetComponentInChildren<GolemSmokeRingManager>();
-        
+
+        characterAbility = GetComponent<CharacterAbility>();
+        PASpeed = characterAbility.GetpSpeed();
+        MASpeed = characterAbility.GetmSpeed();
 	}
 	
 	// Update is called once per frame
@@ -27,6 +32,10 @@ public class GolemAttack : Photon.PunBehaviour {
         {
             if (Input.GetKey(KeyCode.J))
             {
+                if(PASpeed != characterAbility.GetpSpeed())
+                {
+                    this.photonView.RPC("PRCSetpSpeed", PhotonTargets.All, (float)characterAbility.GetpSpeed()); 
+                }
                 animator.SetBool("isShortAttack", true);
             }
             else
@@ -36,6 +45,11 @@ public class GolemAttack : Photon.PunBehaviour {
 
             if (Input.GetKey(KeyCode.K) && !isLaunchDustRing)
             {
+                if (MASpeed != characterAbility.GetmSpeed())
+                {
+                    this.photonView.RPC("PRCSetmSpeed", PhotonTargets.All, (float)characterAbility.GetmSpeed());
+                }
+
                 isLaunchDustRing = true;
                 isNotLaunchDustRing = false;
 
@@ -82,4 +96,17 @@ public class GolemAttack : Photon.PunBehaviour {
         animator.SetBool("isLongAttack", false);
     }
 
+    [PunRPC]
+    private void PRCSetpSpeed(float _pSpeed)
+    {
+        PASpeed = _pSpeed;
+        animator.SetFloat("GolemPASpeed", _pSpeed);
+    }
+
+    [PunRPC]
+    private void PRCSetmSpeed(float _mSpeed)
+    {
+        MASpeed = _mSpeed;
+        animator.SetFloat("GolemMASpeed", _mSpeed);
+    }
 }

@@ -5,11 +5,15 @@ using UnityEngine;
 public class GruntAttack : Photon.PunBehaviour {
 
     private Animator animator;
+    private CharacterAbility characterAbility;
+    private double PASpeed, MASpeed;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         animator = GetComponent<Animator>();
-	}
+        characterAbility = GetComponent<CharacterAbility>();
+        PASpeed = characterAbility.GetpSpeed();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -17,6 +21,10 @@ public class GruntAttack : Photon.PunBehaviour {
         {
             if (Input.GetKey(KeyCode.J))
             {
+                if (PASpeed != characterAbility.GetpSpeed())
+                {
+                    this.photonView.RPC("PRCSetpSpeed", PhotonTargets.All, (float)characterAbility.GetpSpeed());
+                }
                 animator.SetBool("isShortAttack", true);
             }
             else
@@ -35,5 +43,10 @@ public class GruntAttack : Photon.PunBehaviour {
         }
     }
 
-
+    [PunRPC]
+    private void PRCSetpSpeed(float _pSpeed)
+    {
+        PASpeed = _pSpeed;
+        animator.SetFloat("GruntPASpeed", _pSpeed);
+    }
 }

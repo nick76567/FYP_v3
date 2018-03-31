@@ -5,11 +5,15 @@ using UnityEngine;
 public class SoldierAttack : Photon.PunBehaviour {
 
     private Animator animator;
+    private CharacterAbility characterAbility;
+    private double PASpeed, MASpeed;
 
     // Use this for initialization
     void Start()
     {
         animator = GetComponent<Animator>();
+        characterAbility = GetComponent<CharacterAbility>();
+        PASpeed = characterAbility.GetpSpeed();
     }
 
     // Update is called once per frame
@@ -19,6 +23,10 @@ public class SoldierAttack : Photon.PunBehaviour {
         {
             if (Input.GetKey(KeyCode.J))
             {
+                if (PASpeed != characterAbility.GetpSpeed())
+                {
+                    this.photonView.RPC("PRCSetpSpeed", PhotonTargets.All, (float)characterAbility.GetpSpeed());
+                }
                 animator.SetBool("isShortAttack", true);
             }
             else
@@ -35,5 +43,12 @@ public class SoldierAttack : Photon.PunBehaviour {
                 animator.SetBool("isLongAttack", false);
             }
         }
+    }
+
+    [PunRPC]
+    private void PRCSetpSpeed(float _pSpeed)
+    {
+        PASpeed = _pSpeed;
+        animator.SetFloat("SoldierPASpeed", _pSpeed);
     }
 }

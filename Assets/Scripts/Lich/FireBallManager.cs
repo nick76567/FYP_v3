@@ -19,7 +19,7 @@ public class FireBallManager : Photon.PunBehaviour {
         }
 
         initTime = Time.timeSinceLevelLoad;     
-        magicalAp = 100;
+        //magicalAp = 100;
     }
 	
 	// Update is called once per frame
@@ -33,6 +33,10 @@ public class FireBallManager : Photon.PunBehaviour {
         
 	}
 
+    public void SetMagicalAp(int _magicalAp)
+    {
+        magicalAp = _magicalAp;
+    }
 
     private void OnParticleCollision(GameObject other)
     {
@@ -42,14 +46,14 @@ public class FireBallManager : Photon.PunBehaviour {
             {
                 Debug.Log("particle hit name " + other.name);
                 int otherID = other.GetPhotonView().viewID;
-                this.photonView.RPC("RPCOnParticleCollision", PhotonTargets.All, otherID);
+                this.photonView.RPC("RPCOnParticleCollision", PhotonTargets.All, otherID, magicalAp);
                 PhotonNetwork.Destroy(gameObject);
             }
             else if (other.tag == "Planet" && other.GetComponent<PlanetAbility>().GetTeam() != team)
             {
                 if (other.GetComponent<PlanetAbility>().GetTeam() != team)
                 {
-                    this.photonView.RPC("RPCOnParticleCollision", PhotonTargets.All, other.name, team);
+                    this.photonView.RPC("RPCOnParticleCollision", PhotonTargets.All, other.name, team, magicalAp);
                     PhotonNetwork.Destroy(gameObject);
                 }
             }
@@ -63,20 +67,20 @@ public class FireBallManager : Photon.PunBehaviour {
     }
 
     [PunRPC]
-    private void RPCOnParticleCollision(int otherID)
+    private void RPCOnParticleCollision(int otherID, int _magicalAp)
     {
         GameObject other = PhotonView.Find(otherID).gameObject;
-        other.GetComponent<CharacterAbility>().MagicalDamage(magicalAp);
+        other.GetComponent<CharacterAbility>().MagicalDamage(_magicalAp);
         other.GetComponent<Rigidbody>().AddForce(transform.forward * 500);
         
 
     }
 
     [PunRPC]
-    private void RPCOnParticleCollision(string otherName, PunTeams.Team _team)
+    private void RPCOnParticleCollision(string otherName, PunTeams.Team _team, int _magicalAp)
     {
         PlanetAbility other = GameObject.Find(otherName).GetComponent<PlanetAbility>();
-        other.MagicalDamage(magicalAp);
+        other.MagicalDamage(_magicalAp);
         if (other.GetHP() <= 0)
             other.SetTeam(_team);
     }

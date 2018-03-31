@@ -8,11 +8,13 @@ public class LichAttack : Photon.PunBehaviour{
     private GameObject fireBall, fireWall;
     private bool isLaunchFireBall, isLaunchFireWall;
     private bool isStopLaunchFireBall, isStopLaunchFireWall;
+    private CharacterAbility characterAbility;
 
     // Use this for initialization
     void Start()
     {
         animator = GetComponent<Animator>();
+        characterAbility = GetComponent<CharacterAbility>();
         fireBall = Resources.Load("FireBall", typeof(GameObject)) as GameObject;
         fireWall = Resources.Load("FireWall", typeof(GameObject)) as GameObject;
         
@@ -42,7 +44,9 @@ public class LichAttack : Photon.PunBehaviour{
                 animator.SetBool("isShortAttack", true);
                 Invoke("LaunchFireBall", 0.5f);
                 */
-                int id = PhotonNetwork.Instantiate("FireBall", transform.position + (transform.forward * 2) + new Vector3(0, 2, 0), transform.rotation, 0).GetPhotonView().viewID;
+                GameObject lauchFireBall = PhotonNetwork.Instantiate("FireBall", transform.position + (transform.forward * 2) + new Vector3(0, 2, 0), transform.rotation, 0);
+                int id = lauchFireBall.GetPhotonView().viewID;
+                lauchFireBall.GetComponent<FireBallManager>().SetMagicalAp(characterAbility.GetMAP());
                 this.photonView.RPC("RPCLaunchFireBall", PhotonTargets.All, id);
                 isStopLaunchFireBall = false;
                 
@@ -63,7 +67,10 @@ public class LichAttack : Photon.PunBehaviour{
                 animator.SetBool("isLongAttack", true);
                 Invoke("LaunchFireWall", 0.5f);
                 */
-                int id = PhotonNetwork.Instantiate("FireWall", transform.position + (transform.forward * 2), transform.rotation, 0).GetPhotonView().viewID;
+                GameObject lauchFireWall = PhotonNetwork.Instantiate("FireWall", transform.position + (transform.forward * 2), transform.rotation, 0);
+                int id = lauchFireWall.GetPhotonView().viewID;
+                lauchFireWall.GetComponent<FireWallManager>().SetMagicalAp(characterAbility.GetMAP());
+
                 this.photonView.RPC("RPCLaunchFireWall", PhotonTargets.All, id);
                 isStopLaunchFireWall = false;
                 

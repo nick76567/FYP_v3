@@ -136,6 +136,7 @@ public class CharacterAbility : Photon.PunBehaviour
     public void WeaponBuff()
     {
         this.photonView.RPC("RPCWeaponBuff", PhotonTargets.All, (int)equipWeapon.type, equipWeapon.apRate, equipWeapon.speedRate);
+        
         //Debug.Log("WeaponBuff " + equipWeapon.type);
         //Debug.Log("WeaponBuff " + physicalAp);
         //Debug.Log("WeaponBuff " + pSpeed);
