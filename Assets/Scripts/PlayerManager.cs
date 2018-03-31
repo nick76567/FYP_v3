@@ -13,6 +13,7 @@ public class PlayerManager : Photon.PunBehaviour{
 
     private PlayerData playerData;
     private Weapon currentEquipWeapon;
+    private Armor currentEquipArmor;
     private string[] charactersName = { "Golem", "Grunt", "Lich", "Soldier" };
     private enum CharactersName { Golem, Grunt, Lich, Soldier, CharatersLen};
     private CharactersName currentCharacter;
@@ -105,8 +106,9 @@ public class PlayerManager : Photon.PunBehaviour{
         if(scene.name == "Game")
         {
             Debug.Log("before instan");
-            PhotonNetwork.Instantiate(charactersName[(int)currentCharacter], new Vector3(Random.Range(0, 50), 0, 0), Quaternion.identity, 0)
-            .GetComponent<CharacterAbility>().EquipWeapon(currentEquipWeapon);        
+            GameObject character = PhotonNetwork.Instantiate(charactersName[(int)currentCharacter], new Vector3(Random.Range(0, 50), 0, 0), Quaternion.identity, 0);
+            character.GetComponent<CharacterAbility>().EquipWeapon(currentEquipWeapon);
+            character.GetComponent<CharacterAbility>().EquipArmor(currentEquipArmor);
         }
     }
     
@@ -179,6 +181,33 @@ public class PlayerManager : Photon.PunBehaviour{
         Debug.Log("Equip: " + currentEquipWeapon.type);
         Debug.Log("Equip: " + currentEquipWeapon.apRate);
         Debug.Log("Equip: " + currentEquipWeapon.speedRate);
+    }
+
+    public void EquipArmour()
+    {
+        currentEquipArmor = playerData.GetArmor(ArmorAbility.Armor.ARMOUR);
+        Debug.Log("Equip type " + currentEquipArmor.type);
+        Debug.Log("Equip pdp " + currentEquipArmor.pdpRate);
+        Debug.Log("Equip mdp " + currentEquipArmor.mdpRate);
+        Debug.Log("Equip speed " + currentEquipArmor.speed);
+    }
+
+    public void EquipBoot()
+    {
+        currentEquipArmor = playerData.GetArmor(ArmorAbility.Armor.BOOT);
+        Debug.Log("Equip type " + currentEquipArmor.type);
+        Debug.Log("Equip pdp " + currentEquipArmor.pdpRate);
+        Debug.Log("Equip mdp " + currentEquipArmor.mdpRate);
+        Debug.Log("Equip speed " + currentEquipArmor.speed);
+    }
+
+    public void EquipCloak()
+    {
+        currentEquipArmor = playerData.GetArmor(ArmorAbility.Armor.CLOAK);
+        Debug.Log("Equip type " + currentEquipArmor.type);
+        Debug.Log("Equip pdp " + currentEquipArmor.pdpRate);
+        Debug.Log("Equip mdp " + currentEquipArmor.mdpRate);
+        Debug.Log("Equip speed " + currentEquipArmor.speed);
     }
 
     public void Ready()

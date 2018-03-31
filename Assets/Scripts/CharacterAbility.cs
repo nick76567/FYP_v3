@@ -18,10 +18,12 @@ public class CharacterAbility : Photon.PunBehaviour
     private int magicalDp;
     private double pSpeed;
     private double mSpeed;
+    private double speed;
 
     private Weapon equipWeapon;
+    private Armor equipArmor;
     private PunTeams.Team team;
-
+    private CharacterMovement characterMovement;
 
 
 
@@ -39,6 +41,7 @@ public class CharacterAbility : Photon.PunBehaviour
                 button.SetActive(false);
             }
         }
+        characterMovement = GetComponent<CharacterMovement>();
         healthBar.fillAmount = 1;
     }
 
@@ -48,7 +51,7 @@ public class CharacterAbility : Photon.PunBehaviour
 
     }
 
-    public void Init(int _hp, int _mp, int _physicalAp, int _magicalAp, int _physicalDp, int _magicalDp)
+    public void Init(int _hp, int _mp, int _physicalAp, int _magicalAp, int _physicalDp, int _magicalDp, double _speed)
     {
         startHP = hp = _hp;
         mp = _mp;
@@ -57,7 +60,7 @@ public class CharacterAbility : Photon.PunBehaviour
         physicalDp = _physicalDp;
         magicalDp = _magicalDp;
         mSpeed = pSpeed = 1;
-
+        speed = _speed;
     }
 
     public void PhysicalDamage(int _ap)
@@ -128,28 +131,26 @@ public class CharacterAbility : Photon.PunBehaviour
     {
         this.photonView.RPC("RPCEquipWeapon", PhotonTargets.All, (int)weapon.type, weapon.apRate, weapon.speedRate);
         this.photonView.RPC("RPCWeaponBuff", PhotonTargets.All, (int)weapon.type, weapon.apRate, weapon.speedRate);
-        //equipWeapon = weapon;
-        //WeaponBuff();
+
     }
 
 
     public void WeaponBuff()
     {
+        Debug.Log("equipArmor " + equipArmor.type);
         this.photonView.RPC("RPCWeaponBuff", PhotonTargets.All, (int)equipWeapon.type, equipWeapon.apRate, equipWeapon.speedRate);
-        
-        //Debug.Log("WeaponBuff " + equipWeapon.type);
-        //Debug.Log("WeaponBuff " + physicalAp);
-        //Debug.Log("WeaponBuff " + pSpeed);
+      
+    }
 
-        //if (equipWeapon.type == WeaponAbility.Weapon.AXE || equipWeapon.type == WeaponAbility.Weapon.SWORD)
-        //{
-        //    physicalAp = (int)(physicalAp + physicalAp * equipWeapon.apRate);
-        //}
-        //else
-        //{
-        //    magicalAp = (int)(magicalAp + magicalAp * equipWeapon.apRate);
-        //}
-        //pSpeed = pSpeed + pSpeed * equipWeapon.speedRate;
+    public void EquipArmor(Armor armor)
+    {
+        this.photonView.RPC("RPCEquipArmor", PhotonTargets.All, (int)armor.type, armor.pdpRate, armor.mdpRate, armor.speed);
+        this.photonView.RPC("RPCArmorBuff", PhotonTargets.All, (int)armor.type, armor.pdpRate, armor.mdpRate, armor.speed);
+    }
+
+    public void ArmorBuff()
+    {
+        this.photonView.RPC("RPCArmorBuff", PhotonTargets.All, (int)equipArmor.type, equipArmor.pdpRate, equipArmor.mdpRate, equipArmor.speed);
     }
 
     public PunTeams.Team GetTeam()
@@ -189,5 +190,30 @@ public class CharacterAbility : Photon.PunBehaviour
         }
         pSpeed = pSpeed + pSpeed * speedRate;
         Debug.Log("WeaponBuff " + pSpeed);
+    }
+
+    [PunRPC]
+    private void RPCEquipArmor(int type, double pdpRate, double mdpRate, double speedRate)
+    {
+        Armor armor = new Armor((ArmorAbility.Armor)type, pdpRate, mdpRate, speedRate);
+        equipArmor = armor;
+        Debug.Log("equipArmor type " + equipArmor.type);
+    }
+
+    [PunRPC]
+    private void RPCArmorBuff(int type, double pdpRate, double mdpRate, double speedRate)
+    {
+        if((ArmorAbility.Armor)type == ArmorAbility.Armor.BOOT)
+        {
+            speed = speed + speed * speedRate;   
+            characterMovement.SetMovement((float)speed, (float)speed + 8);
+            Debug.Log("Movement is called " + speed);
+        }
+        else
+        {
+            physicalDp = (int)(physicalDp + physicalDp * pdpRate);
+            magicalAp = (int)(magicalDp + magicalDp * mdpRate);
+        }
+        
     }
 }

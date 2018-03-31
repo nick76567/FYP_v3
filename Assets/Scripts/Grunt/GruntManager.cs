@@ -5,7 +5,7 @@ using UnityEngine;
 public class GruntManager : Photon.PunBehaviour {
 
     private const int HP = 1500, MP = 0, PAP = 120, MAP = 0, PDP = 40, MDP = 50;
-    private const float WALK = 14, RUN = 22;
+    private const float WALK = 14, RUN = WALK + 8;
 
     private CharacterAbility characterAbility;
     private AudioListener audioListener;
@@ -14,7 +14,7 @@ public class GruntManager : Photon.PunBehaviour {
     private void Awake()
     {
         characterAbility = GetComponent<CharacterAbility>();
-        characterAbility.Init(HP, MP, PAP, MAP, PDP, MDP);
+        characterAbility.Init(HP, MP, PAP, MAP, PDP, MDP, WALK);
     }
 
     // Use this for initialization

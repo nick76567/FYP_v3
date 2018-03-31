@@ -5,7 +5,7 @@ using UnityEngine;
 public class SoldierManager : Photon.PunBehaviour {
 
     private const int HP = 1500, MP = 500, PAP = 70, MAP = 0, PDP = 50, MDP = 30;
-    private const float WALK = 15, RUN = 24;
+    private const float WALK = 15, RUN = WALK + 8;
 
     private CharacterAbility characterAbility;
     private AudioListener audioListener;
@@ -14,7 +14,7 @@ public class SoldierManager : Photon.PunBehaviour {
     private void Awake()
     {
         characterAbility = GetComponent<CharacterAbility>();
-        characterAbility.Init(HP, MP, PAP, MAP, PDP, MDP);
+        characterAbility.Init(HP, MP, PAP, MAP, PDP, MDP, WALK);
     }
 
     // Use this for initialization

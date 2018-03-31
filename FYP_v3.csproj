@@ -241,6 +241,10 @@
     <Compile Include="Assets\PhotonChatApi\ChatState.cs" />
     <Compile Include="Assets\PhotonChatApi\ChatUserStatus.cs" />
     <Compile Include="Assets\PhotonChatApi\IChatClientListener.cs" />
+    <Compile Include="Assets\Scripts\Armor\ArmorAbility.cs" />
+    <Compile Include="Assets\Scripts\Armor\Armour.cs" />
+    <Compile Include="Assets\Scripts\Armor\Boot.cs" />
+    <Compile Include="Assets\Scripts\Armor\Cloak.cs" />
     <Compile Include="Assets\Scripts\CharacterAbility.cs" />
     <Compile Include="Assets\Scripts\CharacterMovement.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />

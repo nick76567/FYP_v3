@@ -45,6 +45,27 @@ public class ShopManager : MonoBehaviour {
         player.Save();
     }
 
+    public void BuyArmour()
+    {
+        Armour armour = new Armour();
+        player.BuildArmor(ArmorAbility.Armor.ARMOUR, armour.GetpdpIncreaseRate(), armour.GetmdpIncreaseRate(), 0);
+        player.Save();
+    }
+
+    public void BuyBoot()
+    {
+        Boot boot = new Boot();
+        player.BuildArmor(ArmorAbility.Armor.BOOT, 0, 0, boot.GetSpeedIncreaseRate());
+        player.Save();
+    }
+
+    public void BuyCloak()
+    {
+        Cloak cloak = new Cloak();
+        player.BuildArmor(ArmorAbility.Armor.CLOAK, cloak.GetpdpIncreaseRate(), cloak.GetmdpIncreaseRate(), 0);
+        player.Save();
+    }
+
     public void Return()
     {
         SceneManager.LoadScene("Lobby");

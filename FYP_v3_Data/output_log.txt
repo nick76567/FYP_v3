@@ -19,7 +19,7 @@ Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Networkin
 Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-- Completed reload, in  0.017 seconds
+- Completed reload, in  0.180 seconds
 Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
@@ -27,31 +27,39 @@ desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.922021 ms
+UnloadTime: 1.145684 ms
 Setting up 4 worker threads for Enlighten.
-  Thread -> id: 31c0 -> priority: 1 
-  Thread -> id: 141c -> priority: 1 
-  Thread -> id: 2864 -> priority: 1 
-  Thread -> id: 2ed8 -> priority: 1 
+  Thread -> id: 1b70 -> priority: 1 
+  Thread -> id: 2998 -> priority: 1 
+  Thread -> id: 2220 -> priority: 1 
+  Thread -> id: 1d9c -> priority: 1 
 connet to master
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.120299 ms
+UnloadTime: 6.051729 ms
 
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 608.
-Total: 0.515322 ms (FindLiveObjects: 0.040199 ms CreateObjectMapping: 0.018816 ms MarkObjects: 0.445187 ms  DeleteObjects: 0.009836 ms)
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 612.
+Total: 0.538416 ms (FindLiveObjects: 0.041482 ms CreateObjectMapping: 0.025659 ms MarkObjects: 0.457161 ms  DeleteObjects: 0.013257 ms)
+
+Operation failed: OperationResponse 226: ReturnCode: 32758 (Game does not exists). Parameters: {} Server: MasterServer
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Join Room Fail
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.618387 ms
+UnloadTime: 1.238485 ms
 LEVEL Room
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 1130.
-Total: 0.787310 ms (FindLiveObjects: 0.099215 ms CreateObjectMapping: 0.041910 ms MarkObjects: 0.628651 ms  DeleteObjects: 0.017106 ms)
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 1194.
+Total: 0.939983 ms (FindLiveObjects: 0.079543 ms CreateObjectMapping: 0.040199 ms MarkObjects: 0.795436 ms  DeleteObjects: 0.023948 ms)
 
 photon maxplayer 2
  
@@ -69,7 +77,19 @@ MaxPlayerPerTeam 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-GetWeapon in player Data is called SWORD
+Equip type BOOT
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Equip pdp 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Equip mdp 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Equip speed 0
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -90,7 +110,7 @@ RPCREady in !isReady 1
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.269704 ms
+UnloadTime: 1.203845 ms
 LEVEL Game
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
@@ -103,7 +123,7 @@ WeaponBuff 3
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 150
+WeaponBuff 70
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -111,307 +131,397 @@ WeaponBuff 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
+equipArmor type BOOT
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at CharacterAbility.RPCArmorBuff (Int32 type, Double pdpRate, Double mdpRate, Double speedRate) [0x00000] in <filename unknown>:0 
+  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (object,object[],System.Exception&)
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+Rethrow as TargetInvocationException: Exception has been thrown by the target of an invocation.
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at NetworkingPeer.ExecuteRpc (ExitGames.Client.Photon.Hashtable rpcData, Int32 senderID) [0x00000] in <filename unknown>:0 
+  at NetworkingPeer.RPC (.PhotonView view, System.String methodName, PhotonTargets target, .PhotonPlayer player, Boolean encrypt, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at PhotonNetwork.RPC (.PhotonView view, System.String methodName, PhotonTargets target, Boolean encrypt, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at PhotonView.RPC (System.String methodName, PhotonTargets target, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at CharacterAbility.EquipArmor (.Armor armor) [0x00000] in <filename unknown>:0 
+  at PlayerManager.OnLoadCallBack (Scene scene, LoadSceneMode sceneMode) [0x00000] in <filename unknown>:0 
+  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.LoadSceneMode>:invoke_void__this___Scene_LoadSceneMode (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.LoadSceneMode)
+  at UnityEngine.SceneManagement.SceneManager.Internal_SceneLoaded (Scene scene, LoadSceneMode mode) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1805.
+Total: 1.056304 ms (FindLiveObjects: 0.115038 ms CreateObjectMapping: 0.057305 ms MarkObjects: 0.875407 ms  DeleteObjects: 0.006842 ms)
+
+WeaponBuff 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+WeaponBuff 1.016
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+equipArmor type CLOAK
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Movement is called 15
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Movement is called 15
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Movement is called 15
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Movement is called 15
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Movement is called 15
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Movement is called 15
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Movement is called 15
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Movement is called 15
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Movement is called 15
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1789.
-Total: 0.866854 ms (FindLiveObjects: 0.091517 ms CreateObjectMapping: 0.057733 ms MarkObjects: 0.709477 ms  DeleteObjects: 0.006842 ms)
+Movement is called 15
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Movement is called 15
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Movement is called 15
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Movement is called 15
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Movement is called 15
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 3
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 121
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 1.03
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 3
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 122
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 1.0609
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 3
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 123
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 1.092727
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 3
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 124
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 1.12550881
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 3
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 125
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 1.1592740743
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 3
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 126
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 1.194052296529
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 3
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 127
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 1.22987386542487
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 3
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 128
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 1.26677008138762
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 3
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 129
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 1.30477318382924
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 3
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 130
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 1.34391637934412
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 3
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 131
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 1.38423387072445
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 3
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 132
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 1.42576088684618
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 3
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 133
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 1.46853371345156
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 3
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 134
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 1.51258972485511
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 3
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 135
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 1.55796741660076
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 3
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 136
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 1.60470643909879
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 3
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 137
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 1.65284763227175
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Grunt Planet Hit
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Phy damage: 127
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-RPCContrig Planet team red
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Grunt Planet Hit
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Phy damage: 127
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-RPCContrig Planet team red
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-ontriggerEnter short Golem(Clone)
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Phy damage: 87
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-ontriggerEnter short Golem(Clone)
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Phy damage: 87
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 3
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 138
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 1.7024330612399
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 3
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 139
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 1.7535060530771
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-ontriggerEnter short Golem(Clone)
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Phy damage: 89
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-ontriggerEnter short Golem(Clone)
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Phy damage: 89
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-ontriggerEnter short Golem(Clone)
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Phy damage: 89
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-ontriggerEnter long Golem(Clone) (-0.6, 0.0, 0.8)
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Phy damage: 89
+Movement is called 15
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 

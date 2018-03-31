@@ -7,6 +7,10 @@ using System.IO;
 [Serializable]
 public class Weapon
 {
+    public WeaponAbility.Weapon type;
+    public double apRate;
+    public double speedRate;
+
     public Weapon(WeaponAbility.Weapon _type, double _apRate, double _speedRate)
     {
         type = _type;
@@ -14,16 +18,32 @@ public class Weapon
         speedRate = _speedRate;
     }
 
-    public WeaponAbility.Weapon type;
-    public double apRate;
-    public double speedRate;
+   
+}
+
+[Serializable]
+public class Armor
+{
+    public ArmorAbility.Armor type;
+    public double pdpRate;
+    public double mdpRate;
+    public double speed;
+
+    public Armor(ArmorAbility.Armor _type, double _pdpRate, double _mdpRate, double _speed)
+    {
+        type = _type;
+        pdpRate = _pdpRate;
+        mdpRate = _mdpRate;
+        speed = _speed;
+    }
+    
 }
 
 [Serializable]
 public class Data
 {
     public List<Weapon> weaponList;
-    //public Weapon[] weaponList;
+    public List<Armor> armorList;
     public int win;
     public int lose;
     public int money;
@@ -36,7 +56,10 @@ public class Data
         weaponList.Add(new Weapon(WeaponAbility.Weapon.STAFF, 0, 0));
         weaponList.Add(new Weapon(WeaponAbility.Weapon.SWORD, 0, 0));
 
-
+        armorList = new List<Armor>();
+        armorList.Add(new Armor(ArmorAbility.Armor.ARMOUR, 0, 0, 0));
+        armorList.Add(new Armor(ArmorAbility.Armor.BOOT, 0, 0, 0));
+        armorList.Add(new Armor(ArmorAbility.Armor.CLOAK, 0, 0, 0));
 
         money = lose = win = 0;
     }
@@ -57,7 +80,7 @@ public class PlayerData : MonoBehaviour {
         {
             Load();
         }
-        
+        Save();
         DontDestroyOnLoad(gameObject);
     }
 	
@@ -74,13 +97,23 @@ public class PlayerData : MonoBehaviour {
         data.weaponList[index].speedRate = speedRate;
     }
 
+    public void BuildArmor(ArmorAbility.Armor type, double pdpRate, double mdpRate, double speed)
+    {
+        int index = (int)type;
+        data.armorList[index].pdpRate = pdpRate;
+        data.armorList[index].mdpRate = mdpRate;
+        data.armorList[index].speed = speed;
+    }
+
     public Weapon GetWeapon(WeaponAbility.Weapon type)
     {
-        Debug.Log("GetWeapon in player Data is called " + type);
         return data.weaponList[(int)type];
     }
 
-    
+    public Armor GetArmor(ArmorAbility.Armor type)
+    {
+        return data.armorList[(int)type];
+    }
 
     public void Save()
     {
