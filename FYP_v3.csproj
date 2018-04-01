@@ -269,6 +269,7 @@
     <Compile Include="Assets\Scripts\PlanetAbility.cs" />
     <Compile Include="Assets\Scripts\PlayerData.cs" />
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
+    <Compile Include="Assets\Scripts\RoomManager.cs" />
     <Compile Include="Assets\Scripts\ShopManager.cs" />
     <Compile Include="Assets\Scripts\Soldier\SoldierAttack.cs" />
     <Compile Include="Assets\Scripts\Soldier\SoldierManager.cs" />

@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerManager : Photon.PunBehaviour{
 
+    private const string _GAME_VERSION = "1";
+
     private const int READY_BUTTON = 6;
     private const string SCENE = "Game";
 
@@ -23,6 +25,8 @@ public class PlayerManager : Photon.PunBehaviour{
 
     // Use this for initialization
     void Start () {
+        Debug.Log("PlyerManager is created");
+
         if (photonView.isMine)
         {
 
@@ -103,20 +107,46 @@ public class PlayerManager : Photon.PunBehaviour{
 
     private void OnLoadCallBack(Scene scene, LoadSceneMode sceneMode)
     {
-        if(scene.name == "Game")
+        if(scene.name == "Game" /* && !GameObject.Find("PlayerData").GetComponent<PlayerData>().GetIsInGame()*/)
         {
+            //GameObject.Find("PlayerData").GetComponent<PlayerData>().SetIsInGamem(true);
             Debug.Log("before instan");
             GameObject character = PhotonNetwork.Instantiate(charactersName[(int)currentCharacter], new Vector3(Random.Range(0, 50), 0, 0), Quaternion.identity, 0);
             character.GetComponent<CharacterAbility>().EquipWeapon(currentEquipWeapon);
             character.GetComponent<CharacterAbility>().EquipArmor(currentEquipArmor);
         }
     }
-    
+
+    public override void OnLeftRoom()
+    {
+        GameObject.Find("PlayerData").GetComponent<PlayerData>().SetIsInRoom(false);
+        Debug.Log("OnLeftRoom is called");
+        PhotonNetwork.Destroy(gameObject);
+        SceneManager.LoadScene("Lobby");
+    }
+/*
+    public override void OnDisconnectedFromPhoton()
+    {
+        PhotonNetwork.ConnectUsingSettings(_GAME_VERSION);
+
+        GameObject.Find("PlayerData").GetComponent<PlayerData>().SetIsInRoom(false);
+        Debug.Log("OnLeftRoom is called");
+        //PhotonNetwork.Destroy(gameObject);
+        SceneManager.LoadScene("Lobby");
+    }
+*/
+
     private void SelectCharacter(CharactersName name)
     {
         allIdleCharactersList[(int)currentCharacter].SetActive(false);
         currentCharacter = name;
         allIdleCharactersList[(int)currentCharacter].SetActive(true);
+    }
+
+    public void ReturnButton()
+    {
+        PhotonNetwork.LeaveRoom();
+        //PhotonNetwork.Disconnect();
     }
 
     public void SelectGolem()

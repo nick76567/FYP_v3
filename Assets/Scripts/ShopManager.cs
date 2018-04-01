@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ShopManager : MonoBehaviour {
+public class ShopManager : Photon.PunBehaviour {
 
     private PlayerData player;
 
 	// Use this for initialization
 	void Start () {
+        Debug.Log("ShopManager is created");
         player = GameObject.Find("PlayerData").GetComponent<PlayerData>();
 	}
 	
@@ -68,6 +69,6 @@ public class ShopManager : MonoBehaviour {
 
     public void Return()
     {
-        SceneManager.LoadScene("Lobby");
+        SceneManager.LoadScene("Lobby", LoadSceneMode.Single);
     }
 }

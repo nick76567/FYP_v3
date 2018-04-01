@@ -25,7 +25,10 @@ public class CharacterAbility : Photon.PunBehaviour
     private PunTeams.Team team;
     private CharacterMovement characterMovement;
 
-
+    private void Awake()
+    {
+        characterMovement = GetComponent<CharacterMovement>();
+    }
 
     // Use this for initialization
     void Start()
@@ -41,7 +44,7 @@ public class CharacterAbility : Photon.PunBehaviour
                 button.SetActive(false);
             }
         }
-        characterMovement = GetComponent<CharacterMovement>();
+        
         healthBar.fillAmount = 1;
     }
 

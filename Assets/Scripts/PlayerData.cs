@@ -72,6 +72,11 @@ public class PlayerData : MonoBehaviour {
 
     public Data data;
 
+    private RoomManager.CharactersName selectedCharacter;
+    private WeaponAbility.Weapon selectedWeapon;
+    private ArmorAbility.Armor selectedArmor;
+    private bool isInRoom, isInGame;
+
     // Use this for initialization
     void Start () {
         data = new Data();    
@@ -81,12 +86,18 @@ public class PlayerData : MonoBehaviour {
             Load();
         }
         Save();
+
+        selectedCharacter = RoomManager.CharactersName.Golem;
+        selectedWeapon = WeaponAbility.Weapon.AXE;
+        selectedArmor = ArmorAbility.Armor.ARMOUR;
+        isInGame = isInRoom = false;
+        
         DontDestroyOnLoad(gameObject);
     }
 	
 	// Update is called once per frame
 	void Update () {
-		
+        
 	}
 
     public void BuildWeapon(WeaponAbility.Weapon type, double apRate, double speedRate)
@@ -105,6 +116,11 @@ public class PlayerData : MonoBehaviour {
         data.armorList[index].speed = speed;
     }
 
+    public RoomManager.CharactersName GetSelectedCharacter()
+    {
+        return selectedCharacter;
+    }
+
     public Weapon GetWeapon(WeaponAbility.Weapon type)
     {
         return data.weaponList[(int)type];
@@ -113,6 +129,34 @@ public class PlayerData : MonoBehaviour {
     public Armor GetArmor(ArmorAbility.Armor type)
     {
         return data.armorList[(int)type];
+    }
+
+    public WeaponAbility.Weapon GetSelectedWeapon()
+    {
+        return selectedWeapon;
+    }
+
+    public ArmorAbility.Armor GetSelectedArmor()
+    {
+        return selectedArmor;
+    }
+
+    public void SetSelectedCharacter(RoomManager.CharactersName character)
+    {
+        this.selectedCharacter = character;
+        Debug.Log("PlayerData selectedCharacter " + this.selectedCharacter);
+    }
+
+    public void SetSelectedWeapon(WeaponAbility.Weapon type)
+    {
+        this.selectedWeapon = type;
+        Debug.Log("PlayerData selectedWeapon " + this.selectedWeapon);
+    }
+
+    public void SetSelectedArmor(ArmorAbility.Armor type)
+    {
+        this.selectedArmor = type;
+        Debug.Log("PlayerData selectedArmor " + this.selectedArmor);
     }
 
     public void Save()
@@ -126,4 +170,25 @@ public class PlayerData : MonoBehaviour {
         string jsonString = File.ReadAllText(FilePath);
         JsonUtility.FromJsonOverwrite(jsonString, data);
     }
+
+    public bool GetIsInRoom()
+    {
+        return isInRoom;
+    }
+
+    public void SetIsInRoom(bool _IsInRoom)
+    {
+        isInRoom = _IsInRoom;
+    }
+
+    public bool GetIsInGame()
+    {
+        return isInGame;
+    }
+
+    public void SetIsInGamem(bool _IsInGame)
+    {
+        isInGame = _IsInGame;
+    }
+ 
 }
