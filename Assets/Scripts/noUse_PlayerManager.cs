@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PlayerManager : Photon.PunBehaviour{
-
+/*
     private const string _GAME_VERSION = "1";
 
     private const int READY_BUTTON = 6;
@@ -88,11 +88,11 @@ public class PlayerManager : Photon.PunBehaviour{
                 readyButton.text = "Start";
                 isBeingMasterClient = true;
             }
-/*
+
             Debug.Log("Red Team " + PunTeams.PlayersPerTeam[PunTeams.Team.red].Count);
             Debug.Log("Blue Team " + PunTeams.PlayersPerTeam[PunTeams.Team.blue].Count);
             Debug.Log("totalIsReady " + totalIsReady);
-*/
+
             if (PunTeams.PlayersPerTeam[PunTeams.Team.blue].Count == maxPlayerPerTeam &&
                 PunTeams.PlayersPerTeam[PunTeams.Team.red].Count == maxPlayerPerTeam &&
                 totalIsReady == PhotonNetwork.room.MaxPlayers - 1)
@@ -107,7 +107,7 @@ public class PlayerManager : Photon.PunBehaviour{
 
     private void OnLoadCallBack(Scene scene, LoadSceneMode sceneMode)
     {
-        if(scene.name == "Game" /* && !GameObject.Find("PlayerData").GetComponent<PlayerData>().GetIsInGame()*/)
+        if(scene.name == "Game"  && !GameObject.Find("PlayerData").GetComponent<PlayerData>().GetIsInGame())
         {
             //GameObject.Find("PlayerData").GetComponent<PlayerData>().SetIsInGamem(true);
             Debug.Log("before instan");
@@ -124,7 +124,7 @@ public class PlayerManager : Photon.PunBehaviour{
         PhotonNetwork.Destroy(gameObject);
         SceneManager.LoadScene("Lobby");
     }
-/*
+
     public override void OnDisconnectedFromPhoton()
     {
         PhotonNetwork.ConnectUsingSettings(_GAME_VERSION);
@@ -134,7 +134,7 @@ public class PlayerManager : Photon.PunBehaviour{
         //PhotonNetwork.Destroy(gameObject);
         SceneManager.LoadScene("Lobby");
     }
-*/
+
 
     private void SelectCharacter(CharactersName name)
     {
@@ -271,5 +271,5 @@ public class PlayerManager : Photon.PunBehaviour{
                 Debug.Log("RPCREady in !isReady " + totalIsReady);
             }
     }
-
+*/
 }

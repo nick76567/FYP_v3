@@ -84,6 +84,23 @@ public class CharacterAbility : Photon.PunBehaviour
         Debug.Log("Mag damage: " + damage);
     }
 
+    //public void Destroy()
+    //{
+    //    if (photonView.isMine)
+    //    {
+    //        PhotonNetwork.Destroy(gameObject);
+    //    }
+    //}
+
+    public void OnDestroy()
+    {
+        //if (PhotonNetwork.isMasterClient)
+        //{
+        //    PhotonNetwork.LoadLevel("Room");
+        //}
+        //PhotonNetwork.LeaveRoom();
+    }
+
     public void SetMP(int _mp)
     {
         mp -= _mp;
@@ -219,4 +236,5 @@ public class CharacterAbility : Photon.PunBehaviour
         }
         
     }
+
 }

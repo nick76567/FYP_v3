@@ -18,7 +18,7 @@ public class WeaponAbility{
     public WeaponAbility(Weapon weapon)
     {
         type = weapon;
-        switch (weapon)
+        switch (type)
         {
             case Weapon.AXE:
                 papIncreaseRate = RandomRateMain();

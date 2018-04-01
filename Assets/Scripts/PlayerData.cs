@@ -121,14 +121,14 @@ public class PlayerData : MonoBehaviour {
         return selectedCharacter;
     }
 
-    public Weapon GetWeapon(WeaponAbility.Weapon type)
+    public Weapon GetWeapon()
     {
-        return data.weaponList[(int)type];
+        return data.weaponList[(int)selectedWeapon];
     }
 
-    public Armor GetArmor(ArmorAbility.Armor type)
+    public Armor GetArmor()
     {
-        return data.armorList[(int)type];
+        return data.armorList[(int)selectedArmor];
     }
 
     public WeaponAbility.Weapon GetSelectedWeapon()

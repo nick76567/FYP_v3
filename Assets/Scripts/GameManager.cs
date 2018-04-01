@@ -18,10 +18,12 @@ public class GameManager : MonoBehaviour {
         //players = GameObject.FindGameObjectsWithTag("Player");
         playerData = GameObject.Find("PlayerData").GetComponent<PlayerData>();
         GameObject character = PhotonNetwork.Instantiate(charactersName[(int)playerData.GetSelectedCharacter()], new Vector3(Random.Range(0, 50), 0, 0), Quaternion.identity, 0);
-        character.GetComponent<CharacterAbility>().EquipWeapon(playerData.GetWeapon(playerData.GetSelectedWeapon()));
-        character.GetComponent<CharacterAbility>().EquipArmor(playerData.GetArmor(playerData.GetSelectedArmor()));
+        character.GetComponent<CharacterAbility>().EquipWeapon(playerData.GetWeapon());
+        character.GetComponent<CharacterAbility>().EquipArmor(playerData.GetArmor());
     }
 	
+
+
 	// Update is called once per frame
 	void Update () {
         if (PhotonNetwork.isMasterClient)
@@ -44,6 +46,12 @@ public class GameManager : MonoBehaviour {
                 {
                     if (Time.time - startTime >= 10)
                     {
+                        //GameObject[] playerLists = GameObject.FindGameObjectsWithTag("Player");
+                        //foreach(GameObject player in playerLists)
+                        //{
+                        //    player.GetComponent<CharacterAbility>().Destroy();
+                        //}
+                        
                         PhotonNetwork.LoadLevel("Lobby");
                     }
                 }
@@ -57,5 +65,6 @@ public class GameManager : MonoBehaviour {
                 }
             }
         }
+
 	}
 }
