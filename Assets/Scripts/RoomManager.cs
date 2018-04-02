@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class RoomManager : Photon.PunBehaviour {
-
+    public Text redNum, blueNum;
     public Button[] WeaponsList, ArmorsList, CharactersList, TeamList;
     public GameObject[] allIdleCharactersList;
     public Button readyButton, returnButton;
@@ -24,9 +24,6 @@ public class RoomManager : Photon.PunBehaviour {
             //isBeingMasterClient = true;
             readyButton.GetComponentInChildren<Text>().text = "Start";
         }
-
-        PhotonNetwork.player.SetTeam(PunTeams.Team.none);
-        selectedTeam = PunTeams.Team.none;
 
         for (int i = 1; i < (int)CharactersName.CharatersLen; i++)
             allIdleCharactersList[i].SetActive(false);
@@ -50,6 +47,15 @@ public class RoomManager : Photon.PunBehaviour {
         SelectGolem();
         EquipAxe();
         EquipArmour();
+
+        Invoke("ResetTeam", 0.5f);
+        //GameObject[] dummyObjects = GameObject.FindGameObjectsWithTag("Player");
+        //foreach (GameObject player in dummyObjects)
+        //{
+        //    Debug.Log("Destroy Player");
+        //    Destroy(player);
+        //}
+
     }
 	
 	// Update is called once per frame
@@ -107,6 +113,19 @@ public class RoomManager : Photon.PunBehaviour {
         returnButton.enabled = true;
     }
 
+    private void ResetTeam()
+    {
+        PhotonNetwork.player.SetTeam(PunTeams.Team.none);
+        selectedTeam = PunTeams.Team.none;
+        PrintTeamNum();
+    }
+
+    private void PrintTeamNum()
+    {
+        redNum.text = "Red: " + PunTeams.PlayersPerTeam[PunTeams.Team.red].Count + "/" + maxPlayerPerTeam;
+        blueNum.text = "Blue: " + PunTeams.PlayersPerTeam[PunTeams.Team.blue].Count + "/" + maxPlayerPerTeam;
+    }
+
     private void SelectCharacter(CharactersName name)
     {
         allIdleCharactersList[(int)selectedCharacter].SetActive(false);
@@ -130,9 +149,12 @@ public class RoomManager : Photon.PunBehaviour {
 
     public override void OnPhotonPlayerPropertiesChanged(object[] playerAndUpdatedProps)
     {
+        PrintTeamNum();
         if (PhotonNetwork.isMasterClient)
         {
-            
+            Debug.Log("OnPhotonPlayerPropertiesChanged");
+            Debug.Log("blue team " + PunTeams.PlayersPerTeam[PunTeams.Team.blue].Count);
+            Debug.Log("red team " + PunTeams.PlayersPerTeam[PunTeams.Team.red].Count);
             if(PunTeams.PlayersPerTeam[PunTeams.Team.blue].Count > 0 && PunTeams.PlayersPerTeam[PunTeams.Team.red].Count > 0 &&
                 PunTeams.PlayersPerTeam[PunTeams.Team.blue].Count <= maxPlayerPerTeam && PunTeams.PlayersPerTeam[PunTeams.Team.red].Count <= maxPlayerPerTeam &&
                PunTeams.PlayersPerTeam[PunTeams.Team.blue].Count + PunTeams.PlayersPerTeam[PunTeams.Team.red].Count == maxPlayerPerTeam * 2)
@@ -191,7 +213,7 @@ public class RoomManager : Photon.PunBehaviour {
 
     public void ChangeRedTeam()
     {
-        Debug.Log("RoomManager changeRedTeam is called");
+        Debug.Log("RoomManager changeRedTeam is called " + PhotonNetwork.player.GetTeam());
 
         if(selectedTeam == PunTeams.Team.none && !PhotonNetwork.isMasterClient)
         {
@@ -209,7 +231,7 @@ public class RoomManager : Photon.PunBehaviour {
 
     public void ChangeBlueTeam()
     {
-        Debug.Log("RoomManager changeBlueTeam is called");
+        Debug.Log("RoomManager changeBlueTeam is called " + PhotonNetwork.player.GetTeam());
 
         if (selectedTeam == PunTeams.Team.none && !PhotonNetwork.isMasterClient)
         {
@@ -290,8 +312,10 @@ public class RoomManager : Photon.PunBehaviour {
 
     public override void OnPhotonPlayerDisconnected(PhotonPlayer otherPlayer)
     {
+        PrintTeamNum();
         if (PhotonNetwork.isMasterClient)
         {
+            EnableButtons();
             readyButton.GetComponentInChildren<Text>().text = "Start";
             readyButton.enabled = false;
             readyButton.GetComponent<Image>().color = Color.gray;

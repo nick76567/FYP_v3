@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CharacterAbility : Photon.PunBehaviour
 {
@@ -84,13 +85,13 @@ public class CharacterAbility : Photon.PunBehaviour
         Debug.Log("Mag damage: " + damage);
     }
 
-    //public void Destroy()
-    //{
-    //    if (photonView.isMine)
-    //    {
-    //        PhotonNetwork.Destroy(gameObject);
-    //    }
-    //}
+    public void Destroy()
+    {
+        if (photonView.isMine)
+        {
+            PhotonNetwork.Destroy(gameObject);
+        }
+    }
 
     public void OnDestroy()
     {
@@ -98,7 +99,12 @@ public class CharacterAbility : Photon.PunBehaviour
         //{
         //    PhotonNetwork.LoadLevel("Room");
         //}
-        //PhotonNetwork.LeaveRoom();
+        
+        //if (photonView.isMine)
+        //{
+        //    PhotonNetwork.LeaveRoom();
+        //    SceneManager.LoadScene("Lobby");
+        //}
     }
 
     public void SetMP(int _mp)

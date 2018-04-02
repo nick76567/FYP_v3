@@ -46,7 +46,7 @@ public class Data
     public List<Armor> armorList;
     public int win;
     public int lose;
-    public int money;
+    public int coins;
 
     public Data()
     {
@@ -61,7 +61,7 @@ public class Data
         armorList.Add(new Armor(ArmorAbility.Armor.BOOT, 0, 0, 0));
         armorList.Add(new Armor(ArmorAbility.Armor.CLOAK, 0, 0, 0));
 
-        money = lose = win = 0;
+        coins = lose = win = 0;
     }
 }
 

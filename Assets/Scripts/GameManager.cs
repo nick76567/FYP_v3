@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour {
                         //    player.GetComponent<CharacterAbility>().Destroy();
                         //}
                         
-                        PhotonNetwork.LoadLevel("Lobby");
+                        PhotonNetwork.LoadLevel("Room");
                     }
                 }
 
