@@ -39,9 +39,9 @@ public class LichManager : Photon.MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (characterAbility.GetHP() <= 0)
-        {
-            Debug.Log("Lich is dead");
-        }
+        //if (characterAbility.GetHP() <= 0)
+        //{
+        //    Debug.Log("Lich is dead");
+        //}
     }
 }

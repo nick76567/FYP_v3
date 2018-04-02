@@ -38,10 +38,10 @@ public class SoldierManager : Photon.PunBehaviour {
 	void Update () {
        // Debug.Log(characterAbility.GetHP());
 
-		if (characterAbility.GetHP() <= 0)
-        {
-            Debug.Log("Soldire is dead");
-        }
+		//if (characterAbility.GetHP() <= 0)
+  //      {
+  //          Debug.Log("Soldire is dead");
+  //      }
 	}
 
 }

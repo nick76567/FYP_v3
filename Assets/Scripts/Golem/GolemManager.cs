@@ -41,10 +41,10 @@ public class GolemManager : Photon.PunBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (characterAbility.GetHP() <= 0)
-        {
-            Debug.Log("Grunt is dead");
-        }
+        //if (characterAbility.GetHP() <= 0)
+        //{
+        //    Debug.Log("Grunt is dead");
+        //}
     }
 
 }

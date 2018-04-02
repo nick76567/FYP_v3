@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour {
     private PlayerData playerData;
 
     public PlanetAbility[] planets;
-
+    public GameObject endGameCanvas;
 	// Use this for initialization
 	void Start () {
         isStartEndGame = false;
@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour {
         GameObject character = PhotonNetwork.Instantiate(charactersName[(int)playerData.GetSelectedCharacter()], new Vector3(Random.Range(0, 50), 0, 0), Quaternion.identity, 0);
         character.GetComponent<CharacterAbility>().EquipWeapon(playerData.GetWeapon());
         character.GetComponent<CharacterAbility>().EquipArmor(playerData.GetArmor());
+        endGameCanvas.SetActive(false);
     }
 	
 
@@ -32,39 +33,46 @@ public class GameManager : MonoBehaviour {
             {
                 //do sth
             }
+        }
 
-            if (planets[(int)Planet.Orange].GetTeam() != PunTeams.Team.none &&
-               planets[(int)Planet.Orange].GetTeam() == planets[(int)Planet.Forest].GetTeam() &&
-               planets[(int)Planet.Orange].GetTeam() == planets[(int)Planet.Ice].GetTeam())
+        if (planets[(int)Planet.Orange].GetTeam() != PunTeams.Team.none &&
+            planets[(int)Planet.Orange].GetTeam() == planets[(int)Planet.Forest].GetTeam() &&
+            planets[(int)Planet.Orange].GetTeam() == planets[(int)Planet.Ice].GetTeam())
+        {
+            if (!isStartEndGame)
             {
-                if (!isStartEndGame)
-                {
-                    isStartEndGame = true;
-                    startTime = Time.time;
-                }
-                else
-                {
-                    if (Time.time - startTime >= 10)
-                    {
-                        //GameObject[] playerLists = GameObject.FindGameObjectsWithTag("Player");
-                        //foreach(GameObject player in playerLists)
-                        //{
-                        //    player.GetComponent<CharacterAbility>().Destroy();
-                        //}
-                        
-                        PhotonNetwork.LoadLevel("Room");
-                    }
-                }
-
+                isStartEndGame = true;
+                startTime = Time.time;
             }
             else
             {
-                if (isStartEndGame)
+                if (Time.time - startTime >= 10)
                 {
-                    isStartEndGame = false;
+                    //GameObject[] playerLists = GameObject.FindGameObjectsWithTag("Player");
+                    //foreach(GameObject player in playerLists)
+                    //{
+                    //    player.GetComponent<CharacterAbility>().Destroy();
+                    //}
+                    foreach(GameObject character in GameObject.FindGameObjectsWithTag("Player"))
+                    {
+                        character.GetComponent<CharacterAbility>().CharacterEndGame();
+                    }
+                    endGameCanvas.SetActive(true);
+                    endGameCanvas.GetComponent<EndGameManager>().SetWinTeam(planets[(int)Planet.Orange].GetTeam());
+                    endGameCanvas.GetComponent<EndGameManager>().SetReward(PhotonNetwork.player.GetTeam() == planets[(int)Planet.Orange].GetTeam());
+
                 }
             }
+
         }
+        else
+        {
+            if (isStartEndGame)
+            {
+                isStartEndGame = false;
+            }
+        }
+        
 
 	}
 }

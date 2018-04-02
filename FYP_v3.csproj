@@ -247,6 +247,7 @@
     <Compile Include="Assets\Scripts\Armor\Cloak.cs" />
     <Compile Include="Assets\Scripts\CharacterAbility.cs" />
     <Compile Include="Assets\Scripts\CharacterMovement.cs" />
+    <Compile Include="Assets\Scripts\EndGameManager.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Golem\GolemAttack.cs" />
     <Compile Include="Assets\Scripts\Golem\GolemManager.cs" />

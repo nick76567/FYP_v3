@@ -9,6 +9,7 @@ public class CharacterAbility : Photon.PunBehaviour
     public Image healthBar;
     public enum Team { none, blue, red };
     public GameObject[] buttonList;
+    public GameObject dieCanvas;
 
     private float startHP;
     private int hp;
@@ -37,6 +38,8 @@ public class CharacterAbility : Photon.PunBehaviour
         if (photonView.isMine)
         {
             this.photonView.RPC("SetTeam", PhotonTargets.All, PhotonNetwork.player.GetTeam());
+            dieCanvas = GameObject.Find("DieCanvas");
+            dieCanvas.SetActive(false);
         }
         else
         {
@@ -52,7 +55,41 @@ public class CharacterAbility : Photon.PunBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(hp <= 0)
+        {
+            CharacterDie();
+        }   
+    }
 
+    private void CharacterDie()
+    {
+        gameObject.SetActive(false);
+        Invoke("CharacterRebirth", Random.Range(10f, 20f));
+        if (photonView.isMine)
+        {
+            //gray screen
+            dieCanvas.SetActive(true);
+        }
+    }
+
+    private void CharacterRebirth()
+    {
+        if (photonView.isMine)
+        {
+            dieCanvas.SetActive(false);
+        }
+        hp = (int)startHP;
+        healthBar.fillAmount = 1;
+        gameObject.SetActive(true);
+        gameObject.transform.position = new Vector3(Random.Range(0, 50), 0, 0);
+    }
+
+    public void CharacterEndGame()
+    {
+        if (photonView.isMine)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     public void Init(int _hp, int _mp, int _physicalAp, int _magicalAp, int _physicalDp, int _magicalDp, double _speed)

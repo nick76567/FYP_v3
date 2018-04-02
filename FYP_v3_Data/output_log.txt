@@ -19,7 +19,7 @@ Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Networkin
 Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading F:\Documents\FYP_v3\FYP_v3_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-- Completed reload, in  0.176 seconds
+- Completed reload, in  0.181 seconds
 Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: F:\Documents\FYP_v3\FYP_v3_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
@@ -27,27 +27,27 @@ desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.395862 ms
+UnloadTime: 0.950674 ms
 Setting up 4 worker threads for Enlighten.
-  Thread -> id: 2dc -> priority: 1 
-  Thread -> id: 224c -> priority: 1 
-  Thread -> id: 25e4 -> priority: 1 
-  Thread -> id: 1e7c -> priority: 1 
+  Thread -> id: 1f2c -> priority: 1 
+  Thread -> id: 371c -> priority: 1 
+  Thread -> id: b7c -> priority: 1 
+  Thread -> id: 18d0 -> priority: 1 
 connet to master
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 6.487508 ms
+UnloadTime: 7.724283 ms
 
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 613.
-Total: 0.659014 ms (FindLiveObjects: 0.038916 ms CreateObjectMapping: 0.027797 ms MarkObjects: 0.569634 ms  DeleteObjects: 0.021810 ms)
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 614.
+Total: 0.527297 ms (FindLiveObjects: 0.041054 ms CreateObjectMapping: 0.025231 ms MarkObjects: 0.446470 ms  DeleteObjects: 0.013684 ms)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.625657 ms
+UnloadTime: 0.550390 ms
 
-Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 854.
-Total: 0.422521 ms (FindLiveObjects: 0.032074 ms CreateObjectMapping: 0.018816 ms MarkObjects: 0.354525 ms  DeleteObjects: 0.016250 ms)
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 855.
+Total: 0.490946 ms (FindLiveObjects: 0.047469 ms CreateObjectMapping: 0.018816 ms MarkObjects: 0.405843 ms  DeleteObjects: 0.017533 ms)
 
 PlayerData selectedCharacter Golem
  
@@ -69,151 +69,7 @@ RoomManager Blue Team 0
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-RoomManager changeBlueTeam is called none
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-RoomManager Red Team 1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-RoomManager Blue Team 1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.199996 ms
-
-Unloading 54 unused Assets to reduce memory usage. Loaded Objects now: 1170.
-Total: 0.656876 ms (FindLiveObjects: 0.074411 ms CreateObjectMapping: 0.021382 ms MarkObjects: 0.421666 ms  DeleteObjects: 0.138559 ms)
-
-WeaponBuff 0
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-WeaponBuff 150
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-WeaponBuff 1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-equipArmor type ARMOUR
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-WeaponBuff 2
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-WeaponBuff 1.016
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-equipArmor type CLOAK
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Golem Planet Hit
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Phy damage: 140
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Golem Planet Hit
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Phy damage: 140
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Golem Planet Hit
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Phy damage: 140
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Golem Planet Hit
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Phy damage: 140
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-RPCContrig Planet team red
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Golem Planet Hit
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Phy damage: 140
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-RPCContrig Planet team red
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Golem Planet Hit
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Phy damage: 140
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-RPCContrig Planet team red
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.021237 ms
-
-Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 984.
-Total: 0.735564 ms (FindLiveObjects: 0.057733 ms CreateObjectMapping: 0.021382 ms MarkObjects: 0.502065 ms  DeleteObjects: 0.153527 ms)
-
-PlayerData selectedCharacter Golem
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-PlayerData selectedWeapon AXE
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-PlayerData selectedArmor ARMOUR
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-RoomManager Red Team 1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-RoomManager Blue Team 0
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-RoomManager Red Team 0
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-RoomManager Blue Team 0
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-RoomManager Red Team 1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-RoomManager Blue Team 0
+PlayerData selectedWeapon STAFF
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -230,16 +86,12 @@ RoomManager Blue Team 1
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.521309 ms
+UnloadTime: 1.346254 ms
 
-Unloading 43 unused Assets to reduce memory usage. Loaded Objects now: 1309.
-Total: 1.184601 ms (FindLiveObjects: 0.209122 ms CreateObjectMapping: 0.055594 ms MarkObjects: 0.829648 ms  DeleteObjects: 0.087241 ms)
+Unloading 52 unused Assets to reduce memory usage. Loaded Objects now: 1227.
+Total: 0.827937 ms (FindLiveObjects: 0.094511 ms CreateObjectMapping: 0.030791 ms MarkObjects: 0.526014 ms  DeleteObjects: 0.176193 ms)
 
-WeaponBuff 0
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-WeaponBuff 150
+WeaponBuff 2
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -255,7 +107,7 @@ WeaponBuff 2
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-WeaponBuff 1.016
+WeaponBuff 1.013
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -263,19 +115,7 @@ equipArmor type CLOAK
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-_ap 103
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-magicalDp5
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Mag damage: 98
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-_ap 103
+_ap 109
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -283,23 +123,11 @@ magicalDp10
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Mag damage: 93
+Mag damage: 99
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-_ap 103
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-magicalDp10
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Mag damage: 93
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-_ap 103
+_ap 109
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -307,23 +135,11 @@ magicalDp10
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Mag damage: 93
+Mag damage: 99
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-_ap 103
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-magicalDp10
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Mag damage: 93
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-_ap 103
+_ap 109
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -331,71 +147,11 @@ magicalDp10
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Mag damage: 93
+Mag damage: 99
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-_ap 103
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-magicalDp10
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Mag damage: 93
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Failed to 'network-remove' GameObject. Client is neither owner nor masterClient taking over for owner who left: View (0)1013 on FireBall(Clone) 
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Failed to 'network-remove' GameObject. Client is neither owner nor masterClient taking over for owner who left: View (0)1013 on FireBall(Clone) 
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Failed to 'network-remove' GameObject. Client is neither owner nor masterClient taking over for owner who left: View (0)1013 on FireBall(Clone) 
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Failed to 'network-remove' GameObject. Client is neither owner nor masterClient taking over for owner who left: View (0)1013 on FireBall(Clone) 
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Failed to 'network-remove' GameObject. Client is neither owner nor masterClient taking over for owner who left: View (0)1013 on FireBall(Clone) 
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Failed to 'network-remove' GameObject. Client is neither owner nor masterClient taking over for owner who left: View (0)1013 on FireBall(Clone) 
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Failed to 'network-remove' GameObject. Client is neither owner nor masterClient taking over for owner who left: View (0)1013 on FireBall(Clone) 
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Failed to 'network-remove' GameObject. Client is neither owner nor masterClient taking over for owner who left: View (0)1013 on FireBall(Clone) 
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Failed to 'network-remove' GameObject. Client is neither owner nor masterClient taking over for owner who left: View (0)1013 on FireBall(Clone) 
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Failed to 'network-remove' GameObject. Client is neither owner nor masterClient taking over for owner who left: View (0)1013 on FireBall(Clone) 
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Failed to 'network-remove' GameObject. Client is neither owner nor masterClient taking over for owner who left: View (0)1013 on FireBall(Clone) 
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Failed to 'network-remove' GameObject. Client is neither owner nor masterClient taking over for owner who left: View (0)1014 on FireBall(Clone) 
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-_ap 103
+_ap 109
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -403,11 +159,11 @@ magicalDp10
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Mag damage: 93
+Mag damage: 99
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-_ap 103
+_ap 109
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -415,15 +171,51 @@ magicalDp10
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Mag damage: 93
+Mag damage: 99
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+_ap 109
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+magicalDp10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Mag damage: 99
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+_ap 109
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+magicalDp10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Mag damage: 99
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+_ap 109
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+magicalDp10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Mag damage: 99
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.043475 ms
+UnloadTime: 1.260723 ms
 
-Unloading 44 unused Assets to reduce memory usage. Loaded Objects now: 1105.
-Total: 0.909191 ms (FindLiveObjects: 0.061154 ms CreateObjectMapping: 0.035067 ms MarkObjects: 0.596577 ms  DeleteObjects: 0.214682 ms)
+Unloading 46 unused Assets to reduce memory usage. Loaded Objects now: 1106.
+Total: 1.137986 ms (FindLiveObjects: 0.075267 ms CreateObjectMapping: 0.034639 ms MarkObjects: 0.772770 ms  DeleteObjects: 0.254881 ms)
 
 PlayerData selectedCharacter Golem
  
