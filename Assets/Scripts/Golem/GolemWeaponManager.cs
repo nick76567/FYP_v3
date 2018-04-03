@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GolemWeaponManager : Photon.PunBehaviour {
 
+    private bool isHitPlayer, isHitPlanet;
     private Animator animator;
     private CharacterAbility characterAbility;
     //private int physicalAp;
@@ -15,6 +16,7 @@ public class GolemWeaponManager : Photon.PunBehaviour {
         characterAbility = GetComponentInParent<CharacterAbility>();
         //physicalAp = characterAbility.GetPAP();
         team = characterAbility.GetTeam();
+        isHitPlanet = isHitPlayer = false;
 	}
 	
 	// Update is called once per frame
@@ -22,21 +24,35 @@ public class GolemWeaponManager : Photon.PunBehaviour {
 		
 	}
 
+    private void DisableHitPlayer()
+    {
+        isHitPlayer = false;
+    }
+
+    private void DisableHitPlanet()
+    {
+        isHitPlanet = false;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (photonView.isMine)
         {
-            if (other.tag == "Player" && other.GetComponent<CharacterAbility>().GetTeam() != team)
+            if (other.tag == "Player" && other.GetComponent<CharacterAbility>().GetTeam() != team && !isHitPlayer)
             {
+                isHitPlayer = true;
+                Invoke("DisableHitPlayer", 0.5f);
                 Debug.Log("OnTriggerEnter");
                 int otherID = other.gameObject.GetPhotonView().viewID;
                 this.photonView.RPC("RPConTriggerEnter", PhotonTargets.All, otherID, characterAbility.GetPAP());
+
             }
             else if (other.tag == "Planet")
             {
-                if (other.GetComponent<PlanetAbility>().GetTeam() != team)
+                if (other.GetComponent<PlanetAbility>().GetTeam() != team && !isHitPlanet)
                 {
+                    isHitPlanet = true;
+                    Invoke("DisableHitPlanet", 0.5f);
                     string otherName = other.gameObject.name;
                     this.photonView.RPC("RPConTriggerEnter", PhotonTargets.All, other.gameObject.name, team, characterAbility.GetPAP());
                 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GruntWeaponManager : Photon.PunBehaviour {
-
+    private bool isHitPlayer, isHitPlanet;
     private CharacterAbility characterAbility;
     private Animator animator;
    // private int physicalAp;
@@ -30,15 +30,20 @@ public class GruntWeaponManager : Photon.PunBehaviour {
         if (photonView.isMine)
         {
             
-            if (other.tag == "Player" && other.GetComponent<CharacterAbility>().GetTeam() != team)
+            if (other.tag == "Player" && other.GetComponent<CharacterAbility>().GetTeam() != team && !isHitPlayer)
             {
+                isHitPlayer = true;
+                Invoke("DisableHitPlayer", 0.5f);
+
                 int otherID = other.gameObject.GetPhotonView().viewID;
                 this.photonView.RPC("RPCOnTriggerEnter", PhotonTargets.All, otherID, characterAbility.GetPAP());
             }
             else if (other.tag == "Planet")
             {
-                if (other.GetComponent<PlanetAbility>().GetTeam() != team)
+                if (other.GetComponent<PlanetAbility>().GetTeam() != team && !isHitPlanet)
                 {
+                    isHitPlanet = true;
+                    Invoke("DisableHitPlanet", 0.5f);
                     string otherName = other.gameObject.name;
                     this.photonView.RPC("RPConTriggerEnter", PhotonTargets.All, other.gameObject.name, team, characterAbility.GetPAP());
                 }
