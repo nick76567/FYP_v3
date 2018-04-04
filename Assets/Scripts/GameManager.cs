@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour {
     private string[] charactersName = { "Golem", "Grunt", "Lich", "Soldier" };
     private enum Planet { Orange, Ice, Forest};
     private float startTime;
-    private bool isStartEndGame;
+    private bool isStartEndGame, isEndGame;
     //private GameObject[] players;
     private PlayerData playerData;
 
@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour {
     public GameObject endGameCanvas;
 	// Use this for initialization
 	void Start () {
-        isStartEndGame = false;
+        isEndGame = isStartEndGame = false;
         //players = GameObject.FindGameObjectsWithTag("Player");
         playerData = GameObject.Find("PlayerData").GetComponent<PlayerData>();
         GameObject character = PhotonNetwork.Instantiate(charactersName[(int)playerData.GetSelectedCharacter()], new Vector3(Random.Range(0, 50), 0, 0), Quaternion.identity, 0);
@@ -46,13 +46,14 @@ public class GameManager : MonoBehaviour {
             }
             else
             {
-                if (Time.time - startTime >= 10)
+                if (Time.time - startTime >= 10 && !isEndGame)
                 {
                     //GameObject[] playerLists = GameObject.FindGameObjectsWithTag("Player");
                     //foreach(GameObject player in playerLists)
                     //{
                     //    player.GetComponent<CharacterAbility>().Destroy();
                     //}
+                    isEndGame = true;
                     foreach(GameObject character in GameObject.FindGameObjectsWithTag("Player"))
                     {
                         character.GetComponent<CharacterAbility>().CharacterEndGame();

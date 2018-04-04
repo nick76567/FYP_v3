@@ -43,6 +43,11 @@ public class GolemSmokeParticleManager : Photon.PunBehaviour {
                 other.GetComponent<CharacterAbility>().MagicalDamage(characterAbility.GetMAP());
                 //int otherID = other.GetPhotonView().viewID;
                 //this.photonView.RPC("RPCOnTriggerEnter", PhotonTargets.All, otherID, characterAbility.GetMAP());
+
+                if (other.GetComponent<CharacterAbility>().GetHP() <= 0)
+                {
+                    characterAbility.AddCoins(CharacterAbility.REWARD);
+                }
             }
             else if (other.tag == "Planet")
             {

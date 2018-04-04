@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class CharacterAbility : Photon.PunBehaviour
 {
+    public const int REWARD = 500;
     public Image healthBar;
     public enum Team { none, blue, red };
     public GameObject[] buttonList;
     public GameObject dieCanvas;
+    public Text weaponText, armorText;
 
     private float startHP;
     private int hp;
@@ -21,6 +23,7 @@ public class CharacterAbility : Photon.PunBehaviour
     private double pSpeed;
     private double mSpeed;
     private double speed;
+    private int coins, weaponCost, armorCost, weaponLevel, armorLevel;
 
     private Weapon equipWeapon;
     private Armor equipArmor;
@@ -40,6 +43,9 @@ public class CharacterAbility : Photon.PunBehaviour
             this.photonView.RPC("SetTeam", PhotonTargets.All, PhotonNetwork.player.GetTeam());
             dieCanvas = GameObject.Find("DieCanvas");
             dieCanvas.SetActive(false);
+            coins = 0;
+            weaponCost = armorCost = weaponLevel = armorLevel = 1;
+            AddCoins();
         }
         else
         {
@@ -60,6 +66,13 @@ public class CharacterAbility : Photon.PunBehaviour
             CharacterDie();
         }   
     }
+
+    private void AddCoins()
+    {
+        coins += 2;
+        Invoke("AddCoins", 1f);
+    }
+
 
     private void CharacterDie()
     {
@@ -124,27 +137,14 @@ public class CharacterAbility : Photon.PunBehaviour
         //Debug.Log("Mag damage: " + damage);
     }
 
-    public void Destroy()
-    {
-        if (photonView.isMine)
-        {
-            PhotonNetwork.Destroy(gameObject);
-        }
-    }
+    //public void Destroy()
+    //{
+    //    if (photonView.isMine)
+    //    {
+    //        PhotonNetwork.Destroy(gameObject);
+    //    }
+    //}
 
-    public void OnDestroy()
-    {
-        //if (PhotonNetwork.isMasterClient)
-        //{
-        //    PhotonNetwork.LoadLevel("Room");
-        //}
-        
-        //if (photonView.isMine)
-        //{
-        //    PhotonNetwork.LeaveRoom();
-        //    SceneManager.LoadScene("Lobby");
-        //}
-    }
 
     public void SetMP(int _mp)
     {
@@ -192,6 +192,21 @@ public class CharacterAbility : Photon.PunBehaviour
         return mSpeed;
     }
 
+    public int GetCoins()
+    {
+        return coins;
+    }
+
+    public void AddCoins(int _coins)
+    {
+        coins += _coins;
+    }
+
+    public void ReduceCoins(int _cost)
+    {
+        coins -= _cost;
+    }
+
     public void EquipWeapon(Weapon weapon)
     {
         this.photonView.RPC("RPCEquipWeapon", PhotonTargets.All, (int)weapon.type, weapon.apRate, weapon.speedRate);
@@ -202,20 +217,47 @@ public class CharacterAbility : Photon.PunBehaviour
 
     public void WeaponBuff()
     {
-        Debug.Log("equipArmor " + equipArmor.type);
-        this.photonView.RPC("RPCWeaponBuff", PhotonTargets.All, (int)equipWeapon.type, equipWeapon.apRate, equipWeapon.speedRate);
+        if (photonView.isMine)
+        {
+            if (weaponLevel > 9 || weaponCost > coins)
+            {
+                return;
+            }
+
+            ReduceCoins(weaponCost);
+            weaponCost *= 2;
+            weaponLevel++;
+            weaponText.text = "W " + weaponLevel;
+            Debug.Log("equipArmor " + equipArmor.type);
+            this.photonView.RPC("RPCWeaponBuff", PhotonTargets.All, (int)equipWeapon.type, equipWeapon.apRate, equipWeapon.speedRate);
+        }
+        
       
     }
 
     public void EquipArmor(Armor armor)
     {
+        
         this.photonView.RPC("RPCEquipArmor", PhotonTargets.All, (int)armor.type, armor.pdpRate, armor.mdpRate, armor.speed);
         this.photonView.RPC("RPCArmorBuff", PhotonTargets.All, (int)armor.type, armor.pdpRate, armor.mdpRate, armor.speed);
     }
 
     public void ArmorBuff()
     {
-        this.photonView.RPC("RPCArmorBuff", PhotonTargets.All, (int)equipArmor.type, equipArmor.pdpRate, equipArmor.mdpRate, equipArmor.speed);
+        if (photonView.isMine)
+        {
+            if (armorLevel > 9 || armorCost > coins)
+            {
+                return;
+            }
+
+            ReduceCoins(armorCost);
+            armorCost *= 2;
+            armorLevel++;
+            armorText.text = "A " + armorLevel;
+            this.photonView.RPC("RPCArmorBuff", PhotonTargets.All, (int)equipArmor.type, equipArmor.pdpRate, equipArmor.mdpRate, equipArmor.speed);
+        }
+        
     }
 
     public PunTeams.Team GetTeam()

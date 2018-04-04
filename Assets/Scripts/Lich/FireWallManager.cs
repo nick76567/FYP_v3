@@ -62,6 +62,11 @@ public class FireWallManager : Photon.PunBehaviour
                 //int otherID = other.GetPhotonView().viewID;
                 other.GetComponent<CharacterAbility>().MagicalDamage(magicalAp);
                 //this.photonView.RPC("RPCOnParticleCollision", PhotonTargets.All, otherID);
+
+                if (other.GetComponent<CharacterAbility>().GetHP() <= 0)
+                {
+                    PhotonView.Find(photonView.viewID).GetComponent<CharacterAbility>().AddCoins(CharacterAbility.REWARD);
+                }
                 PhotonNetwork.Destroy(gameObject);
             }
             else if (other.tag == "Planet")

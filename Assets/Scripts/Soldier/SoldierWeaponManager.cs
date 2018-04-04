@@ -40,7 +40,12 @@ public class SoldierWeaponManager : Photon.PunBehaviour {
                 int otherID = other.gameObject.GetPhotonView().viewID;
                 other.GetComponent<CharacterAbility>().PhysicalDamage(characterAbility.GetPAP());
                 this.photonView.RPC("RPCOnTriggerEnter", PhotonTargets.All, otherID);
-                
+
+                if (other.GetComponent<CharacterAbility>().GetHP() <= 0)
+                {
+                    characterAbility.AddCoins(CharacterAbility.REWARD);
+                }
+
             }
             else if (other.tag == "Planet")
             {

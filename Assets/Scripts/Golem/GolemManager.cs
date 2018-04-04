@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GolemManager : Photon.PunBehaviour {
 
-    private const int HP = 2000, MP = 0, PAP = 150, MAP = 20, PDP = 50, MDP = 5;
+    private const int HP = 2000, MP = 0, PAP = 150, MAP = 50, PDP = 50, MDP = 5;
     private const float WALK = 10, RUN = WALK + 8;
 
     private CharacterAbility characterAbility;
