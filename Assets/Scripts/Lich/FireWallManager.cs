@@ -8,6 +8,7 @@ public class FireWallManager : Photon.PunBehaviour
     private float initTime;
     private int magicalAp;
     private PunTeams.Team team;
+    private bool isHitPlayer, isHitPlanet;
 
 
     // Use this for initialization
@@ -19,6 +20,7 @@ public class FireWallManager : Photon.PunBehaviour
         }
 
         initTime = Time.timeSinceLevelLoad;
+        isHitPlanet = isHitPlayer = false;
         //magicalAp = 60;
     }
 
@@ -33,6 +35,16 @@ public class FireWallManager : Photon.PunBehaviour
 
     }
 
+    private void DisableHitPlayer()
+    {
+        isHitPlayer = false;
+    }
+
+    private void DisableHitPlanet()
+    {
+        isHitPlanet = false;
+    }
+
     public void SetMagicalAp(int _magicalAp)
     {
         magicalAp = _magicalAp;
@@ -42,35 +54,41 @@ public class FireWallManager : Photon.PunBehaviour
     {
         if (photonView.isMine)
         {
-            if (other.tag == "Player" && other.GetComponent<CharacterAbility>().GetTeam() != team)
+            if (other.tag == "Player" && other.GetComponent<CharacterAbility>().GetTeam() != team && !isHitPlayer)
             {
+                isHitPlayer = true;
+                Invoke("DisableHitPlayer", 0.5f);
                 Debug.Log("particle hit name " + other.name);
-                int otherID = other.GetPhotonView().viewID;
-                this.photonView.RPC("RPCOnParticleCollision", PhotonTargets.All, otherID, magicalAp);
+                //int otherID = other.GetPhotonView().viewID;
+                other.GetComponent<CharacterAbility>().MagicalDamage(magicalAp);
+                //this.photonView.RPC("RPCOnParticleCollision", PhotonTargets.All, otherID);
                 PhotonNetwork.Destroy(gameObject);
             }
             else if (other.tag == "Planet")
             {
-                if (other.GetComponent<PlanetAbility>().GetTeam() != team)
+                if (other.GetComponent<PlanetAbility>().GetTeam() != team && !isHitPlanet)
                 {
-                    this.photonView.RPC("RPCOnParticleCollision", PhotonTargets.All, other.name, team, magicalAp);
+                    isHitPlanet = true;
+                    Invoke("DisableHitPlanet", 0.5f);
+                    other.GetComponent<PlanetAbility>().MagicalDamage(magicalAp);
+                    this.photonView.RPC("RPCOnParticleCollision", PhotonTargets.All, other.name, team);
                     PhotonNetwork.Destroy(gameObject);
                 }
             }
         }
     }
 
-    [PunRPC]
-    private void RPCOnParticleCollision(int otherID, int _magicalAp)
-    {
-        PhotonView.Find(otherID).GetComponent<CharacterAbility>().MagicalDamage(_magicalAp);
-    }
+    //[PunRPC]
+    //private void RPCOnParticleCollision(int otherID)
+    //{
+    //    PhotonView.Find(otherID).GetComponent<CharacterAbility>().MagicalDamage(_magicalAp);
+    //}
 
     [PunRPC]
-    private void RPCOnParticleCollisiion(string otherName, PunTeams.Team _team, int _magicalAp)
+    private void RPCOnParticleCollisiion(string otherName, PunTeams.Team _team)
     {
         PlanetAbility other = GameObject.Find(otherName).GetComponent<PlanetAbility>();
-        other.MagicalDamage(_magicalAp);
+        //other.MagicalDamage(_magicalAp);
         if (other.GetHP() <= 0)
             other.SetTeam(_team);
 

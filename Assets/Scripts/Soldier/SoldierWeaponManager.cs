@@ -18,27 +18,40 @@ public class SoldierWeaponManager : Photon.PunBehaviour {
         //physicalAp = characterAbility.GetPAP();
         isHitPlanet = isHitPlayer = false;
     }
-	
+
+    private void DisableHitPlayer()
+    {
+        isHitPlayer = false;
+    }
+
+    private void DisableHitPlanet()
+    {
+        isHitPlanet = false;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (photonView.isMine)
         {
-            if (other.tag == "Player" && other.GetComponent<CharacterAbility>().GetTeam() != team && !isHitPlayer)
+            if ((animator.GetBool("isShortAttack") || animator.GetBool("isLongAttack")) && other.tag == "Player" && other.GetComponent<CharacterAbility>().GetTeam() != team && !isHitPlayer)
             {
                 isHitPlayer = true;
                 Invoke("DisableHitPlayer", 0.5f);
                 int otherID = other.gameObject.GetPhotonView().viewID;
-                this.photonView.RPC("RPCOnTriggerEnter", PhotonTargets.All, otherID, characterAbility.GetPAP());
+                other.GetComponent<CharacterAbility>().PhysicalDamage(characterAbility.GetPAP());
+                this.photonView.RPC("RPCOnTriggerEnter", PhotonTargets.All, otherID);
+                
             }
             else if (other.tag == "Planet")
             {
-                if (other.GetComponent<PlanetAbility>().GetTeam() != team && !isHitPlanet)
+                if ((animator.GetBool("isShortAttack") || animator.GetBool("isLongAttack")) && other.GetComponent<PlanetAbility>().GetTeam() != team && !isHitPlanet)
                 {
-                    isHitPlayer = true;
+                    isHitPlanet = true;
                     Invoke("DisableHitPlanet", 0.5f);
                     string otherName = other.gameObject.name;
-                    this.photonView.RPC("RPConTriggerEnter", PhotonTargets.All, other.gameObject.name, team, characterAbility.GetPAP());
+                    other.GetComponent<PlanetAbility>().PhysicalDamage(characterAbility.GetPAP());
+                    this.photonView.RPC("RPCOnTriggerEnter", PhotonTargets.All, other.gameObject.name, team);
+                    
                 }
             }
         }
@@ -46,35 +59,35 @@ public class SoldierWeaponManager : Photon.PunBehaviour {
     }
 
     [PunRPC]
-    void RPCOnTriggerEnter(int otherID, int physicalAp)
+    void RPCOnTriggerEnter(int otherID)
     {
         GameObject other = PhotonView.Find(otherID).gameObject;
 
         if (animator.GetBool("isShortAttack"))
         {
-            Debug.Log("Spear hit");
+            //Debug.Log("Spear hit");
 
             other.GetComponent<Rigidbody>().AddForce(transform.root.forward * 500);
-            other.GetComponent<CharacterAbility>().PhysicalDamage(physicalAp);
+            //other.GetComponent<CharacterAbility>().PhysicalDamage(physicalAp);
         }
         else if (animator.GetBool("isLongAttack"))
         {
             other.GetComponent<Rigidbody>().AddForce(transform.root.right * 500);
-            other.GetComponent<CharacterAbility>().PhysicalDamage(physicalAp);
+            //other.GetComponent<CharacterAbility>().PhysicalDamage(physicalAp);
         }
 
     }
 
     [PunRPC]
-    private void RPConTriggerEnter(string otherName, PunTeams.Team _team, int physicalAp)
+    private void RPCOnTriggerEnter(string otherName, PunTeams.Team _team)
     {
         if (animator.GetBool("isShortAttack") || animator.GetBool("isLongAttack"))
         {
-            Debug.Log("Grunt Planet Hit");
+            //Debug.Log("Soldier Planet Hit");
             GameObject other = GameObject.Find(otherName);
 
             PlanetAbility planetAbility = other.GetComponent<PlanetAbility>();
-            planetAbility.PhysicalDamage(physicalAp);
+            //planetAbility.PhysicalDamage(physicalAp);
             if (planetAbility.GetHP() <= 0)
             {
                 planetAbility.SetTeam(_team);

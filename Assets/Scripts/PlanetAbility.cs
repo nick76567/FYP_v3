@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlanetAbility : MonoBehaviour {
+public class PlanetAbility : Photon.PunBehaviour {
 
     public Image healthBar;
     public GameObject blueParticleRing;
@@ -40,21 +40,23 @@ public class PlanetAbility : MonoBehaviour {
     {
 
         int damage = (_ap - physicalDp);
-        hp = hp - ((damage < 0) ? 0 : damage);
-        healthBar.fillAmount = hp / startHP;
-        Debug.Log("Phy damage: " + (_ap - physicalDp));
+        this.photonView.RPC("RPCPhysicalDamage", PhotonTargets.All, ((damage < 0) ? 0 : damage));
+        //hp = hp - ((damage < 0) ? 0 : damage);
+        //healthBar.fillAmount = hp / startHP;
+        //Debug.Log("Phy damage: " + (_ap - physicalDp));
     }
 
     public void MagicalDamage(int _ap)
     {
 
         int damage = (_ap - magicalDp);
-        hp = hp - ((damage < 0) ? 0 : damage);
-        healthBar.fillAmount = hp / startHP;
+        this.photonView.RPC("RPCMagicalDamage", PhotonTargets.All, ((damage < 0) ? 0 : damage));
+        //hp = hp - ((damage < 0) ? 0 : damage);
+        //healthBar.fillAmount = hp / startHP;
 
-        Debug.Log("_ap " + _ap);
-        Debug.Log("magicalDp" + magicalDp);
-        Debug.Log("Mag damage: " + (_ap - magicalDp));
+        //Debug.Log("_ap " + _ap);
+        //Debug.Log("magicalDp" + magicalDp);
+        //Debug.Log("Mag damage: " + (_ap - magicalDp));
     }
 
     public void SetTeam(PunTeams.Team _team)
@@ -99,5 +101,25 @@ public class PlanetAbility : MonoBehaviour {
     public PunTeams.Team GetTeam()
     {
         return team;
+    }
+
+    [PunRPC]
+    public void RPCPhysicalDamage(int _ap)
+    {
+        hp = hp - _ap;
+        healthBar.fillAmount = hp / startHP;
+        if(photonView.isMine)
+            Debug.Log("Phy damage: " + _ap);
+    }
+
+    [PunRPC]
+    public void RPCMagicalDamage(int _ap)
+    {
+        hp = hp - _ap;
+        healthBar.fillAmount = hp / startHP;
+
+        Debug.Log("_ap " + _ap);
+        Debug.Log("magicalDp" + magicalDp);
+        Debug.Log("Mag damage: " + (_ap - magicalDp));
     }
 }
