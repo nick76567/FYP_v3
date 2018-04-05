@@ -11,7 +11,7 @@ public class CharacterAbility : Photon.PunBehaviour
     public enum Team { none, blue, red };
     public GameObject[] buttonList;
     public GameObject dieCanvas;
-    public Text weaponText, armorText;
+    public Text weaponText, armorText, coinsText;
 
     private float startHP;
     private int hp;
@@ -53,8 +53,11 @@ public class CharacterAbility : Photon.PunBehaviour
             {
                 button.SetActive(false);
             }
+
+            coinsText.enabled = false;
         }
         
+
         healthBar.fillAmount = 1;
     }
 
@@ -69,8 +72,10 @@ public class CharacterAbility : Photon.PunBehaviour
 
     private void AddCoins()
     {
-        coins += 2;
+        coins += 1;
+        coinsText.text = "coins: " + coins.ToString();
         Invoke("AddCoins", 1f);
+
     }
 
 
@@ -121,30 +126,13 @@ public class CharacterAbility : Photon.PunBehaviour
     {
         int damage = (_ap - physicalDp);
         this.photonView.RPC("RPCPhysicalDamage", PhotonTargets.All, ((damage < 0) ? 0 : damage));
-        //hp = hp - ((damage < 0) ? 0 : damage);
-        //healthBar.fillAmount = hp / startHP;
-        //Debug.Log("Phy damage: " + damage);
     }
 
     public void MagicalDamage(int _ap)
     {
         int damage = (_ap - magicalDp);
         this.photonView.RPC("RPCMagicalDamage", PhotonTargets.All, ((damage < 0) ? 0 : damage));
-        //hp = hp - ((damage < 0) ? 0 : damage);
-        //healthBar.fillAmount = hp / startHP;
-        //Debug.Log("_ap " + _ap);
-        //Debug.Log("magicalDp" + magicalDp);
-        //Debug.Log("Mag damage: " + damage);
     }
-
-    //public void Destroy()
-    //{
-    //    if (photonView.isMine)
-    //    {
-    //        PhotonNetwork.Destroy(gameObject);
-    //    }
-    //}
-
 
     public void SetMP(int _mp)
     {
@@ -200,11 +188,13 @@ public class CharacterAbility : Photon.PunBehaviour
     public void AddCoins(int _coins)
     {
         coins += _coins;
+        coinsText.text = "coins: " + coins.ToString();
     }
 
     public void ReduceCoins(int _cost)
     {
         coins -= _cost;
+        coinsText.text = "coins: " + coins.ToString();
     }
 
     public void EquipWeapon(Weapon weapon)

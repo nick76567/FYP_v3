@@ -9,6 +9,7 @@ public class FireWallManager : Photon.PunBehaviour
     private int magicalAp;
     private PunTeams.Team team;
     private bool isHitPlayer, isHitPlanet;
+    private int viewID;
 
 
     // Use this for initialization
@@ -21,7 +22,6 @@ public class FireWallManager : Photon.PunBehaviour
 
         initTime = Time.timeSinceLevelLoad;
         isHitPlanet = isHitPlayer = false;
-        //magicalAp = 60;
     }
 
     // Update is called once per frame
@@ -45,8 +45,9 @@ public class FireWallManager : Photon.PunBehaviour
         isHitPlanet = false;
     }
 
-    public void SetMagicalAp(int _magicalAp)
+    public void InitFireWall(int _magicalAp, int _viewID)
     {
+        viewID = _viewID;
         magicalAp = _magicalAp;
     }
 
@@ -65,7 +66,7 @@ public class FireWallManager : Photon.PunBehaviour
 
                 if (other.GetComponent<CharacterAbility>().GetHP() <= 0)
                 {
-                    PhotonView.Find(photonView.viewID).GetComponent<CharacterAbility>().AddCoins(CharacterAbility.REWARD);
+                    PhotonView.Find(viewID).GetComponent<CharacterAbility>().AddCoins(CharacterAbility.REWARD);
                 }
                 PhotonNetwork.Destroy(gameObject);
             }

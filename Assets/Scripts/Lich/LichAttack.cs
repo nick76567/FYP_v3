@@ -40,36 +40,28 @@ public class LichAttack : Photon.PunBehaviour{
             {
                 Debug.Log("Lich fire ball");
                 isLaunchFireBall = true;
-                /*
-                animator.SetBool("isShortAttack", true);
-                Invoke("LaunchFireBall", 0.5f);
-                */
+
                 GameObject lauchFireBall = PhotonNetwork.Instantiate("FireBall", transform.position + (transform.forward * 2) + new Vector3(0, 2, 0), transform.rotation, 0);
                 int id = lauchFireBall.GetPhotonView().viewID;
-                lauchFireBall.GetComponent<FireBallManager>().SetMagicalAp(characterAbility.GetMAP());
+                lauchFireBall.GetComponent<FireBallManager>().InitFireBall(characterAbility.GetMAP(), this.photonView.viewID);
                 this.photonView.RPC("RPCLaunchFireBall", PhotonTargets.All, id);
                 isStopLaunchFireBall = false;
                 
             }
             else if( !isStopLaunchFireBall &&  !isLaunchFireBall)
             {
-                //animator.SetBool("isShortAttack", false);
                 this.photonView.RPC("RPCStopLaunchFireBall", PhotonTargets.All);
-                isStopLaunchFireBall = true;
-                
+                isStopLaunchFireBall = true;            
             }
 
             if (Input.GetKey(KeyCode.K) && !isLaunchFireWall && !isLaunchFireBall)
             {
                 Debug.Log("Lich fire wall");
                 isLaunchFireWall = true;
-                /*
-                animator.SetBool("isLongAttack", true);
-                Invoke("LaunchFireWall", 0.5f);
-                */
+
                 GameObject lauchFireWall = PhotonNetwork.Instantiate("FireWall", transform.position + (transform.forward * 2), transform.rotation, 0);
                 int id = lauchFireWall.GetPhotonView().viewID;
-                lauchFireWall.GetComponent<FireWallManager>().SetMagicalAp(characterAbility.GetMAP());
+                lauchFireWall.GetComponent<FireWallManager>().InitFireWall(characterAbility.GetMAP(), this.photonView.viewID);
 
                 this.photonView.RPC("RPCLaunchFireWall", PhotonTargets.All, id);
                 isStopLaunchFireWall = false;
@@ -77,7 +69,6 @@ public class LichAttack : Photon.PunBehaviour{
             }
             else if( !isStopLaunchFireWall &&  !isLaunchFireWall)
             {
-                //animator.SetBool("isLongAttack", false);
                 this.photonView.RPC("RPCStopLaunchFireWall", PhotonTargets.All);
                 isStopLaunchFireWall = true;
                 
@@ -99,37 +90,14 @@ public class LichAttack : Photon.PunBehaviour{
         
     }
 
-/*    
-    private void LaunchFireBall()
-    {
-        //isLaunchFireBall = true;
-        animator.SetBool("isShortAttack", true);
 
-        Instantiate(fireBall, transform.position + new Vector3(0, 2, 0), transform.rotation).GetComponent<Rigidbody>().AddForce(transform.forward * 1000);
-
-        Invoke("ChangeLaunchFireBallState", 1.0f);
-    }
-
- 
-    private void LaunchFireWall()
-    {
-        //isLaunchFireWall = true;
-        animator.SetBool("isLongAttack", true);
-       
-        Instantiate(fireWall, transform.position + (transform.forward * 2), transform.rotation) ;
-        //fireWall2.Launch();
-        Invoke("ChangeLaunchFireWallState", 2.0f);
-    }
-*/
     [PunRPC]
     private void RPCLaunchFireBall( int id)
     {
-        //isLaunchFireBall = true;
         animator.SetBool("isShortAttack", true);
 
         GameObject tmp = PhotonView.Find(id).gameObject;
         tmp.GetComponent<Rigidbody>().AddForce(transform.forward * 700);
-        //tmp.GetComponent<FireBallManager>().SetTeam(team);
 
         Invoke("ChangeLaunchFireBallState", 1.0f);
     }
@@ -137,15 +105,11 @@ public class LichAttack : Photon.PunBehaviour{
     [PunRPC]
     private void RPCLaunchFireWall(int id)
     {
-        //isLaunchFireWall = true;
         animator.SetBool("isLongAttack", true);
 
         GameObject tmp = PhotonView.Find(id).gameObject;
-        //tmp.GetComponent<FireWallManager>().SetTeam(team);
-       
-        
 
-        //fireWall2.Launch();
+
         Invoke("ChangeLaunchFireWallState", 2.0f);
     }
 
