@@ -60,8 +60,8 @@ public class CharacterMovement : Photon.PunBehaviour
         if (photonView.isMine)
         {
             // Store the value of both input axes.
-            movementInputValue = Input.GetAxis("Vertical");
-            turnInputValue = Input.GetAxis("Horizontal");
+            movementInputValue = SimpleInput.GetAxis("Vertical");
+            turnInputValue = SimpleInput.GetAxis("Horizontal");
 
             if (Input.GetKey(KeyCode.LeftShift))
             {
