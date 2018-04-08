@@ -28,6 +28,11 @@ public class LobbyManager : Photon.PunBehaviour {
 		
 	}
 
+	public void Back() {
+	
+		SceneManager.LoadScene ("New Menu");
+	}
+
     private void DisableUI(string ui)
     {
         switch (ui)
