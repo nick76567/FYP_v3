@@ -185,6 +185,6 @@ public class ShopManager : Photon.PunBehaviour {
 
     public void Return()
     {
-        SceneManager.LoadScene("Lobby", LoadSceneMode.Single);
+        SceneManager.LoadScene("New Lobby", LoadSceneMode.Single);
     }
 }

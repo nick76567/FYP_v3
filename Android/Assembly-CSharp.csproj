@@ -46,6 +46,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Models\Music\DontDestroyAudio.cs" />
+     <Compile Include="Assets\Music\DontDestroyAudio.cs" />
      <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\CustomTypes.cs" />
      <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Enums.cs" />
      <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Extensions.cs" />
@@ -128,7 +130,6 @@
      <Compile Include="Assets\Scripts\LoadSceneManager.cs" />
      <Compile Include="Assets\Scripts\LobbyManager.cs" />
      <Compile Include="Assets\Scripts\MenuManager.cs" />
-     <Compile Include="Assets\Scripts\MusicChangeManager.cs" />
      <Compile Include="Assets\Scripts\Planet\PlanetForestManager.cs" />
      <Compile Include="Assets\Scripts\Planet\PlanetIceManager.cs" />
      <Compile Include="Assets\Scripts\Planet\PlanetOrangeManager.cs" />
@@ -249,6 +250,7 @@
      <None Include="Assets\Vuforia\Shaders\VideoBackground.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
+     <None Include="Assets\Icons Package\_Icon Package Read Me.txt" />
      <None Include="Assets\Unity UI\Textures and Sprites\SF UI\Background\LICENSE.txt" />
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald Bold - OFL.txt" />
      <None Include="Assets\license_3rdpartynotice.txt" />
