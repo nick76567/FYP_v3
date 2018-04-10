@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using UnityEngine.EventSystems;
 
 public class SoldierAttack : Photon.PunBehaviour {
 
@@ -16,6 +17,7 @@ public class SoldierAttack : Photon.PunBehaviour {
         PASpeed = characterAbility.GetpSpeed();
     }
 
+	//public void OnPointerDown(PointerEventData eventData)
     // Update is called once per frame
     void Update()
     {

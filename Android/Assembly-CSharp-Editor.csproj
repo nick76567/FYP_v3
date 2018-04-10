@@ -86,11 +86,14 @@
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
      <None Include="Assets\readme_SDK.txt" />
      <None Include="Assets\Plugins\Photon3Unity3D.xml" />
+     <None Include="Assets\Unity UI\Fonts\Jupiter\LICENSE.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\Plugins\release_history.txt" />
      <None Include="Assets\Vuforia\Shaders\VideoBackground.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
+     <None Include="Assets\Icons Package\_Icon Package Read Me.txt" />
+     <None Include="Assets\Unity UI\Textures and Sprites\SF UI\Background\LICENSE.txt" />
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald Bold - OFL.txt" />
      <None Include="Assets\license_3rdpartynotice.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
@@ -103,6 +106,7 @@
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\LiberationSans - OFL.txt" />
+     <None Include="Assets\Unity UI\Materials\UI-Default-No-Alpha.shader" />
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
      <None Include="Assets\save.txt" />
      <None Include="Assets\Vuforia\Shaders\ClippingMask.shader" />
@@ -112,7 +116,7 @@
      <None Include="Assets\Vuforia\Shaders\Text3D.shader" />
      <None Include="Assets\Photon Unity Networking\changelog.txt" />
  <Reference Include="Assembly-UnityScript-Editor-firstpass">
- <HintPath>/Users/c.h.sun/Desktop/FYP_v3/Android/Library/ScriptAssemblies/Assembly-UnityScript-Editor-firstpass.dll</HintPath>
+ <HintPath>/Users/user/Documents/FYP_v3/Android/Library/ScriptAssemblies/Assembly-UnityScript-Editor-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
@@ -172,25 +176,25 @@
  <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="Newtonsoft.Json">
- <HintPath>/Users/c.h.sun/Desktop/FYP_v3/Android/Assets/Photon Unity Networking/Editor/PhotonNetwork/Newtonsoft.Json.dll</HintPath>
+ <HintPath>/Users/user/Documents/FYP_v3/Android/Assets/Photon Unity Networking/Editor/PhotonNetwork/Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="Photon3Unity3D">
- <HintPath>/Users/c.h.sun/Desktop/FYP_v3/Android/Assets/Plugins/Photon3Unity3D.dll</HintPath>
+ <HintPath>/Users/user/Documents/FYP_v3/Android/Assets/Plugins/Photon3Unity3D.dll</HintPath>
  </Reference>
  <Reference Include="websocket-sharp">
- <HintPath>/Users/c.h.sun/Desktop/FYP_v3/Android/Assets/Plugins/WebSocket/websocket-sharp.dll</HintPath>
- </Reference>
- <Reference Include="Vuforia.UnityExtensions.Editor">
- <HintPath>/Users/c.h.sun/Desktop/FYP_v3/Android/Assets/Vuforia/Editor/Scripts/Vuforia.UnityExtensions.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Vuforia.UnityExtensions">
- <HintPath>/Users/c.h.sun/Desktop/FYP_v3/Android/Assets/Vuforia/Scripts/Internal/Vuforia.UnityExtensions.dll</HintPath>
- </Reference>
- <Reference Include="TextMeshPro-5.6-1.0.56-Runtime">
- <HintPath>/Users/c.h.sun/Desktop/FYP_v3/Android/Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-5.6-1.0.56-Runtime.dll</HintPath>
+ <HintPath>/Users/user/Documents/FYP_v3/Android/Assets/Plugins/WebSocket/websocket-sharp.dll</HintPath>
  </Reference>
  <Reference Include="TextMeshPro-5.6-1.0.56-Editor">
- <HintPath>/Users/c.h.sun/Desktop/FYP_v3/Android/Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-5.6-1.0.56-Editor.dll</HintPath>
+ <HintPath>/Users/user/Documents/FYP_v3/Android/Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-5.6-1.0.56-Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="TextMeshPro-5.6-1.0.56-Runtime">
+ <HintPath>/Users/user/Documents/FYP_v3/Android/Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-5.6-1.0.56-Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="Vuforia.UnityExtensions.Editor">
+ <HintPath>/Users/user/Documents/FYP_v3/Android/Assets/Vuforia/Editor/Scripts/Vuforia.UnityExtensions.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Vuforia.UnityExtensions">
+ <HintPath>/Users/user/Documents/FYP_v3/Android/Assets/Vuforia/Scripts/Internal/Vuforia.UnityExtensions.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
