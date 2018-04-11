@@ -12,6 +12,7 @@ public class GolemAttack : Photon.PunBehaviour {
     private CharacterAbility characterAbility;
     private double PASpeed, MASpeed; 
 
+
 	// Use this for initialization
 	void Start () {
         isLaunchDustRing = false;
