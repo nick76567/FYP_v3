@@ -28,7 +28,7 @@ public class DontDestroyAudio : MonoBehaviour {
     }
 
 	void Update () {
-		myMusic.volume = Volume.value;
+	//	myMusic.volume = Volume.value;
 	}
 
 }

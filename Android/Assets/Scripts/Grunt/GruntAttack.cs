@@ -7,19 +7,34 @@ public class GruntAttack : Photon.PunBehaviour {
     private Animator animator;
     private CharacterAbility characterAbility;
     private double PASpeed, MASpeed;
+	private bool isShortAttack, isLongAttack;
 
     // Use this for initialization
     void Start () {
+		isShortAttack = isLongAttack = false;
         animator = GetComponent<Animator>();
         characterAbility = GetComponent<CharacterAbility>();
         PASpeed = characterAbility.GetpSpeed();
     }
-	
+
+	public void DisableShortAttack(){
+		animator.SetBool("isShortAttack", false);
+		isShortAttack = false;
+		Debug.Log ("DisableShortAttack is called");
+	}
+
+	public void DisableLongAttack(){
+		animator.SetBool("isLongAttack", false);
+		isLongAttack = false;
+		Debug.Log ("DisableSLongAttack is called");
+	}
+
 	// Update is called once per frame
 	void Update () {
         if (photonView.isMine)
         {
-            if (Input.GetKey(KeyCode.J))
+            //if (Input.GetKey(KeyCode.J))
+			if (isShortAttack)
             {
                 if (PASpeed != characterAbility.GetpSpeed())
                 {
@@ -32,7 +47,8 @@ public class GruntAttack : Photon.PunBehaviour {
                 animator.SetBool("isShortAttack", false);
             }
 
-            if (Input.GetKey(KeyCode.K))
+           // if (Input.GetKey(KeyCode.K))
+			if (isLongAttack)
             {
                 animator.SetBool("isLongAttack", true);
             }
@@ -42,6 +58,18 @@ public class GruntAttack : Photon.PunBehaviour {
             }
         }
     }
+
+	public void ShortAttack()
+	{
+		isShortAttack = true;
+		Debug.Log ("isShortAttack is called " + isShortAttack );
+	}
+
+	public void LongAttack()
+	{
+		isLongAttack = true;
+		Debug.Log ("isLongAttack is called " + isLongAttack);
+	}
 
     [PunRPC]
     private void PRCSetpSpeed(float _pSpeed)
