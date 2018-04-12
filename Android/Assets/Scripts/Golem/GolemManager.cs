@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class GolemManager : Photon.PunBehaviour {
@@ -11,6 +12,7 @@ public class GolemManager : Photon.PunBehaviour {
     private CharacterAbility characterAbility;
     private AudioListener audioListener;
     private Camera otherCamera;
+
 
     private void Awake()
     {
@@ -32,6 +34,7 @@ public class GolemManager : Photon.PunBehaviour {
             otherCamera = GetComponentInChildren<Camera>();
             audioListener.enabled = false;
             otherCamera.enabled = false;
+
             //this.tag = "Player";
         }
 

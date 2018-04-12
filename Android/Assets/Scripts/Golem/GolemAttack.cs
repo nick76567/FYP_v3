@@ -12,9 +12,11 @@ public class GolemAttack : Photon.PunBehaviour {
     private CharacterAbility characterAbility;
     private double PASpeed, MASpeed; 
 
+	private bool isShortAttack, isLongAttack;
+
 	// Use this for initialization
 	void Start () {
-        isLaunchDustRing = false;
+        isShortAttack = isLongAttack = isLaunchDustRing = false;
         isNotLaunchDustRing = true;
 
         animator = GetComponent<Animator>();
@@ -25,26 +27,51 @@ public class GolemAttack : Photon.PunBehaviour {
         PASpeed = characterAbility.GetpSpeed();
         MASpeed = characterAbility.GetmSpeed();
 	}
+
+	public void DisableShortAttack(){
+		animator.SetBool("isShortAttack", false);
+		isShortAttack = false;
+		Debug.Log ("DisableShortAttack is called");
+	}
+
+	public void DisableLongAttack(){
+		animator.SetBool("isLongAttack", false);
+		isLongAttack = false;
+		Debug.Log ("DisableSLongAttack is called");
+	}
 	
 	// Update is called once per frame
 	void Update () {
         if (photonView.isMine)
         {
-            if (Input.GetKey(KeyCode.J))
+            //if (Input.GetKey(KeyCode.J))
+//			Debug.Log("isShortAttack: " + isShortAttack);
+//			Debug.Log ("animator short attack " + animator.GetBool ("isShortAttack"));
+			if(isShortAttack && !animator.GetBool("isShortAttack"))
             {
+
+				Debug.Log ("attack ");
                 if(PASpeed != characterAbility.GetpSpeed())
                 {
                     this.photonView.RPC("PRCSetpSpeed", PhotonTargets.All, (float)characterAbility.GetpSpeed()); 
                 }
                 animator.SetBool("isShortAttack", true);
+
+				//isShortAttack = false;
+
+				//Invoke ("DisableShortAttack", 0.2f);
+
+
             }
             else
             {
-                animator.SetBool("isShortAttack", false);
+                //animator.SetBool("isShortAttack", false);
             }
 
-            if (Input.GetKey(KeyCode.K) && !isLaunchDustRing)
+          //  if (Input.GetKey(KeyCode.K) && !isLaunchDustRing)
+			if (isLongAttack && !animator.GetBool("isLongAttack") && !isLaunchDustRing)
             {
+				Debug.Log ("long attack");
                 if (MASpeed != characterAbility.GetmSpeed())
                 {
                     this.photonView.RPC("PRCSetmSpeed", PhotonTargets.All, (float)characterAbility.GetmSpeed());
@@ -83,6 +110,17 @@ public class GolemAttack : Photon.PunBehaviour {
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionY;
     }
 
+	public void ShortAttack()
+	{
+		isShortAttack = true;
+		Debug.Log ("isShortAttack is called " + isShortAttack );
+	}
+
+	public void LongAttack()
+	{
+		isLongAttack = true;
+		Debug.Log ("isLongAttack is called " + isLongAttack);
+	}
     [PunRPC]
     private void RPCLaunchDustRing()
     {

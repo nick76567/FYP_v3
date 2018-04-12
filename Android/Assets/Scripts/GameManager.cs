@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour {
     private enum Planet { Orange, Ice, Forest};
     private float startTime;
     private bool isStartEndGame, isEndGame;
-    //private GameObject[] players;
+    private GameObject[] players;
     private PlayerData playerData;
 
     public PlanetAbility[] planets;
@@ -15,12 +15,14 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         isEndGame = isStartEndGame = false;
-        //players = GameObject.FindGameObjectsWithTag("Player");
+        players = GameObject.FindGameObjectsWithTag("Player");
         playerData = GameObject.Find("PlayerData").GetComponent<PlayerData>();
         GameObject character = PhotonNetwork.Instantiate(charactersName[(int)playerData.GetSelectedCharacter()], new Vector3(Random.Range(0, 50), 0, 0), Quaternion.identity, 0);
         character.GetComponent<CharacterAbility>().EquipWeapon(playerData.GetWeapon());
         character.GetComponent<CharacterAbility>().EquipArmor(playerData.GetArmor());
         endGameCanvas.SetActive(false);
+
+        //DisablePlayers();
     }
 	
 
@@ -31,6 +33,7 @@ public class GameManager : MonoBehaviour {
         {
             if (PhotonNetwork.room.PlayerCount != PhotonNetwork.room.MaxPlayers)
             {
+                PhotonNetwork.LoadLevel("Room");
                 //do sth
             }
         }
@@ -76,4 +79,38 @@ public class GameManager : MonoBehaviour {
         
 
 	}
+
+    private void DisablePlayers()
+    {
+        Debug.Log("DisablePlayers is called");
+        players = GameObject.FindGameObjectsWithTag("Player");
+        if (players.Length < PhotonNetwork.room.MaxPlayers)
+        {
+            Debug.Log("less Players num " + players.Length);
+            foreach (GameObject player in players)
+            {
+                player.SetActive(false);
+                
+            }
+
+            Invoke("DisablePlayers", 0.3f);
+
+        }
+        else
+        {
+            Debug.Log("equal Players num " + players.Length);
+            EnablePlayers();
+        }
+    }
+
+    private void EnablePlayers()
+    {
+        Debug.Log("EnablePlayers");
+
+
+        foreach(GameObject player in players)
+        {
+            player.SetActive(true);
+        }
+    }
 }
