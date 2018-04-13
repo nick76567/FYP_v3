@@ -1,0 +1,139 @@
+Initialize engine version: 5.6.3f1 (d3101c3b8468)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GT 750M (ID=0xfe4)
+    Vendor:   NVIDIA
+    VRAM:     4029 MB
+    Driver:   10.18.13.5946
+Begin MonoManager ReloadAssembly
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\Android\FYP_v3_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading F:\HKUST\Fall_2018\FYP\FYP_v3\Android\FYP_v3_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\Android\FYP_v3_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading F:\HKUST\Fall_2018\FYP\FYP_v3\Android\FYP_v3_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\Android\FYP_v3_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading F:\HKUST\Fall_2018\FYP\FYP_v3\Android\FYP_v3_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\Android\FYP_v3_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading F:\HKUST\Fall_2018\FYP\FYP_v3\Android\FYP_v3_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\Android\FYP_v3_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading F:\HKUST\Fall_2018\FYP\FYP_v3\Android\FYP_v3_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\Android\FYP_v3_Data\Managed\Photon3Unity3D.dll (this message is harmless)
+Loading F:\HKUST\Fall_2018\FYP\FYP_v3\Android\FYP_v3_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\Android\FYP_v3_Data\Managed\Vuforia.UnityExtensions.dll (this message is harmless)
+Loading F:\HKUST\Fall_2018\FYP\FYP_v3\Android\FYP_v3_Data\Managed\Vuforia.UnityExtensions.dll into Unity Child Domain
+- Completed reload, in  0.018 seconds
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\Android\FYP_v3_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\Android\FYP_v3_Data\Managed\System.dll (this message is harmless)
+OnLevelWasLoaded was found on VuforiaAbstractBehaviour
+This message has been deprecated and will be removed in a later version of Unity.
+Add a delegate to SceneManager.sceneLoaded instead to get notifications after scene loading has completed
+ 
+(Filename:  Line: 376)
+
+OnLevelWasLoaded was found on VuforiaBehaviour
+This message has been deprecated and will be removed in a later version of Unity.
+Add a delegate to SceneManager.sceneLoaded instead to get notifications after scene loading has completed
+ 
+(Filename:  Line: 376)
+
+desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
+<RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.863003 ms
+Vuforia initialization successful
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 20cc -> priority: 1 
+  Thread -> id: 2260 -> priority: 1 
+  Thread -> id: 18c0 -> priority: 1 
+  Thread -> id: 4d0 -> priority: 1 
+connet to master
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.894061 ms
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 680.
+Total: 0.544402 ms (FindLiveObjects: 0.050463 ms CreateObjectMapping: 0.020527 ms MarkObjects: 0.460154 ms  DeleteObjects: 0.012401 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.549106 ms
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 921.
+Total: 0.567067 ms (FindLiveObjects: 0.052601 ms CreateObjectMapping: 0.018816 ms MarkObjects: 0.476833 ms  DeleteObjects: 0.017961 ms)
+
+PlayerData selectedCharacter Golem
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+PlayerData selectedWeapon AXE
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+PlayerData selectedArmor ARMOUR
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+RoomManager Red Team 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+RoomManager Blue Team 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+RoomManager changeBlueTeam is called none
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+RoomManager Red Team 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+RoomManager Blue Team 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.130714 ms
+
+Unloading 51 unused Assets to reduce memory usage. Loaded Objects now: 1322.
+Total: 0.794579 ms (FindLiveObjects: 0.077832 ms CreateObjectMapping: 0.032073 ms MarkObjects: 0.537132 ms  DeleteObjects: 0.146685 ms)
+
+WeaponBuff 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+WeaponBuff 150
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+WeaponBuff 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+equipArmor type ARMOUR
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+WeaponBuff 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+WeaponBuff 150
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+WeaponBuff 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+equipArmor type ARMOUR
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
