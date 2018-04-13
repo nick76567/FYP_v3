@@ -13,7 +13,6 @@ public class GruntManager : Photon.PunBehaviour {
 
     private void Awake()
     {
-        this.gameObject.SetActive(false);
         characterAbility = GetComponent<CharacterAbility>();
         characterAbility.Init(HP, MP, PAP, MAP, PDP, MDP, WALK);
     }
