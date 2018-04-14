@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlanetIceManager : Photon.PunBehaviour
 {
 
-    private const int HP = 1, PDP = 10, MDP = 10;
+    private const int HP = 600, PDP = 10, MDP = 30;
     private PlanetAbility planetAbility;
 
     // Use this for initialization
