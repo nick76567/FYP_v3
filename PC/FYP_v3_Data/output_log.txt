@@ -21,7 +21,7 @@ Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\PC\FYP_v3_Data\Managed\Photon3U
 Loading F:\HKUST\Fall_2018\FYP\FYP_v3\PC\FYP_v3_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
 Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\PC\FYP_v3_Data\Managed\Vuforia.UnityExtensions.dll (this message is harmless)
 Loading F:\HKUST\Fall_2018\FYP\FYP_v3\PC\FYP_v3_Data\Managed\Vuforia.UnityExtensions.dll into Unity Child Domain
-- Completed reload, in  0.025 seconds
+- Completed reload, in  0.019 seconds
 Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\PC\FYP_v3_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: F:\HKUST\Fall_2018\FYP\FYP_v3\PC\FYP_v3_Data\Managed\System.dll (this message is harmless)
 OnLevelWasLoaded was found on VuforiaAbstractBehaviour
@@ -41,27 +41,31 @@ desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 2.128001 ms
+UnloadTime: 0.863004 ms
 Vuforia initialization successful
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Setting up 4 worker threads for Enlighten.
-  Thread -> id: 281c -> priority: 1 
-  Thread -> id: 2550 -> priority: 1 
-  Thread -> id: 18e8 -> priority: 1 
-  Thread -> id: 25fc -> priority: 1 
+  Thread -> id: 17b8 -> priority: 1 
+  Thread -> id: 1298 -> priority: 1 
+  Thread -> id: 5c8 -> priority: 1 
+  Thread -> id: d48 -> priority: 1 
+connet to master
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 7.779009 ms
+UnloadTime: 4.554079 ms
 
 Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 680.
-Total: 0.626939 ms (FindLiveObjects: 0.049180 ms CreateObjectMapping: 0.026086 ms MarkObjects: 0.537132 ms  DeleteObjects: 0.013684 ms)
+Total: 0.463576 ms (FindLiveObjects: 0.044903 ms CreateObjectMapping: 0.018389 ms MarkObjects: 0.388309 ms  DeleteObjects: 0.011118 ms)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.749675 ms
+UnloadTime: 0.574765 ms
 
 Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 921.
-Total: 1.002418 ms (FindLiveObjects: 0.096221 ms CreateObjectMapping: 0.079971 ms MarkObjects: 0.801421 ms  DeleteObjects: 0.023520 ms)
+Total: 0.512328 ms (FindLiveObjects: 0.051318 ms CreateObjectMapping: 0.021810 ms MarkObjects: 0.404987 ms  DeleteObjects: 0.033356 ms)
 
 PlayerData selectedCharacter Golem
  
@@ -88,10 +92,10 @@ RoomManager Blue Team 1
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.811966 ms
+UnloadTime: 1.276544 ms
 
 Unloading 51 unused Assets to reduce memory usage. Loaded Objects now: 1322.
-Total: 0.884386 ms (FindLiveObjects: 0.074839 ms CreateObjectMapping: 0.043192 ms MarkObjects: 0.553383 ms  DeleteObjects: 0.212115 ms)
+Total: 0.963075 ms (FindLiveObjects: 0.121881 ms CreateObjectMapping: 0.040199 ms MarkObjects: 0.612827 ms  DeleteObjects: 0.186456 ms)
 
 WeaponBuff 0
  
@@ -109,11 +113,6 @@ equipArmor type ARMOUR
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-NullReferenceException: Object reference not set to an instance of an object
-  at GolemWeaponManager.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
 WeaponBuff 0
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
@@ -127,6 +126,38 @@ WeaponBuff 1.013
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 equipArmor type ARMOUR
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Received RPC "RPCPhysicalDamage" for viewID 107 but this PhotonView does not exist! Was remote PV. Remote called. By: 1 Maybe GO was destroyed but RPC not cleaned up.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Received RPC "RPCPhysicalDamage" for viewID 107 but this PhotonView does not exist! Was remote PV. Remote called. By: 1 Maybe GO was destroyed but RPC not cleaned up.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Received RPC "RPCPhysicalDamage" for viewID 107 but this PhotonView does not exist! Was remote PV. Remote called. By: 1 Maybe GO was destroyed but RPC not cleaned up.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Phy damage: 24
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Phy damage: 24
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Phy damage: 24
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Phy damage: 24
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Phy damage: 24
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
