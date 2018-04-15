@@ -20,7 +20,6 @@ public class LobbyManager : Photon.PunBehaviour {
 	// Use this for initialization
 	void Start () {
         DisableUI("All");
-        //SceneManager.sceneLoaded += this.OnLoadCallBack;
 	}
 	
 	// Update is called once per frame
@@ -87,19 +86,7 @@ public class LobbyManager : Photon.PunBehaviour {
     {
         SceneManager.LoadScene(SHOP_SCENE);
     }
-/*
-    private void OnLoadCallBack(Scene scene, LoadSceneMode sceneMode)
-    {
-        Debug.Log("LEVEL " + scene.name);
 
-        if(scene.name == "Room" && !GameObject.Find("PlayerData").GetComponent<PlayerData>().GetIsInRoom())
-        {
-            GameObject.Find("PlayerData").GetComponent<PlayerData>().SetIsInRoom(true);
-            Debug.Log("Player is instantiate");
-            PhotonNetwork.Instantiate("Player", new Vector3(), Quaternion.identity, 0);
-        }
-    }
-*/
     public override void OnCreatedRoom()
     {
         Debug.Log("Craete Room");

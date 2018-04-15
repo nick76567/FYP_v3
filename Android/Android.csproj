@@ -204,7 +204,6 @@
     <Compile Include="Assets\Scripts\Weapon\Staff.cs" />
     <Compile Include="Assets\Scripts\Weapon\Sword.cs" />
     <Compile Include="Assets\Scripts\Weapon\WeaponAbililty.cs" />
-    <Compile Include="Assets\Scripts\noUse_PlayerManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />

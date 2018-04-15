@@ -30,7 +30,6 @@ public class LichManager : Photon.MonoBehaviour {
             otherCamera = GetComponentInChildren<Camera>();
             audioListener.enabled = false;
             otherCamera.enabled = false;
-            //this.tag = "Enemy";
         }
 
         GetComponent<CharacterMovement>().SetMovement(WALK, RUN);
@@ -39,9 +38,6 @@ public class LichManager : Photon.MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        //if (characterAbility.GetHP() <= 0)
-        //{
-        //    Debug.Log("Lich is dead");
-        //}
+
     }
 }

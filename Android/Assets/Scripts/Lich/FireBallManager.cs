@@ -22,7 +22,6 @@ public class FireBallManager : Photon.PunBehaviour {
 
         initTime = Time.timeSinceLevelLoad;
         isHitPlanet = isHitPlayer = false;
-        //magicalAp = 100;
     }
 	
 	// Update is called once per frame
@@ -98,7 +97,6 @@ public class FireBallManager : Photon.PunBehaviour {
     private void RPCOnParticleCollision(int otherID)
     {
         GameObject other = PhotonView.Find(otherID).gameObject;
-        //other.GetComponent<CharacterAbility>().MagicalDamage(_magicalAp);
         other.GetComponent<Rigidbody>().AddForce(transform.forward * 500);
         
 
@@ -108,7 +106,6 @@ public class FireBallManager : Photon.PunBehaviour {
     private void RPCOnParticleCollision(string otherName, PunTeams.Team _team)
     {
         PlanetAbility other = GameObject.Find(otherName).GetComponent<PlanetAbility>();
-        //other.MagicalDamage(_magicalAp);
         if (other.GetHP() <= 0)
             other.SetTeam(_team);
     }

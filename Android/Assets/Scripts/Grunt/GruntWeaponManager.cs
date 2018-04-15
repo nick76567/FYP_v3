@@ -13,20 +13,9 @@ public class GruntWeaponManager : Photon.PunBehaviour {
     // Use this for initialization
     void Start () {
         characterAbility = GetComponentInParent<CharacterAbility>();
-        //physicalAp = characterAbility.GetPAP();
         team = characterAbility.GetTeam();
         animator = this.GetComponentInParent<Animator>();
-        //this.transform.localScale = new Vector3(1.8f, 1.8f, 1.8f);
-        
 	}
-
-    //private void OnEnable()
-    //{
-    //    this.transform.localScale = new Vector3(1.8f, 1.8f, 1.8f);
-    //    Debug.Log("Grunt is enable");
-    //}
-
-    
 
     // Update is called once per frame
     void Update () {
@@ -84,14 +73,11 @@ public class GruntWeaponManager : Photon.PunBehaviour {
 
         if (animator.GetBool("isShortAttack"))
         {
-
             other.GetComponent<Rigidbody>().AddForce(transform.root.forward * 500);
-            //other.GetComponent<CharacterAbility>().PhysicalDamage(physicalAp);
         }
         else if (animator.GetBool("isLongAttack"))
         {
             other.GetComponent<Rigidbody>().AddForce(transform.root.right * 500);
-            //other.GetComponent<CharacterAbility>().PhysicalDamage(physicalAp);
         }
 
     }
@@ -105,7 +91,7 @@ public class GruntWeaponManager : Photon.PunBehaviour {
             GameObject other = GameObject.Find(otherName);
 
             PlanetAbility planetAbility = other.GetComponent<PlanetAbility>();
-            //planetAbility.PhysicalDamage(physicalAp);
+
             if (planetAbility.GetHP() <= 0)
             {
                 planetAbility.SetTeam(_team);

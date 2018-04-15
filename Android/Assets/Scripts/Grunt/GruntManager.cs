@@ -30,7 +30,6 @@ public class GruntManager : Photon.PunBehaviour {
             otherCamera = GetComponentInChildren<Camera>();
             audioListener.enabled = false;
             otherCamera.enabled = false;
-            //this.tag = "Enemy";
         }
 
         GetComponent<CharacterMovement>().SetMovement(WALK, RUN);
@@ -39,10 +38,7 @@ public class GruntManager : Photon.PunBehaviour {
     // Update is called once per frame
     void Update()
     {
-        //if (characterAbility.GetHP() <= 0)
-        //{
-        //    Debug.Log("Grunt is dead");
-        //}
+
     }
 
 

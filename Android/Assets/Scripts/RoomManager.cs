@@ -21,7 +21,6 @@ public class RoomManager : Photon.PunBehaviour {
     void Start () {
         if (PhotonNetwork.isMasterClient)
         {
-            //isBeingMasterClient = true;
 			readyButton.GetComponentInChildren<Text>().text = "BATTLE";
         }
 
@@ -51,12 +50,6 @@ public class RoomManager : Photon.PunBehaviour {
         EquipArmour();
 
         Invoke("ResetTeam", 0.5f);
-        //GameObject[] dummyObjects = GameObject.FindGameObjectsWithTag("Player");
-        //foreach (GameObject player in dummyObjects)
-        //{
-        //    Debug.Log("Destroy Player");
-        //    Destroy(player);
-        //}
 
     }
 	

@@ -36,12 +36,7 @@ public class SoldierManager : Photon.PunBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-       // Debug.Log(characterAbility.GetHP());
 
-		//if (characterAbility.GetHP() <= 0)
-  //      {
-  //          Debug.Log("Soldire is dead");
-  //      }
 	}
 
 }
