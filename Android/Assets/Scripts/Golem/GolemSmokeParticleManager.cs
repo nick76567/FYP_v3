@@ -33,13 +33,14 @@ public class GolemSmokeParticleManager : Photon.PunBehaviour {
 
     private void OnParticleCollision(GameObject other)
     {
+        Debug.Log("particle hit name " + other.name + " hit " + characterAbility.GetMAP());
         if (photonView.isMine)
         {
             if (other.tag == "Player" && other.GetComponent<CharacterAbility>().GetTeam() != team && !isHitPlayer)
             {
                 isHitPlayer = true;
                 Invoke("DisableHitPlayer", 0.5f);
-                Debug.Log("particle hit name " + other.name);
+                Debug.Log("particle hit name " + other.name + " hit " + characterAbility.GetMAP());
                 other.GetComponent<CharacterAbility>().MagicalDamage(characterAbility.GetMAP());
                 //int otherID = other.GetPhotonView().viewID;
                 //this.photonView.RPC("RPCOnTriggerEnter", PhotonTargets.All, otherID, characterAbility.GetMAP());

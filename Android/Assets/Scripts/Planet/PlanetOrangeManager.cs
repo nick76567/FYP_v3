@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlanetOrangeManager : Photon.PunBehaviour {
 
-    private const int HP = 500, PDP = 10, MDP = 10;
+    private const int HP = 700, PDP = 20, MDP = 20;
     private PlanetAbility planetAbility;
 
 	// Use this for initialization

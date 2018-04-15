@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GolemManager : Photon.PunBehaviour {
 
-    private const int HP = 2000, MP = 0, PAP = 150, MAP = 50, PDP = 50, MDP = 5;
+    private const int HP = 1300, MP = 0, PAP = 100, MAP = 80, PDP = 60, MDP = 10;
     private const float WALK = 10, RUN = WALK + 8;
 
     private CharacterAbility characterAbility;
@@ -25,7 +25,6 @@ public class GolemManager : Photon.PunBehaviour {
     {
         if (photonView.isMine)
         {
-
         
         }
         else

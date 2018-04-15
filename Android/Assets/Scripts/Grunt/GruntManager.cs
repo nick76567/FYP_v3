@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GruntManager : Photon.PunBehaviour {
 
-    private const int HP = 1500, MP = 0, PAP = 120, MAP = 0, PDP = 40, MDP = 50;
+    private const int HP = 1200, MP = 0, PAP = 150, MAP = 0, PDP = 20, MDP = 40;
     private const float WALK = 14, RUN = WALK + 8;
 
     private CharacterAbility characterAbility;
