@@ -15,7 +15,6 @@ public class SoldierWeaponManager : Photon.PunBehaviour {
         team = GetComponentInParent<CharacterAbility>().GetTeam();
         animator = GetComponentInParent<Animator>();
         characterAbility = GetComponentInParent<CharacterAbility>();
-        //physicalAp = characterAbility.GetPAP();
         isHitPlanet = isHitPlayer = false;
     }
 
@@ -70,15 +69,13 @@ public class SoldierWeaponManager : Photon.PunBehaviour {
 
         if (animator.GetBool("isShortAttack"))
         {
-            //Debug.Log("Spear hit");
 
             other.GetComponent<Rigidbody>().AddForce(transform.root.forward * 500);
-            //other.GetComponent<CharacterAbility>().PhysicalDamage(physicalAp);
+
         }
         else if (animator.GetBool("isLongAttack"))
         {
             other.GetComponent<Rigidbody>().AddForce(transform.root.right * 500);
-            //other.GetComponent<CharacterAbility>().PhysicalDamage(physicalAp);
         }
 
     }
@@ -88,11 +85,10 @@ public class SoldierWeaponManager : Photon.PunBehaviour {
     {
         if (animator.GetBool("isShortAttack") || animator.GetBool("isLongAttack"))
         {
-            //Debug.Log("Soldier Planet Hit");
             GameObject other = GameObject.Find(otherName);
 
             PlanetAbility planetAbility = other.GetComponent<PlanetAbility>();
-            //planetAbility.PhysicalDamage(physicalAp);
+
             if (planetAbility.GetHP() <= 0)
             {
                 planetAbility.SetTeam(_team);

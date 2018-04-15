@@ -34,7 +34,6 @@ public class GameManager : MonoBehaviour {
             if (PhotonNetwork.room.PlayerCount != PhotonNetwork.room.MaxPlayers)
             {
                 PhotonNetwork.LoadLevel("Room");
-                //do sth
             }
         }
 
@@ -51,11 +50,6 @@ public class GameManager : MonoBehaviour {
             {
                 if (Time.time - startTime >= 10 && !isEndGame)
                 {
-                    //GameObject[] playerLists = GameObject.FindGameObjectsWithTag("Player");
-                    //foreach(GameObject player in playerLists)
-                    //{
-                    //    player.GetComponent<CharacterAbility>().Destroy();
-                    //}
                     isEndGame = true;
                     foreach(GameObject character in GameObject.FindGameObjectsWithTag("Player"))
                     {

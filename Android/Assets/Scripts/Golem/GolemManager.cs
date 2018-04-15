@@ -33,8 +33,6 @@ public class GolemManager : Photon.PunBehaviour {
             otherCamera = GetComponentInChildren<Camera>();
             audioListener.enabled = false;
             otherCamera.enabled = false;
-
-            //this.tag = "Player";
         }
 
         GetComponent<CharacterMovement>().SetMovement(WALK, RUN);
@@ -43,10 +41,7 @@ public class GolemManager : Photon.PunBehaviour {
     // Update is called once per frame
     void Update()
     {
-        //if (characterAbility.GetHP() <= 0)
-        //{
-        //    Debug.Log("Grunt is dead");
-        //}
+
     }
 
 }
