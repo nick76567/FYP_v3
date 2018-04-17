@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class ShopManager : Photon.PunBehaviour {
-    private const int WEAPON_PRICE = 0, ARMOR_PRICE = 0;
+    private const int WEAPON_PRICE = 200, ARMOR_PRICE = 100;
     private PlayerData player;
     private Data data;
     public Text[] weaponList;

@@ -99,7 +99,7 @@ public class CharacterAbility : Photon.PunBehaviour
         hp = (int)startHP;
         healthBar.fillAmount = 1;
         gameObject.SetActive(true);
-        gameObject.transform.position = new Vector3(Random.Range(0, 10), 0, 0);
+        gameObject.transform.position = new Vector3(Random.Range(0, 50), 0, 0);
     }
 
     public void CharacterEndGame()
@@ -327,7 +327,7 @@ public class CharacterAbility : Photon.PunBehaviour
         else
         {
             physicalDp = (int)(physicalDp + physicalDp * pdpRate);
-            magicalAp = (int)(magicalDp + magicalDp * mdpRate);
+            magicalDp = (int)(magicalDp + magicalDp * mdpRate);
         }
         
     }

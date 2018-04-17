@@ -14,7 +14,6 @@ public class GolemWeaponManager : Photon.PunBehaviour {
 	void Start () {
         animator = GetComponentInParent<Animator>();
         characterAbility = GetComponentInParent<CharacterAbility>();
-        //physicalAp = characterAbility.GetPAP();
         team = characterAbility.GetTeam();
         isHitPlanet = isHitPlayer = false;
 	}
@@ -76,7 +75,6 @@ public class GolemWeaponManager : Photon.PunBehaviour {
             Debug.Log("Golem hit");
             GameObject other = PhotonView.Find(otherID).gameObject;
             other.GetComponent<Rigidbody>().AddForce(transform.root.forward * 700);
-            //other.GetComponent<CharacterAbility>().PhysicalDamage(physicalAp);
         }
     }
 
@@ -90,9 +88,8 @@ public class GolemWeaponManager : Photon.PunBehaviour {
             if (other == null)
                 Debug.Log("Planet Orange not found");
 
-
             PlanetAbility planetAbility = other.GetComponent<PlanetAbility>();
-            //planetAbility.PhysicalDamage(physicalAp);
+
             if(planetAbility.GetHP() <= 0)
             {
                planetAbility.SetTeam(_team);

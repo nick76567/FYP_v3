@@ -12,7 +12,6 @@ public class GolemSmokeParticleManager : Photon.PunBehaviour {
     // Use this for initialization
     void Start () {
         characterAbility = GetComponentInParent<CharacterAbility>();
-       // magicalAp = characterAbility.GetMAP();
         team = characterAbility.GetTeam();
         isHitPlanet = isHitPlayer = false;
     }
@@ -39,10 +38,8 @@ public class GolemSmokeParticleManager : Photon.PunBehaviour {
             {
                 isHitPlayer = true;
                 Invoke("DisableHitPlayer", 0.5f);
-                Debug.Log("particle hit name " + other.name);
+                Debug.Log("particle hit name " + other.name + " hit " + characterAbility.GetMAP());
                 other.GetComponent<CharacterAbility>().MagicalDamage(characterAbility.GetMAP());
-                //int otherID = other.GetPhotonView().viewID;
-                //this.photonView.RPC("RPCOnTriggerEnter", PhotonTargets.All, otherID, characterAbility.GetMAP());
 
                 if (other.GetComponent<CharacterAbility>().GetHP() <= 0)
                 {
@@ -63,12 +60,6 @@ public class GolemSmokeParticleManager : Photon.PunBehaviour {
         
     }
 
-    //[PunRPC]
-    //private void RPCOnTriggerEnter(int otherID, int magicalAp)
-    //{
-    //    GameObject other = PhotonView.Find(otherID).gameObject;
-    //    other.GetComponent<CharacterAbility>().MagicalDamage(magicalAp);
-    //}
 
     [PunRPC]
     private void RPConTriggerEnter(string otherName, PunTeams.Team _team)
@@ -77,7 +68,6 @@ public class GolemSmokeParticleManager : Photon.PunBehaviour {
         GameObject other = GameObject.Find(otherName);
 
         PlanetAbility planetAbility = other.GetComponent<PlanetAbility>();
-        //planetAbility.MagicalDamage(magicalAp);
         if (planetAbility.GetHP() <= 0)
         {
             planetAbility.SetTeam(_team);

@@ -59,7 +59,7 @@ public class LichAttack : Photon.PunBehaviour{
                 Debug.Log("Lich fire ball");
                 isLaunchFireBall = true;
 
-                GameObject lauchFireBall = PhotonNetwork.Instantiate("FireBall", transform.position + (transform.forward * 2) + new Vector3(0, 2, 0), transform.rotation, 0);
+                GameObject lauchFireBall = PhotonNetwork.Instantiate("FireBall", transform.position + (transform.forward * 10) + new Vector3(0, 3f, 0), transform.rotation, 0);
                 int id = lauchFireBall.GetPhotonView().viewID;
                 lauchFireBall.GetComponent<FireBallManager>().InitFireBall(characterAbility.GetMAP(), this.photonView.viewID);
                 this.photonView.RPC("RPCLaunchFireBall", PhotonTargets.All, id);
@@ -78,7 +78,7 @@ public class LichAttack : Photon.PunBehaviour{
                 Debug.Log("Lich fire wall");
                 isLaunchFireWall = true;
 
-                GameObject lauchFireWall = PhotonNetwork.Instantiate("FireWall", transform.position + (transform.forward * 2), transform.rotation, 0);
+                GameObject lauchFireWall = PhotonNetwork.Instantiate("FireWall", transform.position + (transform.forward * 10) + new Vector3(0, 1f, 0), transform.rotation, 0);
                 int id = lauchFireWall.GetPhotonView().viewID;
                 lauchFireWall.GetComponent<FireWallManager>().InitFireWall(characterAbility.GetMAP(), this.photonView.viewID);
 
@@ -127,7 +127,7 @@ public class LichAttack : Photon.PunBehaviour{
         animator.SetBool("isShortAttack", true);
 
         GameObject tmp = PhotonView.Find(id).gameObject;
-        tmp.GetComponent<Rigidbody>().AddForce(transform.forward * 700);
+        tmp.GetComponent<Rigidbody>().AddForce(transform.forward * 1400);
 
         Invoke("ChangeLaunchFireBallState", 1.0f);
     }

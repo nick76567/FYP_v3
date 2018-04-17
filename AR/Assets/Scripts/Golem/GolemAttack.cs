@@ -20,7 +20,6 @@ public class GolemAttack : Photon.PunBehaviour {
         isNotLaunchDustRing = true;
 
         animator = GetComponent<Animator>();
-        //dustRing = Resources.Load("GolemSmokeRing", typeof(GameObject)) as GameObject;
         smokeRing = GetComponentInChildren<GolemSmokeRingManager>();
 
         characterAbility = GetComponent<CharacterAbility>();
@@ -44,9 +43,6 @@ public class GolemAttack : Photon.PunBehaviour {
 	void Update () {
         if (photonView.isMine)
         {
-            //if (Input.GetKey(KeyCode.J))
-//			Debug.Log("isShortAttack: " + isShortAttack);
-//			Debug.Log ("animator short attack " + animator.GetBool ("isShortAttack"));
 			if(isShortAttack && !animator.GetBool("isShortAttack"))
             {
 
@@ -56,11 +52,6 @@ public class GolemAttack : Photon.PunBehaviour {
                     this.photonView.RPC("PRCSetpSpeed", PhotonTargets.All, (float)characterAbility.GetpSpeed()); 
                 }
                 animator.SetBool("isShortAttack", true);
-
-				//isShortAttack = false;
-
-				//Invoke ("DisableShortAttack", 0.2f);
-
 
             }
             else
@@ -98,7 +89,6 @@ public class GolemAttack : Photon.PunBehaviour {
 
     private void LaunchDustRing()
     {
-        //Instantiate(dustRing, transform.position, Quaternion.identity);
         smokeRing.Launch();
         Invoke("ChangeIsLaunchDustRingState", 1f);
     }
