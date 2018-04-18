@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿	using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -21,8 +21,7 @@ public class RoomManager : Photon.PunBehaviour {
     void Start () {
         if (PhotonNetwork.isMasterClient)
         {
-            //isBeingMasterClient = true;
-            readyButton.GetComponentInChildren<Text>().text = "Start";
+			readyButton.GetComponentInChildren<Text>().text = "BATTLE";
         }
 
         for (int i = 1; i < (int)CharactersName.CharatersLen; i++)
@@ -44,17 +43,13 @@ public class RoomManager : Photon.PunBehaviour {
         playerData = GameObject.Find("PlayerData").GetComponent<PlayerData>();
         maxPlayerPerTeam = PhotonNetwork.room.MaxPlayers / 2;
 
+        Debug.Log("MaxPlayerPerTeam " + maxPlayerPerTeam);
+
         SelectGolem();
         EquipAxe();
         EquipArmour();
 
         Invoke("ResetTeam", 0.5f);
-        //GameObject[] dummyObjects = GameObject.FindGameObjectsWithTag("Player");
-        //foreach (GameObject player in dummyObjects)
-        //{
-        //    Debug.Log("Destroy Player");
-        //    Destroy(player);
-        //}
 
     }
 	
@@ -81,7 +76,8 @@ public class RoomManager : Photon.PunBehaviour {
         }
 
         foreach (Button button in TeamList)
-        {
+        {	
+			Debug.Log ("Button name " + button.name);
             button.enabled = false;
         }
 
@@ -107,6 +103,7 @@ public class RoomManager : Photon.PunBehaviour {
 
         foreach (Button button in TeamList)
         {
+            Debug.Log("Button Name " + button.name);
             button.enabled = true;
         }
 
@@ -179,7 +176,7 @@ public class RoomManager : Photon.PunBehaviour {
 
     public override void OnLeftRoom()
     {
-        SceneManager.LoadScene("Lobby");
+        SceneManager.LoadScene("New Lobby");
     }
 
     public void ReturnButton()

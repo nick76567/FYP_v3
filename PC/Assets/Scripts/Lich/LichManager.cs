@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LichManager : Photon.MonoBehaviour {
 
-    private const int HP = 1200, MP = 1000, PAP = 0, MAP = 140, PDP = 20, MDP = 100;
+    private const int HP = 1000, MP = 1000, PAP = 0, MAP = 150, PDP = 10, MDP = 60;
     private const float WALK = 12, RUN = WALK + 8;
 
     private CharacterAbility characterAbility;
@@ -30,7 +30,6 @@ public class LichManager : Photon.MonoBehaviour {
             otherCamera = GetComponentInChildren<Camera>();
             audioListener.enabled = false;
             otherCamera.enabled = false;
-            //this.tag = "Enemy";
         }
 
         GetComponent<CharacterMovement>().SetMovement(WALK, RUN);
@@ -39,9 +38,6 @@ public class LichManager : Photon.MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        //if (characterAbility.GetHP() <= 0)
-        //{
-        //    Debug.Log("Lich is dead");
-        //}
+
     }
 }

@@ -1,16 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class GolemManager : Photon.PunBehaviour {
 
-    private const int HP = 2000, MP = 0, PAP = 150, MAP = 50, PDP = 50, MDP = 5;
+    private const int HP = 1300, MP = 0, PAP = 100, MAP = 80, PDP = 60, MDP = 10;
     private const float WALK = 10, RUN = WALK + 8;
 
     private CharacterAbility characterAbility;
     private AudioListener audioListener;
     private Camera otherCamera;
+
 
     private void Awake()
     {
@@ -23,7 +25,6 @@ public class GolemManager : Photon.PunBehaviour {
     {
         if (photonView.isMine)
         {
-
         
         }
         else
@@ -32,7 +33,6 @@ public class GolemManager : Photon.PunBehaviour {
             otherCamera = GetComponentInChildren<Camera>();
             audioListener.enabled = false;
             otherCamera.enabled = false;
-            //this.tag = "Player";
         }
 
         GetComponent<CharacterMovement>().SetMovement(WALK, RUN);
@@ -41,10 +41,7 @@ public class GolemManager : Photon.PunBehaviour {
     // Update is called once per frame
     void Update()
     {
-        //if (characterAbility.GetHP() <= 0)
-        //{
-        //    Debug.Log("Grunt is dead");
-        //}
+
     }
 
 }

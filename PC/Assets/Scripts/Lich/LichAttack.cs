@@ -10,9 +10,13 @@ public class LichAttack : Photon.PunBehaviour{
     private bool isStopLaunchFireBall, isStopLaunchFireWall;
     private CharacterAbility characterAbility;
 
+	//private bool isShortAttack, isLongAttack;
+
+
     // Use this for initialization
     void Start()
-    {
+    {	
+		//isShortAttack = isLongAttack = false;
         animator = GetComponent<Animator>();
         characterAbility = GetComponent<CharacterAbility>();
         fireBall = Resources.Load("FireBall", typeof(GameObject)) as GameObject;
@@ -31,12 +35,26 @@ public class LichAttack : Photon.PunBehaviour{
         isStopLaunchFireWall = true;
     }
 
+	//public void DisableShortAttack(){
+	//	animator.SetBool("isShortAttack", false);
+	//	isShortAttack = false;
+	//	Debug.Log ("DisableShortAttack is called");
+	//}
+
+	//public void DisableLongAttack(){
+	//	animator.SetBool("isLongAttack", false);
+	//	isLongAttack = false;
+	//	Debug.Log ("DisableSLongAttack is called");
+	//}
+
+
     // Update is called once per frame
     void Update()
     {
         if (photonView.isMine)
         {
             if (Input.GetKey(KeyCode.J) && !isLaunchFireBall && !isLaunchFireWall)
+			//if (isShortAttack && !isLaunchFireBall && !isLaunchFireWall)
             {
                 Debug.Log("Lich fire ball");
                 isLaunchFireBall = true;
@@ -55,6 +73,7 @@ public class LichAttack : Photon.PunBehaviour{
             }
 
             if (Input.GetKey(KeyCode.K) && !isLaunchFireWall && !isLaunchFireBall)
+			//if ((isLongAttack) && !isLaunchFireWall && !isLaunchFireBall)
             {
                 Debug.Log("Lich fire wall");
                 isLaunchFireWall = true;
@@ -84,12 +103,23 @@ public class LichAttack : Photon.PunBehaviour{
     }
 
     
-    private void ChangeLaunchFireWallState()
-    {
-        isLaunchFireWall = !isLaunchFireWall;
+ //   private void ChangeLaunchFireWallState()
+ //   {
+ //       isLaunchFireWall = !isLaunchFireWall;
         
-    }
+ //   }
 
+	//public void ShortAttack()
+	//{
+	//	isShortAttack = true;
+	//	Debug.Log ("isShortAttack is called " + isShortAttack );
+	//}
+
+	//public void LongAttack()
+	//{
+	//	isLongAttack = true;
+	//	Debug.Log ("isLongAttack is called " + isLongAttack);
+	//}
 
     [PunRPC]
     private void RPCLaunchFireBall( int id)

@@ -327,7 +327,7 @@ public class CharacterAbility : Photon.PunBehaviour
         else
         {
             physicalDp = (int)(physicalDp + physicalDp * pdpRate);
-            magicalAp = (int)(magicalDp + magicalDp * mdpRate);
+            magicalDp = (int)(magicalDp + magicalDp * mdpRate);
         }
         
     }

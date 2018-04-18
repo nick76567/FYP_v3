@@ -61,7 +61,8 @@ public class Data
         armorList.Add(new Armor(ArmorAbility.Armor.BOOT, 0, 0, 0));
         armorList.Add(new Armor(ArmorAbility.Armor.CLOAK, 0, 0, 0));
 
-        coins = lose = win = 0;
+        lose = win = 0;
+        coins = 500;
     }
 }
 
@@ -80,12 +81,16 @@ public class PlayerData : MonoBehaviour {
     // Use this for initialization
     void Start () {
         data = new Data();    
-        FilePath = Path.Combine(Application.dataPath, "save.txt");
-        if (File.Exists(FilePath))
+        //FilePath = Path.Combine(Application.dataPath, "save.txt");
+        if (PlayerPrefs.HasKey("save"))
         {
             Load();
         }
-        Save();
+        else
+        {
+            Save();
+        }
+        
 
         selectedCharacter = RoomManager.CharactersName.Golem;
         selectedWeapon = WeaponAbility.Weapon.AXE;
@@ -162,12 +167,12 @@ public class PlayerData : MonoBehaviour {
     public void Save()
     {
         string jsonString = JsonUtility.ToJson(data);
-        File.WriteAllText(FilePath, jsonString);
+        PlayerPrefs.SetString("save", jsonString);
     }
 
     public void Load()
     {
-        string jsonString = File.ReadAllText(FilePath);
+        string jsonString = PlayerPrefs.GetString("save");
         JsonUtility.FromJsonOverwrite(jsonString, data);
     }
 
