@@ -13,5 +13,6 @@ namespace Vuforia
     /// </summary>
     public class PropBehaviour : PropAbstractBehaviour
     {
+        
     }
 }

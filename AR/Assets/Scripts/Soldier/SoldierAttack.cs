@@ -31,7 +31,7 @@ public class SoldierAttack : Photon.PunBehaviour {
 	}
 
 
-	//public void OnPointerDown(PointerEventData eventData)
+
     // Update is called once per frame
     void Update()
     {

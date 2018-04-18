@@ -61,7 +61,8 @@ public class Data
         armorList.Add(new Armor(ArmorAbility.Armor.BOOT, 0, 0, 0));
         armorList.Add(new Armor(ArmorAbility.Armor.CLOAK, 0, 0, 0));
 
-        coins = lose = win = 0;
+        lose = win = 0;
+        coins = 500;
     }
 }
 
@@ -167,12 +168,10 @@ public class PlayerData : MonoBehaviour {
     {
         string jsonString = JsonUtility.ToJson(data);
         PlayerPrefs.SetString("save", jsonString);
-        //File.WriteAllText(FilePath, jsonString);
     }
 
     public void Load()
     {
-        //string jsonString = File.ReadAllText(FilePath);
         string jsonString = PlayerPrefs.GetString("save");
         JsonUtility.FromJsonOverwrite(jsonString, data);
     }

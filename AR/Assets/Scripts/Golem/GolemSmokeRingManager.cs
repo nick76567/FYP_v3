@@ -13,12 +13,6 @@ public class GolemSmokeRingManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        /*
-		if(Time.time - init_time >= 2.5f)
-        {
-            Destroy(gameObject);
-        }
-        */
 
 	}
 
