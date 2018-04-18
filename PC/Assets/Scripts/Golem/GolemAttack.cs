@@ -27,17 +27,6 @@ public class GolemAttack : Photon.PunBehaviour {
         MASpeed = characterAbility.GetmSpeed();
 	}
 
-	//public void DisableShortAttack(){
-	//	animator.SetBool("isShortAttack", false);
-	//	isShortAttack = false;
-	//	Debug.Log ("DisableShortAttack is called");
-	//}
-
-	//public void DisableLongAttack(){
-	//	animator.SetBool("isLongAttack", false);
-	//	isLongAttack = false;
-	//	Debug.Log ("DisableSLongAttack is called");
-	//}
 	
 	// Update is called once per frame
 	void Update () {
@@ -60,7 +49,6 @@ public class GolemAttack : Photon.PunBehaviour {
             }
 
             if (Input.GetKey(KeyCode.K) && !isLaunchDustRing)
-			//if (isLongAttack && !animator.GetBool("isLongAttack") && !isLaunchDustRing)
             {
                 if (MASpeed != characterAbility.GetmSpeed())
                 {
@@ -99,17 +87,6 @@ public class GolemAttack : Photon.PunBehaviour {
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionY;
     }
 
-	//public void ShortAttack()
-	//{
-	//	isShortAttack = true;
-	//	Debug.Log ("isShortAttack is called " + isShortAttack );
-	//}
-
-	//public void LongAttack()
-	//{
-	//	isLongAttack = true;
-	//	Debug.Log ("isLongAttack is called " + isLongAttack);
-	//}
 
     [PunRPC]
     private void RPCLaunchDustRing()

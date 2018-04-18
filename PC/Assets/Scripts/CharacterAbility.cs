@@ -30,6 +30,8 @@ public class CharacterAbility : Photon.PunBehaviour
     private PunTeams.Team team;
     private CharacterMovement characterMovement;
 
+    private bool isUpgraded;
+
     private void Awake()
     {
         characterMovement = GetComponent<CharacterMovement>();
@@ -56,8 +58,8 @@ public class CharacterAbility : Photon.PunBehaviour
 
             coinsText.enabled = false;
         }
-        
 
+        isUpgraded = false;
         healthBar.fillAmount = 1;
     }
 
@@ -67,7 +69,29 @@ public class CharacterAbility : Photon.PunBehaviour
         if(hp <= 0)
         {
             CharacterDie();
-        }   
+        }
+
+        if (photonView.isMine && !isUpgraded)
+        {
+            if (Input.GetKey(KeyCode.N))
+            {
+                ChangeIsUpgraded();
+                WeaponBuff();
+                Invoke("ChangeIsUpgraded", .5f);
+            }
+
+            if (Input.GetKey(KeyCode.M))
+            {
+                ChangeIsUpgraded();
+                ArmorBuff();
+                Invoke("ChangeIsUpgraded", .5f);
+            }
+        }
+    }
+
+    private void ChangeIsUpgraded()
+    {
+        isUpgraded = !isUpgraded;
     }
 
     private void AddCoins()
