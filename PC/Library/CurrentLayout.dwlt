@@ -38,7 +38,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 510
-    width: 234
+    width: 380
     height: 477
   m_MinSize: {x: 234, y: 271}
   m_MaxSize: {x: 10004, y: 10021}
@@ -63,14 +63,14 @@ MonoBehaviour:
   - {fileID: 2}
   m_Position:
     serializedVersion: 2
-    x: 1100
+    x: 954
     y: 0
-    width: 234
+    width: 380
     height: 987
   m_MinSize: {x: 234, y: 492}
   m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
-  controlID: 10
+  controlID: 70
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_MinSize: {x: 538, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 131
+  controlID: 32
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -178,12 +178,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1100
+    width: 954
     height: 987
   m_MinSize: {x: 202, y: 442}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 132
+  controlID: 33
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -200,7 +200,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 234
+    width: 380
     height: 510
   m_MinSize: {x: 204, y: 221}
   m_MaxSize: {x: 4004, y: 4021}
@@ -251,10 +251,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1100
+    width: 954
     height: 390
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -276,10 +276,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 390
-    width: 1100
+    width: 954
     height: 597
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -333,15 +333,15 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1102
+    x: 956
     y: 92
-    width: 230
+    width: 376
     height: 489
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ca9afdffd29bfdffd49dfdffce9efdfff29efdff209ffdff3e9ffdff4ac3fdff0ac4fdfffac5fdfff0c6fdff12c7fdff3ec7fdff5cc7fdffd2e4fdff92e5fdff82e7fdff78e8fdff9ae8fdffc6e8fdffe4e8fdfffefdfdffbefefdffae00feffa401feffc601fefff201feff1002feff4c27feff0c28feffe229feffbe2afeffc62afeffd82afeffdc2afeff403cfeff003dfefff03efeffe63ffeff0840feff3440feff5240feff925cfeff9a5dfeff705ffeff4c60feff5460feff6660feff6a60feff4878feff0879fefff87afeffee7bfeff107cfeff3c7cfeff5a7cfeffc29cfeff829dfeff729ffeff68a0feff8aa0feffb6a0feffd4a0feff62b7feff12befeffd2befeffc2c0feffb8c1feffdac1feff06c2feff24c2feffc40effff1417ffff1a18ffffe019ffffbc1affffc41affffd61affffda1affff568affff00000000
+    m_ExpandedIDs: a4e1ffff96e2ffff7ee4ffff5ee5ffff68e5ffff7ce5ffff80e5ffff04f0fffff4f0ffffdcf2ffffbcf3ffffc6f3ffffdaf3ffffdef3ffffe2fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -419,9 +419,9 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1102
+    x: 956
     y: 602
-    width: 230
+    width: 376
     height: 456
   m_SearchFilter:
     m_NameFilter: 
@@ -434,19 +434,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Resources
+    - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Resources
+  - Assets/Scenes
   m_LastFoldersGridSize: 16
   m_LastProjectPath: F:\HKUST\Fall_2018\FYP\FYP_v3\PC
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 77}
-    m_SelectedIDs: 0a5b0000
-    m_LastClickedID: 23306
-    m_ExpandedIDs: 00000000f0580000665a0000c25b0000e65b0000e85b0000045c00007e5c0000d05e00005461000056610000586100005a6100005c6100005e610000606100006261000064610000ffffff7f
+    m_SelectedIDs: 3e280000
+    m_LastClickedID: 10302
+    m_ExpandedIDs: 00000000562700005a2a00000e2d00005a2d00005c2d00009e2d0000be2e000002340000c2380000c4380000c6380000c8380000ca380000cc380000ce380000d0380000d2380000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -474,7 +474,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f0580000665a0000c25b0000e65b0000e85b0000045c00007e5c0000d05e00005461000056610000586100005a6100005c6100005e610000606100006261000064610000
+    m_ExpandedIDs: 00000000562700005a2a00000e2d00005a2d00005c2d00009e2d0000be2e000002340000c2380000c4380000c6380000c8380000ca380000cc380000ce380000d0380000d2380000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -553,7 +553,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 482
-    width: 1098
+    width: 952
     height: 576
   m_MaximizeOnPlay: 0
   m_Gizmos: 0
@@ -563,8 +563,8 @@ MonoBehaviour:
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
-    m_HBaseRangeMin: -549
-    m_HBaseRangeMax: 549
+    m_HBaseRangeMin: -476
+    m_HBaseRangeMax: 476
     m_VBaseRangeMin: -279.5
     m_VBaseRangeMax: 279.5
     m_HAllowExceedBaseRangeMin: 1
@@ -583,25 +583,25 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
-      width: 1098
+      width: 952
       height: 559
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 549, y: 279.5}
+    m_Translation: {x: 476, y: 279.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -549
+      x: -476
       y: -279.5
-      width: 1098
+      width: 952
       height: 559
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 1098, y: 576}
+  m_LastWindowPixelSize: {x: 952, y: 576}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -629,7 +629,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 92
-    width: 1098
+    width: 952
     height: 369
   m_SceneLighting: 1
   lastFramingTime: 7056.1618208604805
