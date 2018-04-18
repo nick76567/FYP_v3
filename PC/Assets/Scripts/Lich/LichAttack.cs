@@ -10,13 +10,9 @@ public class LichAttack : Photon.PunBehaviour{
     private bool isStopLaunchFireBall, isStopLaunchFireWall;
     private CharacterAbility characterAbility;
 
-	//private bool isShortAttack, isLongAttack;
-
-
     // Use this for initialization
     void Start()
     {	
-		//isShortAttack = isLongAttack = false;
         animator = GetComponent<Animator>();
         characterAbility = GetComponent<CharacterAbility>();
         fireBall = Resources.Load("FireBall", typeof(GameObject)) as GameObject;
@@ -27,25 +23,9 @@ public class LichAttack : Photon.PunBehaviour{
             Debug.LogError("particle not found");
         }
 
-
-
-        isLaunchFireBall = false;
-        isLaunchFireWall = false;
-        isStopLaunchFireBall = true;
-        isStopLaunchFireWall = true;
+        isLaunchFireBall = isLaunchFireWall = false;
+        isStopLaunchFireBall = isStopLaunchFireWall = true;
     }
-
-	//public void DisableShortAttack(){
-	//	animator.SetBool("isShortAttack", false);
-	//	isShortAttack = false;
-	//	Debug.Log ("DisableShortAttack is called");
-	//}
-
-	//public void DisableLongAttack(){
-	//	animator.SetBool("isLongAttack", false);
-	//	isLongAttack = false;
-	//	Debug.Log ("DisableSLongAttack is called");
-	//}
 
 
     // Update is called once per frame
@@ -54,43 +34,32 @@ public class LichAttack : Photon.PunBehaviour{
         if (photonView.isMine)
         {
             if (Input.GetKey(KeyCode.J) && !isLaunchFireBall && !isLaunchFireWall)
-			//if (isShortAttack && !isLaunchFireBall && !isLaunchFireWall)
             {
-                Debug.Log("Lich fire ball");
+                animator.SetBool("isShortAttack", true);
                 isLaunchFireBall = true;
 
-                GameObject lauchFireBall = PhotonNetwork.Instantiate("FireBall", transform.position + (transform.forward * 2) + new Vector3(0, 2, 0), transform.rotation, 0);
-                int id = lauchFireBall.GetPhotonView().viewID;
-                lauchFireBall.GetComponent<FireBallManager>().InitFireBall(characterAbility.GetMAP(), this.photonView.viewID);
-                this.photonView.RPC("RPCLaunchFireBall", PhotonTargets.All, id);
-                isStopLaunchFireBall = false;
+                Invoke("LaunchFireBall", 0.4f);
+                Invoke("ChangeStopFireBallState", 0.7f);
                 
             }
-            else if( !isStopLaunchFireBall &&  !isLaunchFireBall)
+            else if( !isStopLaunchFireBall)
             {
-                this.photonView.RPC("RPCStopLaunchFireBall", PhotonTargets.All);
-                isStopLaunchFireBall = true;            
+                animator.SetBool("isShortAttack", false);
+                ChangeStopFireBallState();
             }
 
             if (Input.GetKey(KeyCode.K) && !isLaunchFireWall && !isLaunchFireBall)
-			//if ((isLongAttack) && !isLaunchFireWall && !isLaunchFireBall)
             {
-                Debug.Log("Lich fire wall");
+                animator.SetBool("isLongAttack", true);
                 isLaunchFireWall = true;
 
-                GameObject lauchFireWall = PhotonNetwork.Instantiate("FireWall", transform.position + (transform.forward * 2), transform.rotation, 0);
-                int id = lauchFireWall.GetPhotonView().viewID;
-                lauchFireWall.GetComponent<FireWallManager>().InitFireWall(characterAbility.GetMAP(), this.photonView.viewID);
-
-                this.photonView.RPC("RPCLaunchFireWall", PhotonTargets.All, id);
-                isStopLaunchFireWall = false;
-                
+                Invoke("LaunchFireWall", 0.4f);
+                Invoke("ChangeStopFireWallState", 1f);
             }
-            else if( !isStopLaunchFireWall &&  !isLaunchFireWall)
+            else if( !isStopLaunchFireWall)
             {
-                this.photonView.RPC("RPCStopLaunchFireWall", PhotonTargets.All);
-                isStopLaunchFireWall = true;
-                
+                animator.SetBool("isLongAttack", false);
+                ChangeStopFireWallState();
             }
         }
     }
@@ -98,61 +67,55 @@ public class LichAttack : Photon.PunBehaviour{
     
     private void ChangeLaunchFireBallState()
     {
-        isLaunchFireBall = !isLaunchFireBall;
-        
+        isLaunchFireBall = !isLaunchFireBall;       
     }
 
-    
- //   private void ChangeLaunchFireWallState()
- //   {
- //       isLaunchFireWall = !isLaunchFireWall;
-        
- //   }
+    private void ChangeLaunchFireWallState()
+    {
+        isLaunchFireWall = !isLaunchFireWall;
+    }
 
-	//public void ShortAttack()
-	//{
-	//	isShortAttack = true;
-	//	Debug.Log ("isShortAttack is called " + isShortAttack );
-	//}
+    private void ChangeStopFireBallState()
+    {
+        isStopLaunchFireBall = !isStopLaunchFireBall;
+    }
 
-	//public void LongAttack()
-	//{
-	//	isLongAttack = true;
-	//	Debug.Log ("isLongAttack is called " + isLongAttack);
-	//}
+    private void ChangeStopFireWallState()
+    {
+        isStopLaunchFireWall = !isStopLaunchFireWall;
+    }
+
+    private void LaunchFireBall()
+    {
+        GameObject lauchFireBall = PhotonNetwork.Instantiate("FireBall", transform.position + transform.forward + new Vector3(0, 2, 0), transform.rotation, 0);
+        int id = lauchFireBall.GetPhotonView().viewID;
+        lauchFireBall.GetComponent<FireBallManager>().InitFireBall(characterAbility.GetMAP(), this.photonView.viewID);
+        this.photonView.RPC("RPCLaunchFireBall", PhotonTargets.All, id);
+    }
+
+    private void LaunchFireWall()
+    {
+        GameObject lauchFireWall = PhotonNetwork.Instantiate("FireWall", transform.position + (transform.forward * 2), transform.rotation, 0);
+        int id = lauchFireWall.GetPhotonView().viewID;
+        lauchFireWall.GetComponent<FireWallManager>().InitFireWall(characterAbility.GetMAP(), this.photonView.viewID);
+        this.photonView.RPC("RPCLaunchFireWall", PhotonTargets.All, id);
+    }
+
 
     [PunRPC]
     private void RPCLaunchFireBall( int id)
     {
-        animator.SetBool("isShortAttack", true);
-
         GameObject tmp = PhotonView.Find(id).gameObject;
         tmp.GetComponent<Rigidbody>().AddForce(transform.forward * 700);
 
-        Invoke("ChangeLaunchFireBallState", 1.0f);
+        Invoke("ChangeLaunchFireBallState", 2f);
     }
 
     [PunRPC]
     private void RPCLaunchFireWall(int id)
     {
-        animator.SetBool("isLongAttack", true);
-
         GameObject tmp = PhotonView.Find(id).gameObject;
-
 
         Invoke("ChangeLaunchFireWallState", 2.0f);
     }
-
-    [PunRPC]
-    private void RPCStopLaunchFireBall()
-    {
-        animator.SetBool("isShortAttack", false);
-    }
-
-    [PunRPC]
-    private void RPCStopLaunchFireWall()
-    {
-        animator.SetBool("isLongAttack", false);
-    }
-
 }
