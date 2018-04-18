@@ -46,7 +46,8 @@ public class CharacterAbility : Photon.PunBehaviour
             dieCanvas = GameObject.Find("DieCanvas");
             dieCanvas.SetActive(false);
             coins = 0;
-            weaponCost = armorCost = weaponLevel = armorLevel = 1;
+            weaponLevel = armorLevel = 1;
+            weaponCost = armorCost = 10;
             AddCoins();
         }
         else
@@ -106,7 +107,7 @@ public class CharacterAbility : Photon.PunBehaviour
     private void CharacterDie()
     {
         gameObject.SetActive(false);
-        Invoke("CharacterRebirth", Random.Range(10f, 20f));
+        Invoke("CharacterRebirth", Random.Range(5f, 10f));
         if (photonView.isMine)
         {
             //gray screen
@@ -123,7 +124,7 @@ public class CharacterAbility : Photon.PunBehaviour
         hp = (int)startHP;
         healthBar.fillAmount = 1;
         gameObject.SetActive(true);
-        gameObject.transform.position = new Vector3(Random.Range(0, 50), 0, 0);
+        gameObject.transform.position = new Vector3(Random.Range(0, 4), 0, 0);
     }
 
     public void CharacterEndGame()
