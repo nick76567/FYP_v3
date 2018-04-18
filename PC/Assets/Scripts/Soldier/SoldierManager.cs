@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SoldierManager : Photon.PunBehaviour {
 
-    private const int HP = 1500, MP = 500, PAP = 70, MAP = 0, PDP = 50, MDP = 30;
-    private const float WALK = 15, RUN = WALK + 8;
+    private const int HP = 1100, MP = 500, PAP = 120, MAP = 0, PDP = 40, MDP = 20;
+    private const float WALK = 16, RUN = WALK + 8;
 
     private CharacterAbility characterAbility;
     private AudioListener audioListener;
@@ -36,12 +36,7 @@ public class SoldierManager : Photon.PunBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-       // Debug.Log(characterAbility.GetHP());
 
-		//if (characterAbility.GetHP() <= 0)
-  //      {
-  //          Debug.Log("Soldire is dead");
-  //      }
 	}
 
 }

@@ -60,9 +60,7 @@ public class FireWallManager : Photon.PunBehaviour
                 isHitPlayer = true;
                 Invoke("DisableHitPlayer", 0.5f);
                 Debug.Log("particle hit name " + other.name);
-                //int otherID = other.GetPhotonView().viewID;
                 other.GetComponent<CharacterAbility>().MagicalDamage(magicalAp);
-                //this.photonView.RPC("RPCOnParticleCollision", PhotonTargets.All, otherID);
 
                 if (other.GetComponent<CharacterAbility>().GetHP() <= 0)
                 {
@@ -84,17 +82,11 @@ public class FireWallManager : Photon.PunBehaviour
         }
     }
 
-    //[PunRPC]
-    //private void RPCOnParticleCollision(int otherID)
-    //{
-    //    PhotonView.Find(otherID).GetComponent<CharacterAbility>().MagicalDamage(_magicalAp);
-    //}
 
     [PunRPC]
     private void RPCOnParticleCollisiion(string otherName, PunTeams.Team _team)
     {
         PlanetAbility other = GameObject.Find(otherName).GetComponent<PlanetAbility>();
-        //other.MagicalDamage(_magicalAp);
         if (other.GetHP() <= 0)
             other.SetTeam(_team);
 

@@ -16,7 +16,7 @@ public class CharacterMovement : Photon.PunBehaviour
     private float turnInputValue;
     private float speed, walk, run;
 
-
+    //private bool isRun;
     //private float m_OriginalPitch;          
 
 
@@ -24,6 +24,7 @@ public class CharacterMovement : Photon.PunBehaviour
     {
         rigidBody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        //isRun = false;
     }
 
 
@@ -60,10 +61,10 @@ public class CharacterMovement : Photon.PunBehaviour
         if (photonView.isMine)
         {
             // Store the value of both input axes.
-            movementInputValue = Input.GetAxis("Vertical");
-            turnInputValue = Input.GetAxis("Horizontal");
+            movementInputValue = SimpleInput.GetAxis("Vertical");
+            turnInputValue = SimpleInput.GetAxis("Horizontal");
 
-            if (Input.GetKey(KeyCode.LeftShift))
+            if (Input.GetKey(KeyCode.L))
             {
                 animator.SetBool("isRun", true);
                 speed = run;
@@ -148,4 +149,16 @@ public class CharacterMovement : Photon.PunBehaviour
         walk = _walk;
         run = _run;
     }
+
+    //public void Run()
+    //{
+    //    isRun = true;
+    //    Debug.Log("Run() is Called");
+    //}
+
+    //public void DisableRun()
+    //{
+    //    isRun = false;
+    //    Debug.Log("DisableRun() is Called");
+    //}
 }

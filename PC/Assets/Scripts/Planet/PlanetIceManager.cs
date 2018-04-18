@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlanetIceManager : Photon.PunBehaviour
 {
 
-    private const int HP = 1, PDP = 10, MDP = 10;
+    private const int HP = 600, PDP = 10, MDP = 30;
     private PlanetAbility planetAbility;
 
     // Use this for initialization
@@ -18,12 +18,7 @@ public class PlanetIceManager : Photon.PunBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (planetAbility.GetHP() <= 0)
-        //{
-        //    //planetAbility.SetTeam((planetAbility.GetTeam() == CharacterAbility.Team.blue) ? CharacterAbility.Team.red : CharacterAbility.Team.blue);
-        //    planetAbility.SetHP(HP);
-        //    Debug.Log("PlanetIce isBlueTeam " + planetAbility.GetTeam());
-        //}
+
     }
 
 }

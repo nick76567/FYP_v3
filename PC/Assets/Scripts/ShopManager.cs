@@ -6,17 +6,20 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class ShopManager : Photon.PunBehaviour {
-    private const int WEAPON_PRICE = 3000, ARMOR_PRICE = 2000;
+    private const int WEAPON_PRICE = 200, ARMOR_PRICE = 100;
     private PlayerData player;
     private Data data;
     public Text[] weaponList;
     public Text[] armorList;
     public Text coins;
 
+
+
 	// Use this for initialization
 	void Start () {
         Debug.Log("ShopManager is created");
         player = GameObject.Find("PlayerData").GetComponent<PlayerData>();
+        Debug.Log("After find playerData");
         data = player.data;
 
 
@@ -182,6 +185,6 @@ public class ShopManager : Photon.PunBehaviour {
 
     public void Return()
     {
-        SceneManager.LoadScene("Lobby", LoadSceneMode.Single);
+        SceneManager.LoadScene("New Lobby", LoadSceneMode.Single);
     }
 }
