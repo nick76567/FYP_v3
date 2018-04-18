@@ -16,7 +16,6 @@ public class GolemAttack : Photon.PunBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        //isShortAttack = isLongAttack = isLaunchDustRing = false;
         isNotLaunchDustRing = true;
 
         animator = GetComponent<Animator>();
@@ -34,8 +33,6 @@ public class GolemAttack : Photon.PunBehaviour {
         {
 			if(Input.GetKey(KeyCode.J))
             {
-
-				Debug.Log ("attack ");
                 if(PASpeed != characterAbility.GetpSpeed())
                 {
                     this.photonView.RPC("PRCSetpSpeed", PhotonTargets.All, (float)characterAbility.GetpSpeed()); 
