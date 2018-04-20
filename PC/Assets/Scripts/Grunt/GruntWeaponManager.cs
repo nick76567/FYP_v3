@@ -77,7 +77,7 @@ public class GruntWeaponManager : Photon.PunBehaviour {
         }
         else if (animator.GetBool("isLongAttack"))
         {
-            other.GetComponent<Rigidbody>().AddForce(transform.root.right * 500);
+            other.GetComponent<Rigidbody>().AddForce(transform.root.right * -500);
         }
 
     }
