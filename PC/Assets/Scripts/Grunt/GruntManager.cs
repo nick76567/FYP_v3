@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GruntManager : Photon.PunBehaviour {
 
-    private const int HP = 1200, MP = 0, PAP = 150, MAP = 0, PDP = 20, MDP = 40;
-    private const float WALK = 14, RUN = WALK + 8;
+    private const int HP = 1200, MP = 0, PAP = 100, MAP = 0, PDP = 20, MDP = 40;
+    private const float WALK = 10, RUN = WALK + 8;
 
     private CharacterAbility characterAbility;
     private AudioListener audioListener;
