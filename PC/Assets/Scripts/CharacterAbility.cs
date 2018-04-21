@@ -107,7 +107,8 @@ public class CharacterAbility : Photon.PunBehaviour
     private void CharacterDie()
     {
         gameObject.SetActive(false);
-        Invoke("CharacterRebirth", Random.Range(5f, 10f));
+        //Invoke("CharacterRebirth", Random.Range(5f, 10f));
+        Invoke("CharacterRebirth", 12f);
         if (photonView.isMine)
         {
             //gray screen
