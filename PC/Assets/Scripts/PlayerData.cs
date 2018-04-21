@@ -98,6 +98,7 @@ public class PlayerData : MonoBehaviour {
         isInGame = isInRoom = false;
         
         DontDestroyOnLoad(gameObject);
+        data.coins = 500;
     }
 	
 	// Update is called once per frame
